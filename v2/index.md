@@ -1,6 +1,6 @@
 # API OVERVIEW
 
-API's are built with `REST` standard that allows you to easily send messages to your end users and make your work easy. You can send alerts, reminders, and notifications, or you can send verification messages containing one-time passcodes (OTP) using this feature of ours.
+APIs are built with `REST` standard that allows you to easily send messages to your end users and make your work easy. You can send alerts, reminders, and notifications, or you can send verification messages containing one-time passcodes (OTP) using this feature of ours.
 
 This documentation gives you instructions on how to integrate our api through various _*HTTP*_ API and _*JSON*_ API.
 

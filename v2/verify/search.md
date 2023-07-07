@@ -1,4 +1,3 @@
-# Verify search
 
 To check the status of past or current verification requests:
 

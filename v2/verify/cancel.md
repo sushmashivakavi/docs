@@ -1,4 +1,3 @@
-# Cancel Verify
 
 Deletes an existing Verify request. You only need to supply the unique id that was returned upon creation.
 #include "_include/endpoint.md"

@@ -5,16 +5,17 @@
 
 - [Introduction](#)
 
-    - [Authentication](/docs/{version})
+    - [API Overview](/docs/{version})
+    - [Authentication](/docs/{version}#content-authentication)
     - [Rate Limits](/docs/{version}#content-rate-limits)
     - [Status Code](/docs/{version}#content-http-status-codes)
 
 - [Verify](#)
 
   - [Introduction](/docs/{version}/verify)
-  - [Check](/docs/{version}/verify/check)
+  <!-- - [Check](/docs/{version}/verify/check)
   - [Search](/docs/{version}/verify/search)
-  - [Cancel](/docs/{version}/verify/cancel)
+  - [Cancel](/docs/{version}/verify/cancel) -->
 
 - [Messaging](#)
 

@@ -1,4 +1,3 @@
-# Verify Token
 
 Verify a sent verification token. Can only be done once for each token.
 

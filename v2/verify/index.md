@@ -1,4 +1,4 @@
-# Verify Api
+# Verify API
 
 Verify API enables you to verify a mobile phone number with two-factor authentication.
 
@@ -92,3 +92,14 @@ Create a new Verify object through the API to start the verification process of 
   "expire_at": "2019-01-31 14:43:48"
 }
 ```
+## Validate Token
+
+#include "{version}/verify/check.md"
+
+## Search Verify Token
+
+#include "{version}/verify/search.md"
+
+## Cancel Verify Token
+
+#include "{version}/verify/cancel.md"
