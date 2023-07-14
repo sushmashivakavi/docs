@@ -1,11 +1,11 @@
 # Creating Message Templates
 
-Your Message Templates will be reviewed to ensure they do not violate policies. Once approved, your business will have its own name where the Message Templates will live.
+To ensure compliance with policies, your Message Templates will undergo a review process. Once approved, your business will have its own designated name where the Message Templates will reside.
 
-When creating a Message Temaple, you must have the following:
+When creating a Message Template, please make sure to include the following:
 
-1. Message Template name
-2. Translated Message Template in the correct format
+1. Message Template name: Provide a descriptive name for your Message Template.
+2. Translated Message Template in the correct format: Ensure that the Message Template is correctly formatted and includes appropriate translations if necessary.
 
 ### Examples
 
@@ -61,7 +61,7 @@ Any message arising out of customers actions or his existing relationship with t
 
 ## Service Explicit
 
-These are the messages which require explicit consent from the customer, that has been verified directly from the recipient in a robust and verifiable manner and recorded by the consent registrar. Any service message which doesn’t fall under the service-implicit category.
+These messages necessitate explicit consent from the customer, which has been directly verified from the recipient in a reliable and verifiable manner. The consent is recorded by the consent registrar. These messages do not fall into the category of service-implicit messages.
 
 `Note: Additionally, the customer consent template needs to be linked to content templates in the service explicit category.`
 
@@ -84,7 +84,7 @@ Messages to the existing customers recommending or promoting their other product
 
 ## Promotional
 
-Any message with an intention to promote or sell a product, goods or service.Service content mixed with promotional content is also treated as promotional. These messages will be sent to customers after performing the preference and consent scrubbing function.
+Any message that aims to promote or sell a product, goods, or service, including messages that contain a mixture of service and promotional content, will be categorized as promotional. These messages will only be sent to customers after undergoing the preference and consent scrubbing process.
 
 `Note: Additionally, customer consent template needs to be linked to content templates in service explicit category.`
 

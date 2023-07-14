@@ -1,6 +1,6 @@
 # IP Whitelisting
 
-IP whitelisting allows you to create lists of trusted IP addresses or IP ranges from which API Tokens can be accessed. IP whitelist is a security feature often used for limiting and controlling access only to trusted users.
+IP whitelisting enables the creation of lists consisting of trusted IP addresses or IP ranges that have access to API Tokens. This security feature is commonly employed to restrict and regulate access exclusively to trusted users.
 
 ### How to Enable IP Whitelisting
 
