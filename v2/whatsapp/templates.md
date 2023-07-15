@@ -145,34 +145,36 @@ Kindly replace the token with your respective access_token and other params.
 
 #### PARAMETERS
 
-| name                                | optional | value                                                                                                |
-| ----------------------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
-| type                                | No       | `template`                                                                                           |
-| name                                | No       | Template name without space ex: template_name                                                        |
-| category                            | No       | `marketing`, `utility` or `authentication`                                                           |
-| language                            | No       | prefer language ex: en, en_US                                                                        |
-| is_conversation                     | No       | if `true`, approval not required from Meta                                                           |
-| number                              | No       | business number Ex:(91861xxxxxxxx)                                                                   |
-| payload.header.type                 | No       | `text`, `image`, `video` and `document`                                                              |
-| payload.header.payload.text         | yes      | The header content, header contain only one variable incase type is `text`.                          |
-| payload.header.payload.url          | No       | if header types `image`, `video` or `document`                                                       |
-| payload.header.params               | yes      | if type is `text` and have one variable.                                                             |
-| payload.body                        | No       | Body content is mandatory                                                                            |
-| payload.body.type                   | No       | `text`                                                                                               |
-| payload.body.payload.text           | No       | The body content, body contains multiple variables (one variable is required if category is utility) |
-| payload.body.params                 | No       | if body content has variables provide the values for each variable                                   |
-| payload.footer                      | Yes      | Footer is optional                                                                                   |
-| payload.footer.type                 | Yes      | `text`                                                                                               |
-| payload.footer.payload.text         | Yes      | The footer content is optional                                                                       |
-| choices                             | Yes      | The choices buttons is optional                                                                      |
-| choices.type                        | No       | `actions`                                                                                            |
-| choices.actions                     | No       | expect the object at least one                                                                       |
-| choices.actions.type                | No       | `phone_number`, `url`                                                                                |
-| choices.actions.phone_number_text   | No       | max 20 characters                                                                                    |
-| choices.actions.phone_number        | No       | country code prefix required Ex:(+91)                                                                |
-| choices.actions.website_url_type    | No       | value is `Static`                                                                                    |
-| choices.actions.website_button_text | No       | max 20 characters                                                                                    |
-| choices.actions.website_url         | No       | should be url                                                                                        |
+| name                                | optional | value                                                                                               |
+| ----------------------------------- | -------- | --------------------------------------------------------------------------------------------------- |
+| type                                | No       | `template`                                                                                          |
+| name                                | No       | Template name without space ex: template_name                                                       |
+| category                            | No       | `marketing`, `utility` or `authentication`                                                          |
+| language                            | No       | prefer language ex: en, en_US                                                                       |
+| is_conversation                     | No       | if `true`, approval not required from Meta                                                          |
+| number                              | No       | business number Ex:(91861xxxxxxxx)                                                                  |
+| payload.header.type                 | No       | `text`, `image`, `video` and `document`                                                             |
+| payload.header.payload.text         | yes      | The header content, header contain only one variable incase type is `text`.                         |
+| payload.header.params               | yes      | if type is `text`, support only one variable replacement.                                           |
+| payload.header.payload.url          | No       | if header types `image`, `video` or `document`, link url                                            |
+| payload.body                        | No       | Body content is mandatory                                                                           |
+| payload.body.type                   | No       | `text`                                                                                              |
+| payload.body.payload.text           | No       | The body content, body contains multiple variables (one variable is required if category `utility`) |
+| payload.body.params                 | No       | if body content has variables provide the values for each variable                                  |
+| payload.footer                      | Yes      | Footer is optional                                                                                  |
+| payload.footer.type                 | Yes      | `text`                                                                                              |
+| payload.footer.payload.text         | Yes      | The footer content is optional                                                                      |
+| choices                             | Yes      | The choices buttons is optional                                                                     |
+| choices.type                        | No       | `actions`                                                                                           |
+| choices.actions                     | No       | expect the object at least one                                                                      |
+| choices.actions.type                | No       | `phone_number`, `url`                                                                               |
+| choices.actions.phone_number_text   | No       | max 20 characters                                                                                   |
+| choices.actions.phone_number        | No       | country code prefix required Ex:(+91)                                                               |
+| choices.actions.website_url_type    | No       | value is `Static`                                                                                   |
+| choices.actions.website_button_text | No       | max 20 characters                                                                                   |
+| choices.actions.website_url         | No       | should be url                                                                                       |
+
+**_NOTE:_** Pass variables in `@{{}}` variables name should be different ex: `{{name}}`, `@{{email}}`
 
 ### With Button
 
@@ -196,20 +198,16 @@ curl -X POST \
         "header": {
             "type": "text",
             "payload": {
-                "text": "Header text @{{var}}"
+                "text": "Header text"
             },
-            "params": [
-                "params"
-            ]
+            "params": []
         },
         "body": {
             "type": "text",
             "payload": {
-                "text": "Any doubts please contact us @{{var}}"
+                "text": "Any doubts please contact us"
             },
-            "params": [
-                "params"
-            ]
+            "params": []
         },
         "footer": {
             "type": "text",
@@ -261,11 +259,9 @@ curl -X POST \
         "body": {
             "type": "text",
             "payload": {
-                "text": "Any doubts please contact us @{{var}}"
+                "text": "Any doubts please contact us"
             },
-            "params": [
-                "replace"
-            ]
+            "params": []
         },
         "footer": {
             "type": "text",
@@ -318,11 +314,9 @@ curl -X POST \
         "body": {
             "type": "text",
             "payload": {
-                "text": "Any doubts please contact us @{{var}}"
+                "text": "Any doubts please contact us"
             },
-            "params": [
-                "replace"
-            ]
+            "params": []
         },
         "footer": {
             "type": "text",
@@ -374,11 +368,9 @@ curl -X POST \
         "body": {
             "type": "text",
             "payload": {
-                "text": "Any doubts please contact us @{{var}}"
+                "text": "Any doubts please contact us"
             },
-            "params": [
-                "params"
-            ]
+            "params": []
         },
         "footer": {
             "type": "text",
@@ -440,20 +432,16 @@ curl -X POST \
         "header": {
             "type": "text",
             "payload": {
-                "text": "Header text @{{var}}"
+                "text": "Header text"
             },
-            "params": [
-                "params"
-            ]
+            "params": []
         },
         "body": {
             "type": "text",
             "payload": {
-                "text": "Any doubts please contact us @{{var}}"
+                "text": "Any doubts please contact us"
             },
-            "params": [
-                "params"
-            ]
+            "params": []
         },
         "footer": {
             "type": "text",
@@ -497,11 +485,9 @@ curl -X POST \
         "body": {
             "type": "text",
             "payload": {
-                "text": "Any doubts please contact us @{{var}}"
+                "text": "Any doubts please contact us"
             },
-            "params": [
-                "replace"
-            ]
+            "params": []
         },
         "footer": {
             "type": "text",
@@ -546,11 +532,9 @@ curl -X POST \
         "body": {
             "type": "text",
             "payload": {
-                "text": "Any doubts please contact us @{{var}}"
+                "text": "Any doubts please contact us"
             },
-            "params": [
-                "replace"
-            ]
+            "params": []
         },
         "footer": {
             "type": "text",
@@ -594,11 +578,9 @@ curl -X POST \
         "body": {
             "type": "text",
             "payload": {
-                "text": "Any doubts please contact us @{{var}}"
+                "text": "Any doubts please contact us"
             },
-            "params": [
-                "replace"
-            ]
+            "params": []
         },
         "footer": {
             "type": "text",
@@ -676,14 +658,14 @@ curl -X POST \
                 "text": "@{{code}} is your verification code."
             },
             "params": [
-                "542727"
+                "replacement_code"
             ]
         },
         "choices": {
             "type": "otp",
             "otp": {
                 "otp_type": "copy_code",
-                "otp_code": "Copy your Code"
+                "text": "Copy your Code"
             },
             "code_expire": "5",
             "security": "true"
@@ -715,7 +697,7 @@ curl -X POST \
 
 | name            | description                                | Type                  | Required |
 | --------------- | ------------------------------------------ | --------------------- | -------- |
-| type            | values are `text`, `template`, `JSON`      | `string`              | Yes      |
+| type            | values are `text`, `JSON`, `media`         | `string`              | Yes      |
 | name            | name should be a alphanumeric              | `string`              | Yes      |
 | category        | `marketing`, `authentication` or `utility` | `string`              | Yes      |
 | language        | Example : `en`, `en_US`                    | `string`              | Yes      |
