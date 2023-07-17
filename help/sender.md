@@ -1,8 +1,10 @@
 # Sender ID
 
-Sender ID is your identity from which the message is sent. According to TRAI, all application to people SMSs should be sent from a Sender-ID rather than a number. SMS Sender ID is the name with which your outgoing transactional SMS will be sent.'Sender ID is a fantastic way to remind your customer of your brand name, so you should take full advantage of it.'For example, when you receive a general SMS from your friend, their name is displayed. Similarly, in case of Sender ID, the ID that you choose on the panel, or the one that is given to you, serves as your identity while sending messages. 
+The Sender ID serves as your identity when sending messages. According to TRAI regulations, all application-to-people SMSs should be sent using a Sender ID rather than a number. The SMS Sender ID is the name that appears as the sender of your outgoing transactional SMS messages. It provides an excellent opportunity to reinforce your brand identity with your customers.
 
-This SenderID will be used as often as possible but a major percentage of traffic will still be overwritten to ensure delivery: Due to recent regulation changes the alpha SenderID will be prefixed with 2 letters depending on which carrier was used to deliver the SMS to the final operator, or more commonly a random number; e.g. MD-XXXXXX (where XXXXXX is the registered SenderID).
+Similar to how you receive general SMS messages from your friends with their names displayed, the Sender ID chosen on the panel or provided to you serves as your identity when sending messages.
+
+While the chosen Sender ID will be used as frequently as possible, it's important to note that a significant portion of traffic will still be overwritten to ensure successful delivery. Recent regulation changes require the alpha Sender ID to be prefixed with two letters, depending on the carrier used for delivering the SMS to the final operator. In some cases, a random number may be added as well. For example, the registered Sender ID "MD" may appear as "MD-XXXXXX" (where XXXXXX represents the registered Sender ID).
 
 ### Sender ID format
 

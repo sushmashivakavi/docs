@@ -1,10 +1,10 @@
 # Smart Link
 
-URL shortening is a technique in which a URL may be made substantially shorter in length and still direct to the required page. This is achieved by using an HTTP Redirect on a domain name that is short, which links to the web page that has a long URL
+URL shortening is a method used to reduce the length of a URL while still ensuring it directs users to the intended page. It involves employing an HTTP Redirect on a short domain name, which points to the web page with a longer URL.
 
-This is especially convenient for messaging technologies which severely limit the number of characters that may be used in a message.
+This technique proves particularly useful in messaging technologies that impose strict character limitations on messages.
 
-Smart url also tracks the traffic ie the number of visits to the domain and further advanced analytics as to who (mobile number) visited the page.
+Additionally, Smart URL provides traffic tracking capabilities, allowing you to monitor the number of visits to the domain. Furthermore, it offers advanced analytics to determine the identities (mobile numbers) of visitors to the page.
 
 #### Customizing the redirection of Smart URL
 
@@ -38,6 +38,6 @@ Below are the replaceable parameters that can be used along with the URL to extr
 
 ## WebHook
 
-The concept of a WebHook is simple. A WebHook is an HTTP callback: an HTTP GET that occurs when something happens; a simple event-notification via HTTP GET.
+The concept of WebHooks is quite simple. A WebHook acts as an HTTP callback, specifically an HTTP GET request, which is triggered when a certain event occurs. It serves as a straightforward means of event notification through an HTTP GET.
 
-We will send `curl` request to your server with above replacable variables. You can store those details in your crm or perform any action against it.
+In our implementation, we will send a `curl` request to your server, including the specified replaceable variables. You have the option to store these details in your crm or take any desired action based on the received data.
