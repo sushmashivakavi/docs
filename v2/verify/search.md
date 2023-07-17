@@ -1,4 +1,4 @@
-# Verify search
+# Search Token
 
 To check the status of past or current verification requests:
 

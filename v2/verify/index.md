@@ -1,4 +1,4 @@
-# Verify Api
+# Verify API
 
 The Verify API allows you to implement two-factor authentication by verifying mobile phone numbers.
 

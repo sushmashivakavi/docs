@@ -1,4 +1,4 @@
-# User Registration Api
+# User Registration API
 
 Registration api will support only `POST` method.
 #include "_include/endpoint.md"

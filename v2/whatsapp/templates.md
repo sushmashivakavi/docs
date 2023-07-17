@@ -141,149 +141,38 @@ Kindly replace the token with your respective access_token and other params.
 {endpoint}whatsapp/templates
 ```
 
-#### PARAMETERS
-
-| name          | description                                    | Type                  | Required |
-| ------------- | ---------------------------------------------- | --------------------- | -------- |
-| type          | values are `text`, `template`, `mediatemplate` | `string`              | Yes      |
-| name          | name should be a alphanumeric                  | `string`,`integer`    | Yes      |
-| category      | `marketing`, `authentication` or `utility`     | `string`              | Yes      |
-| language      | Example : `eu`, `en_US`                        | `string`              | Yes      |
-| number        | business number Ex:(91861xxxxxxxx)             | `string` or `integer` | Yes      |
-| meta_approval | Send to meta approval                          | boolean               | Yes      |
-
-## Text Type
-
-### Example Request
-
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "text",
-    "name": "new_text",
-    "category": "marketing",
-    "language": "en",
-    "number": "91861xxxxxxxx",
-    "meta_approval" : true,
-    "payload": {
-        "type": "text",
-        "payload": {
-            "text": "This is a simple text message from whatsapp channel"
-        }
-    }
-}'
-```
-
-### Example Response
-
-```
-{
-    "status": "OK",
-    "code": 200,
-    "message": "Template created successfully.",
-    "data": []
-}
-```
-
 ## Template Type
 
-### Example Request
-
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "template",
-    "name": "new_template",
-    "category": "marketing",
-    "language": "en",
-    "number": "91861xxxxxxxx",
-    "meta_approval" : true,
-    "payload": {
-        "type": "template",
-        "payload": {
-            "text": "Hello @{{#var#}}, This is a simple text message from whatsapp channel",
-            "body_params": ["user"]
-        }
-    }
-}'
-```
-
-### Example Response
-
-```
-{
-    "status": "OK",
-    "code": 200,
-    "message": "Template created successfully.",
-    "data": []
-}
-```
-
-## Json Type
-
-In body content message should be json format.
-
-### Example Request
-
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "json",
-    "name": "new_json",
-    "category": "marketing",
-    "language": "en",
-    "number": "91861xxxxxxxx",
-    "meta_approval" : true,
-    "payload": {
-        "type": "json",
-        "payload" : {
-            "text" : {"name" : "hlo"}
-        }
-    }
-}'
-```
-
-### Example Response
-
-```
-{
-    "status": "OK",
-    "code": 200,
-    "message": "Template created successfully.",
-    "data": []
-}
-```
-
-## Media Template Type
-
 #### PARAMETERS
 
-| name                                | optional | value                                                                                                   |
-| ----------------------------------- | -------- | ------------------------------------------------------------------------------------------------------- |
-| category                            | No       | `marketing`, `utility` or `authentication` [if authentication](/docs/{version}/whatsapp/authentication) |
-| language                            | No       | prefer language ex: en, en_US, af                                                                       |
-| payload.type                        | No       | `mediatemplate`                                                                                         |
-| payload.payload.header              | No       | The header content, header contain only one variable                                                    |
-| payload.payload.body                | No       | The body content, body contains multiple variables (one variable is required if category utility)       |
-| payload.payload.footer              | Yes      | The footer content                                                                                      |
-| choices                             | Yes      | The choices buttons is optional                                                                         |
-| choices.type                        | No       | `actions`                                                                                               |
-| choices.actions                     | No       | expect the object at least one                                                                          |
-| choices.actions.type                | No       | `phone_number`, `url`                                                                                   |
-| choices.actions.phone_number_text   | No       | max 20 characters                                                                                       |
-| choices.actions.phone_number        | No       | country code prefix required Ex:(+91)                                                                   |
-| choices.actions.website_url_type    | No       | value is `Static`                                                                                       |
-| choices.actions.website_button_text | No       | max 20 characters                                                                                       |
-| choices.actions.website_url         | No       | should be url                                                                                           |
+| name                                | optional | value                                                                                                |
+| ----------------------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| type                                | No       | `template`                                                                                           |
+| name                                | No       | Template name without space ex: template_name                                                        |
+| category                            | No       | `marketing`, `utility` or `authentication`                                                           |
+| language                            | No       | prefer language ex: en, en_US                                                                        |
+| is_conversation                     | No       | if `true`, approval not required from Meta                                                           |
+| number                              | No       | business number Ex:(91861xxxxxxxx)                                                                   |
+| payload.header.type                 | No       | `text`, `image`, `video` and `document`                                                              |
+| payload.header.payload.text         | yes      | The header content, header contain only one variable incase type is `text`.                          |
+| payload.header.payload.url          | No       | if header types `image`, `video` or `document`                                                       |
+| payload.header.params               | yes      | if type is `text` and have one variable.                                                             |
+| payload.body                        | No       | Body content is mandatory                                                                            |
+| payload.body.type                   | No       | `text`                                                                                               |
+| payload.body.payload.text           | No       | The body content, body contains multiple variables (one variable is required if category is utility) |
+| payload.body.params                 | No       | if body content has variables provide the values for each variable                                   |
+| payload.footer                      | Yes      | Footer is optional                                                                                   |
+| payload.footer.type                 | Yes      | `text`                                                                                               |
+| payload.footer.payload.text         | Yes      | The footer content is optional                                                                       |
+| choices                             | Yes      | The choices buttons is optional                                                                      |
+| choices.type                        | No       | `actions`                                                                                            |
+| choices.actions                     | No       | expect the object at least one                                                                       |
+| choices.actions.type                | No       | `phone_number`, `url`                                                                                |
+| choices.actions.phone_number_text   | No       | max 20 characters                                                                                    |
+| choices.actions.phone_number        | No       | country code prefix required Ex:(+91)                                                                |
+| choices.actions.website_url_type    | No       | value is `Static`                                                                                    |
+| choices.actions.website_button_text | No       | max 20 characters                                                                                    |
+| choices.actions.website_url         | No       | should be url                                                                                        |
 
 ### With Button
 
@@ -297,53 +186,52 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "mediatemplate",
+    "type": "template",
     "name": "template_name",
-    "category": "Marketing",
+    "category": "marketing",
     "language": "en",
-    "meta_approval": true,
+    "is_conversation": false,
     "number": "918736xxxxxx",
     "payload": {
-        "type": "mediatemplate",
-        "payload": {
-            "name": "mediatemplate_with_buttons",
-            "language": "en",
-            "body_params": [],
-            "header_params": [],
-            "header": {
-                "type": "text",
-                "payload": {
-                    "text": "Q&A"
-                }
+        "header": {
+            "type": "text",
+            "payload": {
+                "text": "Header text @{{var}}"
             },
-            "body": {
-                "type": "text",
-                "payload": {
-                    "text": "Any doubts please contact us"
-                }
+            "params": [
+                "params"
+            ]
+        },
+        "body": {
+            "type": "text",
+            "payload": {
+                "text": "Any doubts please contact us @{{var}}"
             },
-            "footer": {
-                "type": "text",
-                "payload": {
-                    "text": "Thank you!"
-                }
-            },
-            "choices": {
-                "type": "actions",
-                "actions": [
-                    {
-                        "type": "phone_number",
-                        "phone_number_text": "Any queries call",
-                        "phone_number": "+918783xxxxxx"
-                    },
-                    {
-                        "type": "url",
-                        "website_url_type" : "Static",
-                        "website_button_text" : "More info visit",
-                        "website_url" : "www.example.com"
-                    }
-                ]
+            "params": [
+                "params"
+            ]
+        },
+        "footer": {
+            "type": "text",
+            "payload": {
+                "text": "Thank you!"
             }
+        },
+        "choices": {
+            "type": "actions",
+            "actions": [
+                {
+                    "type": "phone_number",
+                    "phone_number_text": "Any queries call",
+                    "phone_number": "+918783xxxxxx"
+                },
+                {
+                    "type": "url",
+                    "website_url_type": "Static",
+                    "website_button_text": "More info visit",
+                    "website_url": "www.example.com"
+                }
+            ]
         }
     }
 }'
@@ -357,58 +245,49 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "mediatemplate",
+    "type": "template",
     "name": "template_name",
     "category": "marketing",
-    "meta_approval": true,
     "language": "en",
+    "is_conversation": false,
     "number": "918736xxxxxx",
     "payload": {
-        "type": "mediatemplate",
-        "payload": {
-            "name": "mediatemplate_with_buttons",
-            "language": "en",
-            "body_params": [
-                "body"
-            ],
-            "header_params": [
-                "header"
-            ],
-            "header": {
-                "type": "image",
-                "payload": {
-                    "text": "Header text @{{#var#}}",
-                    "url": "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg"
-                }
-            },
-            "body": {
-                "type": "text",
-                "payload": {
-                    "text": "Any doubts please contact us  @{{#var#}}"
-                }
-            },
-            "footer": {
-                "type": "text",
-                "payload": {
-                    "text": "Thank you!"
-                }
-            },
-            "choices": {
-                "type": "actions",
-                "actions": [
-                    {
-                        "type": "phone_number",
-                        "phone_number_text": "Any queries call",
-                        "phone_number": "+918783xxxxxx"
-                    },
-                    {
-                        "type": "url",
-                        "website_url_type": "Static",
-                        "website_button_text": "More info visit",
-                        "website_url": "www.example.com"
-                    }
-                ]
+        "header": {
+            "type": "image",
+            "payload": {
+                "url": "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg"
             }
+        },
+        "body": {
+            "type": "text",
+            "payload": {
+                "text": "Any doubts please contact us @{{var}}"
+            },
+            "params": [
+                "replace"
+            ]
+        },
+        "footer": {
+            "type": "text",
+            "payload": {
+                "text": "Thank you!"
+            }
+        },
+        "choices": {
+            "type": "actions",
+            "actions": [
+                {
+                    "type": "phone_number",
+                    "phone_number_text": "Any queries call",
+                    "phone_number": "+918783xxxxxx"
+                },
+                {
+                    "type": "url",
+                    "website_url_type": "Static",
+                    "website_button_text": "More info visit",
+                    "website_url": "www.example.com"
+                }
+            ]
         }
     }
 }'
@@ -423,58 +302,49 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "mediatemplate",
+    "type": "template",
     "name": "template_name",
     "category": "marketing",
-    "meta_approval": true,
     "language": "en",
+    "is_conversation": false,
     "number": "918736xxxxxx",
     "payload": {
-        "type": "mediatemplate",
-        "payload": {
-            "name": "mediatemplate_with_button",
-            "language": "en",
-            "body_params": [
-                "body_params"
-            ],
-            "header_params": [
-                "header_params"
-            ],
-            "header": {
-                "type": "video",
-                "payload": {
-                    "text": "Header text @{{#var#}}",
-                    "url": "https://www.example/sample/video/sample.mp4"
-                }
-            },
-            "body": {
-                "type": "text",
-                "payload": {
-                    "text": "Any doubts please contact us @{{#var#}}"
-                }
-            },
-            "footer": {
-                "type": "text",
-                "payload": {
-                    "text": "Thank you!"
-                }
-            },
-            "choices": {
-                "type": "actions",
-                "actions": [
-                    {
-                        "type": "phone_number",
-                        "phone_number_text": "Any queries call",
-                        "phone_number": "+918783xxxxxx"
-                    },
-                    {
-                        "type": "url",
-                        "website_url_type": "Static",
-                        "website_button_text": "More info visit",
-                        "website_url": "www.example.com"
-                    }
-                ]
+        "header": {
+            "type": "video",
+            "payload": {
+                "url": "https://www.example/sample/video/sample.mp4"
             }
+        },
+        "body": {
+            "type": "text",
+            "payload": {
+                "text": "Any doubts please contact us @{{var}}"
+            },
+            "params": [
+                "replace"
+            ]
+        },
+        "footer": {
+            "type": "text",
+            "payload": {
+                "text": "Thank you!"
+            }
+        },
+        "choices": {
+            "type": "actions",
+            "actions": [
+                {
+                    "type": "phone_number",
+                    "phone_number_text": "Any queries call",
+                    "phone_number": "+918783xxxxxx"
+                },
+                {
+                    "type": "url",
+                    "website_url_type": "Static",
+                    "website_button_text": "More info visit",
+                    "website_url": "www.example.com"
+                }
+            ]
         }
     }
 }'
@@ -488,58 +358,49 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "mediatemplate",
+    "type": "template",
     "name": "template_name",
     "category": "marketing",
-    "meta_approval": true,
     "language": "en",
+    "is_conversation": false,
     "number": "918736xxxxxx",
     "payload": {
-        "type": "mediatemplate",
-        "payload": {
-            "name": "mediatemplate_with_buttons",
-            "language": "en",
-            "body_params": [
-                "body"
-            ],
-            "header_params": [
-                "header"
-            ],
-            "header": {
-                "type": "document",
-                "payload": {
-                    "text": "Header text @{{#var#}}",
-                    "url": "https://www.example.com/pdf-test.pdf"
-                }
-            },
-            "body": {
-                "type": "text",
-                "payload": {
-                    "text": "Any doubts please contact us @{{#var#}}"
-                }
-            },
-            "footer": {
-                "type": "text",
-                "payload": {
-                    "text": "Thank you!"
-                }
-            },
-            "choices": {
-                "type": "actions",
-                "actions": [
-                    {
-                        "type": "phone_number",
-                        "phone_number_text": "Any queries call",
-                        "phone_number": "+918783xxxxxx"
-                    },
-                    {
-                        "type": "url",
-                        "website_url_type": "Static",
-                        "website_button_text": "More info visit",
-                        "website_url": "www.example.com"
-                    }
-                ]
+        "header": {
+            "type": "document",
+            "payload": {
+                "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
             }
+        },
+        "body": {
+            "type": "text",
+            "payload": {
+                "text": "Any doubts please contact us @{{var}}"
+            },
+            "params": [
+                "params"
+            ]
+        },
+        "footer": {
+            "type": "text",
+            "payload": {
+                "text": "Thank you!"
+            }
+        },
+        "choices": {
+            "type": "actions",
+            "actions": [
+                {
+                    "type": "phone_number",
+                    "phone_number_text": "Any queries call",
+                    "phone_number": "+918736xxxxxx"
+                },
+                {
+                    "type": "url",
+                    "website_url_type": "Static",
+                    "website_button_text": "More info visit",
+                    "website_url": "www.example.com"
+                }
+            ]
         }
     }
 }'
@@ -569,48 +430,43 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "mediatemplate",
+    "type": "template",
     "name": "template_name",
     "category": "marketing",
     "language": "en",
-    "meta_approval": true,
+    "is_conversation": false,
     "number": "918736xxxxxx",
     "payload": {
-        "type": "mediatemplate",
-        "payload": {
-            "name": "mediatemplate_with_reply",
-            "language": "en",
-            "body_params": [
-                "body"
-            ],
-            "header_params": [
-                "header"
-            ],
-            "header": {
-                "type": "text",
-                "payload": {
-                    "text": "Header text @{{#var#}}"
-                }
+        "header": {
+            "type": "text",
+            "payload": {
+                "text": "Header text @{{var}}"
             },
-            "body": {
-                "type": "text",
-                "payload": {
-                    "text": "Any doubts please contact us @{{#var#}}"
-                }
+            "params": [
+                "params"
+            ]
+        },
+        "body": {
+            "type": "text",
+            "payload": {
+                "text": "Any doubts please contact us @{{var}}"
             },
-            "footer": {
-                "type": "text",
-                "payload": {
-                    "text": "Thank you!"
-                }
-            },
-            "choices": {
-                "type": "reply",
-                "reply": {
-                    "type": "quick_reply",
-                    "quick_reply1": "Yes",
-                    "quick_reply2": "No"
-                }
+            "params": [
+                "params"
+            ]
+        },
+        "footer": {
+            "type": "text",
+            "payload": {
+                "text": "Thank you!"
+            }
+        },
+        "choices": {
+            "type": "reply",
+            "reply": {
+                "type": "quick_reply",
+                "quick_reply1": "Yes",
+                "quick_reply2": "No"
             }
         }
     }
@@ -625,49 +481,40 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "mediatemplate",
-    "name": "template_name",
+    "type": "template",
+    "name": "template_name_test",
     "category": "marketing",
-    "meta_approval": true,
     "language": "en",
+    "is_conversation": false,
     "number": "918736xxxxxx",
     "payload": {
-        "type": "mediatemplate",
-        "payload": {
-            "name": "mediatemplate_with_buttons",
-            "language": "en",
-            "body_params": [
-                "body"
-            ],
-            "header_params": [
-                "header"
-            ],
-            "header": {
-                "type": "image",
-                "payload": {
-                    "text": "Header text @{{#var#}}",
-                    "url": "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg"
-                }
+        "header": {
+            "type": "image",
+            "payload": {
+                "url": "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg"
+            }
+        },
+        "body": {
+            "type": "text",
+            "payload": {
+                "text": "Any doubts please contact us @{{var}}"
             },
-            "body": {
-                "type": "text",
-                "payload": {
-                    "text": "Any doubts please contact us  @{{#var#}}"
-                }
-            },
-            "footer": {
-                "type": "text",
-                "payload": {
-                    "text": "Thank you!"
-                }
-            },
-            "choices": {
-                "type": "reply",
-                "reply": {
-                    "type": "quick_reply",
-                    "quick_reply1": "Yes",
-                    "quick_reply2": "No"
-                }
+            "params": [
+                "replace"
+            ]
+        },
+        "footer": {
+            "type": "text",
+            "payload": {
+                "text": "Thank you!"
+            }
+        },
+        "choices": {
+            "type": "reply",
+            "reply": {
+                "type": "quick_reply",
+                "quick_reply1": "Yes",
+                "quick_reply2": "No"
             }
         }
     }
@@ -683,49 +530,40 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "mediatemplate",
+    "type": "template",
     "name": "template_name",
     "category": "marketing",
-    "meta_approval": true,
     "language": "en",
+    "is_conversation": false,
     "number": "918736xxxxxx",
     "payload": {
-        "type": "mediatemplate",
-        "payload": {
-            "name": "mediatemplate_with_button",
-            "language": "en",
-            "body_params": [
-                "body_params"
-            ],
-            "header_params": [
-                "header_params"
-            ],
-            "header": {
-                "type": "video",
-                "payload": {
-                    "text": "Header text @{{#var#}}",
-                    "url": "https://www.example/sample/video/sample.mp4"
-                }
+        "header": {
+            "type": "video",
+            "payload": {
+                "url": "https://www.buildquickbots.com/whatsapp/media/sample/video/sample01.mp4"
+            }
+        },
+        "body": {
+            "type": "text",
+            "payload": {
+                "text": "Any doubts please contact us @{{var}}"
             },
-            "body": {
-                "type": "text",
-                "payload": {
-                    "text": "Any doubts please contact us @{{#var#}}"
-                }
-            },
-            "footer": {
-                "type": "text",
-                "payload": {
-                    "text": "Thank you!"
-                }
-            },
-            "choices": {
-                "type": "reply",
-                "reply": {
-                    "type": "quick_reply",
-                    "quick_reply1": "Yes",
-                    "quick_reply2": "No"
-                }
+            "params": [
+                "replace"
+            ]
+        },
+        "footer": {
+            "type": "text",
+            "payload": {
+                "text": "Thank you!"
+            }
+        },
+        "choices": {
+            "type": "reply",
+            "reply": {
+                "type": "quick_reply",
+                "quick_reply1": "Yes",
+                "quick_reply2": "No"
             }
         }
     }
@@ -740,49 +578,40 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "mediatemplate",
+    "type": "template",
     "name": "template_name",
     "category": "marketing",
-    "meta_approval": true,
     "language": "en",
+    "is_conversation": false,
     "number": "918736xxxxxx",
     "payload": {
-        "type": "mediatemplate",
-        "payload": {
-            "name": "mediatemplate_with_buttons",
-            "language": "en",
-            "body_params": [
-                "body"
-            ],
-            "header_params": [
-                "header"
-            ],
-            "header": {
-                "type": "document",
-                "payload": {
-                    "text": "Header text @{{#var#}}",
-                    "url": "https://www.example.com/pdf-test.pdf"
-                }
+        "header": {
+            "type": "document",
+            "payload": {
+                "url": "https://www.orimi.com/pdf-test.pdf"
+            }
+        },
+        "body": {
+            "type": "text",
+            "payload": {
+                "text": "Any doubts please contact us @{{var}}"
             },
-            "body": {
-                "type": "text",
-                "payload": {
-                    "text": "Any doubts please contact us @{{#var#}}"
-                }
-            },
-            "footer": {
-                "type": "text",
-                "payload": {
-                    "text": "Thank you!"
-                }
-            },
-            "choices": {
-                "type": "reply",
-                "reply": {
-                    "type": "quick_reply",
-                    "quick_reply1": "Yes",
-                    "quick_reply2": "No"
-                }
+            "params": [
+                "replace"
+            ]
+        },
+        "footer": {
+            "type": "text",
+            "payload": {
+                "text": "Thank you!"
+            }
+        },
+        "choices": {
+            "type": "reply",
+            "reply": {
+                "type": "quick_reply",
+                "quick_reply1": "Yes",
+                "quick_reply2": "No"
             }
         }
     }
@@ -796,17 +625,194 @@ curl -X POST \
     "status": "OK",
     "code": 200,
     "message": "Template created successfully.",
-    "data": []
+    "data": {
+        "id": "b6cda411-8fee-4918-beb2-fde30975383e",
+        "name": "template_name",
+        "category": "marketing",
+        "language": "en",
+        "status": "PENDING",
+        "is_conversation": "false",
+        "created_at": "2023-07-14T07:26:03.000000Z"
+    }
+}
+```
+
+### Authentication Category
+
+#### PARAMETERS
+
+| name                      | optional | value                                       |
+| ------------------------- | -------- | ------------------------------------------- |
+| category                  | No       | `authentication`                            |
+| payload.body.type         | No       | `text`                                      |
+| payload.body.payload.text | No       | Use defined content                         |
+| payload.body.params       | No       | your verification code only one ex: 1287    |
+| choices.type              | No       | value is `otp`                              |
+| choices.type.otp.otp_type | No       | value is `copy_code` and `one_tap`          |
+| choices.type.otp.otp_code | No       | value button text ex: copy your code        |
+| choices.security          | No       | true, false                                 |
+| choices.code_expire       | No       | min 1 and max 90 minutes (Code expiry time) |
+
+## Type copy_code
+
+### Example Request
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/templates' \
+  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "type": "template",
+    "name": "template_name",
+    "category": "authentication",
+    "language": "en",
+    "is_conversation": false,
+    "number": "918736xxxxxx",
+    "payload": {
+        "body": {
+            "type": "text",
+            "payload": {
+                "text": "@{{code}} is your verification code."
+            },
+            "params": [
+                "542727"
+            ]
+        },
+        "choices": {
+            "type": "otp",
+            "otp": {
+                "otp_type": "copy_code",
+                "otp_code": "Copy your Code"
+            },
+            "code_expire": "5",
+            "security": "true"
+        }
+    }
+}'
+```
+
+### Example Response
+
+```
+{
+    "status": "OK",
+    "code": 200,
+    "message": "Template created successfully.",
+    "data": {
+        "id": "b6cda411-8fee-4918-beb2-fde30975383e",
+        "name": "template_name",
+        "category": "authentication",
+        "language": "en",
+        "status": "PENDING",
+        "is_conversation": "false",
+        "created_at": "2023-07-14T07:26:03.000000Z"
+    }
+}
+```
+
+#### PARAMETERS
+
+| name            | description                                | Type                  | Required |
+| --------------- | ------------------------------------------ | --------------------- | -------- |
+| type            | values are `text`, `template`, `JSON`      | `string`              | Yes      |
+| name            | name should be a alphanumeric              | `string`              | Yes      |
+| category        | `marketing`, `authentication` or `utility` | `string`              | Yes      |
+| language        | Example : `en`, `en_US`                    | `string`              | Yes      |
+| is_conversation | if `true` approval not required from Meta  | boolean               | Yes      |
+| number          | business number Ex:(91861xxxxxxxx)         | `string` or `integer` | Yes      |
+
+## Text Type
+
+### Example Request
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/templates' \
+  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "type": "text",
+    "name": "new_text",
+    "category": "marketing",
+    "language": "en",
+    "number": "91861xxxxxxxx",
+    "is_conversation" : true,
+    "payload": {
+        "type": "text",
+        "payload": {
+            "text": "This is a simple text message from whatsapp channel"
+        }
+    }
+}'
+```
+
+### Example Response
+
+```
+{
+    "status": "OK",
+    "code": 200,
+    "message": "Template created successfully.",
+    "data": {
+        "id": "b6cda411-8fee-4918-beb2-fde30975383e",
+        "name": "template_name",
+        "category": "marketing",
+        "language": "en",
+        "status": "PENDING",
+        "is_conversation": "false",
+        "created_at": "2023-07-14T07:26:03.000000Z"
+    }
+}
+```
+
+## Json Type
+
+In body content message should be json format.
+
+### Example Request
+
+```
+curl -X POST \
+  '{endpoint}whatsapp/templates' \
+  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
+  -H 'content-type: application/json' \
+  -d '{
+    "type": "json",
+    "name": "new_json",
+    "category": "marketing",
+    "language": "en",
+    "number": "91861xxxxxxxx",
+    "is_conversation" : false,
+    "payload": {
+        "type": "json",
+        "payload" : {
+            "text" : {"name" : "hlo"}
+        }
+    }
+}'
+```
+
+### Example Response
+
+```
+{
+    "status": "OK",
+    "code": 200,
+    "message": "Template created successfully.",
+    "data": {
+        "id": "b6cda411-8fee-4918-beb2-fde30975383e",
+        "name": "template_name",
+        "category": "marketing",
+        "language": "en",
+        "status": "PENDING",
+        "is_conversation": "false",
+        "created_at": "2023-07-14T07:26:03.000000Z"
+    }
 }
 ```
 
 ## Media Type
-
-#### PARAMETERS
-
-| name         | optional | value                                   |
-| ------------ | -------- | --------------------------------------- |
-| payload.type | No       | `image`, `audio`, `video` or `document` |
 
 ### Example Request
 
@@ -821,7 +827,7 @@ curl -X POST \
     "category": "marketing",
     "language": "en",
     "number": "91861xxxxxxxx",
-    "meta_approval" : true,
+    "is_conversation": true,
     "payload": {
         "type": "image",
         "payload": {
@@ -841,7 +847,15 @@ curl -X POST \
     "status": "OK",
     "code": 200,
     "message": "Template created successfully.",
-    "data": []
+    "data": {
+        "id": "b6cda411-8fee-4918-beb2-fde30975383e",
+        "name": "template_name",
+        "category": "marketing",
+        "language": "en",
+        "status": "PENDING",
+        "is_conversation": "false",
+        "created_at": "2023-07-14T07:26:03.000000Z"
+    }
 }
 ```
 
@@ -868,9 +882,9 @@ curl -X DELETE \
 
 ```json
 {
-    "status": "OK",
-    "code": 200,
-    "message": "Template Successfully Deleted",
-    "data": []
+  "status": "OK",
+  "code": 200,
+  "message": "Template Successfully Deleted",
+  "data": []
 }
 ```

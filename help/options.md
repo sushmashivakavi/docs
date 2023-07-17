@@ -19,7 +19,7 @@ In meta we need to enable voice option as `{"voice":{"bridge":918068057xxx,"acce
 |Name|Description|Example|
 |--- |--- |--- |
 |bridge|Bridge number belongs to customer account|918068057xxx|
-|access_token|Api key of the customer|a19eb34810e672cxxxxxxxxxx|
+|access_token|API key of the customer|a19eb34810e672cxxxxxxxxxx|
 |flow_id|Flow Id configured in customer account|191|
 |duration|Duration for ending the call|Defaults to 30 Seconds|
 
