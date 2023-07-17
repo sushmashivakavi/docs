@@ -1,16 +1,20 @@
 # Overview
 
-Our SMS API allows you to send text messages to users around the globe through simple RESTful APIs.
+Our SMS API provides a convenient way to send text messages to users worldwide using straightforward RESTful APIs.
 
-- Programmatically send and receive high volume of SMS anywhere in the world.
-- Build apps that scale with the web technologies that you are already using.
-- Send SMS with low latency and high delivery rates.
-- Receive SMS for free using SMS-enabled local numbers in countries around the world.
-- Only pay for what you use, nothing more.
+Key features of our SMS API include:
+
+- Programmatically send and receive a high volume of SMS messages globally.
+- Seamlessly integrate with the web technologies you already use, allowing your apps to scale effortlessly.
+- Experience low latency and high delivery rates when sending SMS.
+- Receive SMS for free using SMS-enabled local numbers available in various countries.
+- Pay only for the SMS messages you send, without any additional charges.
+
+With our SMS API, you can efficiently reach your users through text messages, leveraging the benefits of global coverage, reliability, and cost-effectiveness.
 
 #### Available HTTP methods
 
-Our API uses HTTP verbs to understand if you want to read (`GET`), delete (`DELETE`) or create (`POST`) an object. When your web application cannot do a `POST` or `DELETE`, we provide the ability to set the method through the query parameter `_method`.
+Our API relies on HTTP verbs to determine the desired action for an object: reading (`GET`), deleting (`DELETE`), or creating (`POST`). In cases where your web application lacks support for `POST` or `DELETE` operations, we offer a solution. You can specify the desired method by including the query parameter `_method`.
 
 #### Number format
 
@@ -25,9 +29,9 @@ For example, a US number would have the format `14155550101`. A UK number would 
 
 #### Sender ID
 
-All text messages carry a sender ID. When you send a text message through API, you could use any of the approved sender IDs for your account.
+Every text message sent through our API is associated with a sender ID. When utilizing the API to send a text message, you have the option to use any of the approved sender IDs associated with your account.
 
-In case you have not created a sender ID, you can always create one through our application. Once the Sender ID is approved, you can start sending messages.
+If you haven't created a sender ID yet, don't worry! You can easily create one within our application. Once your Sender ID is approved, you can immediately begin sending messages using it.
 
 #### Message Templates
 

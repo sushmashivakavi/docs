@@ -1,7 +1,6 @@
 # OPTOUT
 
-RCS campaigns are targeted to those customers who are registered subscribers to your RCS
-services. You can block the customer's number using our optout feature. Once the customer's number is blocked, meanwhile if you try to trigger RCS to the customer's number then our system will automatically reject the RCS triggered and the customer will not recieve the RCS.
+RCS campaigns specifically target customers who are registered subscribers to your RCS services. To manage customer preferences, our opt-out feature allows you to block a customer's number. Once a number is blocked, any attempt to trigger an RCS message to that customer will be automatically rejected by our system. As a result, the customer will not receive the RCS message. This feature ensures that customer preferences are respected and allows for effective communication management.
 #include "_include/endpoint.md"
 
 #### POST

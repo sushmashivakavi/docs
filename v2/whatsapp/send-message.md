@@ -105,15 +105,14 @@ curl -X POST \
 
 #### PARAMETERS
 
-| Name        | Description                                                                                                                                                                                         | Limits                                                                | Required                                               |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------ |
-| name        | Template `Alias` Name                                                                                                                                                                                 | N/A                                                                   | yes                                                    |
-| namespace   | Namespace of the template                                                                                                                                                                           | N/A                                                                   | yes                                                    |
-| language    | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                   | No                                                     |
-| header_params | Only one header replace variable value.                                                                                | Up to 1024 characters for all parameters and predefined template text | Yes incase only templates contain header variable|
-| body_params | Up to 1024 characters for all parameters that are predefined template text, if `authentication` template has only one replace variable value.                                                                                                                  | Up to 1024 characters for all parameters and predefined template text | Yes incase only template contains body with no headers |
-| components  | This block contains header, body, footer sections payload as per predefined template.                                                                                                               | Up to 1024 characters for all parameters and predefined template text | Yes incase Template contains headers and footers       |
-| ttl         | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                  | No                                                     |
+| Name          | Description                                                                                                                                                                                         | Limits                                                                | Required                                               |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------ |
+| name          | Template `Alias` Name                                                                                                                                                                               | N/A                                                                   | yes                                                    |
+| language      | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                   | No                                                     |
+| header_params | Only one header replace variable value.                                                                                                                                                             | Up to 1024 characters for all parameters and predefined template text | Yes incase only templates contain header variable      |
+| body_params   | Up to 1024 characters for all parameters that are predefined template text, if `authentication` template has only one replace variable value.                                                       | Up to 1024 characters for all parameters and predefined template text | Yes incase only template contains body with no headers |
+| components    | This block contains header, body, footer sections payload as per predefined template.                                                                                                               | Up to 1024 characters for all parameters and predefined template text | Yes incase Template contains headers and footers       |
+| ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                  | No                                                     |
 
 #### Example Request With Templates
 
@@ -138,9 +137,8 @@ curl -X POST \
         "type": "template",
         "payload": {
             "name": "template_alias_name",
-            "namespace": "template_alias_name",
             "language": "en",
-            "header_params" : ["Hello"]
+            "header_params" : ["Hello"],
             "body_params" : ["Dear", "Customer"]
         }
     }
@@ -170,7 +168,6 @@ curl -X POST \
         "type": "template",
         "payload": {
             "name": "template_alias_name",
-            "namespace": "template_alias_name",
             "language": "en",
             "body_params" : [23455]
         }
@@ -197,7 +194,6 @@ curl -X POST \
 		"type": "template",
 		"payload": {
 			"name": "otp",
-			"namespace": "",
 			"language": "en",
 			"components": [{
 					"type": "header",
@@ -289,7 +285,6 @@ curl -X POST \
 		"type": "template",
 		"payload": {
 			"name": "oculus_shipment_update",
-			"namespace": "88b39973_f0d5_54e1_29cf_e80f1e3da4f2",
 			"language": "en",
 			"components": "components": [{
 				"type": "header",
@@ -712,7 +707,7 @@ curl -X POST \
 			"name": {
 				"firstName": "Peter",
 				"lastName": "Parker",
-				"formattedName": "Peter Parker",
+				"formattedName": "Peter Parker"
 			},
 			"phones": [{
 				"phone": "91901xxxxxxx",

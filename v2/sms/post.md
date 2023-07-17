@@ -4,11 +4,11 @@ The SMS API supports the following:
 
 #### HTTP Methods
 
-`POST` - When you send a POST request with the end user's phone number to the messaging subresource, We sends the SMS message you specify.
+`POST` - To send an SMS message using the messaging subresource, you need to make a POST request and include the end user's phone number along with the desired message.
 
-Country code is mandatory to be included in the `to` paramenter for global messaging.
+Please ensure that the country code is included in the `to` parameter when sending messages globally. It is a mandatory requirement.
 
-Before you start sending SMS through this API, please test whether your content is matching a template which has been pre approved. Otherwise, the SMS will end up being rejected.
+Before you begin sending SMS messages through this API, we recommend testing your content against pre-approved templates. This step is crucial to prevent any rejection of your SMS messages.
 
 ## Send SMS
 #include "_include/endpoint.md"

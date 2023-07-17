@@ -1,12 +1,12 @@
 # API OVERVIEW
 
-APIs are built with `REST` standard that allows you to easily send messages to your end users and make your work easy. You can send alerts, reminders, and notifications, or you can send verification messages containing one-time passcodes (OTP) using this feature of ours.
+Our APIs are built using the `REST` standard, which enables you to effortlessly send messages to your end users, simplifying your work. With this feature, you can send alerts, reminders, notifications, and even verification messages containing one-time passcodes (OTP).
 
-This documentation gives you instructions on how to integrate our api through various _*HTTP*_ API and _*JSON*_ API.
+This documentation provides clear instructions on how to integrate our API using different _*HTTP*_ and _*JSON*_ APIs.
 
-We'll be helping you configure, access and use the API for our services.
+We are here to assist you in configuring, accessing, and utilizing our API for our services.
 
-To integrate our API, any HTTP recipient in any programming language can be used.
+To integrate our API, you can use any HTTP recipient in any programming language of your choice.
 
 @if(isset($products))
 
@@ -23,35 +23,24 @@ List of product names and product codes
 @endforeach
 
 @endif
+
 #include "_include/endpoint.md"
-
-Note: Few elements in endpoint may change for service to service.
-
-@if(isset($branding) && isset($branding->options) && isset($branding->options['docs.postman']))
-
-## API Collection Postman link
-
-```
-https://www.getpostman.com/collections/{collection}
-```
-
-@endif
 
 #### Available HTTP methods
 
-Our API uses HTTP verbs to understand if you want to read (`GET`), delete (`DELETE`) or create (`POST`) an object. When your web application cannot do a `POST` or `DELETE`, we provide the ability to set the method through the query parameter `_method`.
+In our API, we utilize HTTP verbs to determine the action you wish to perform on an object. You can use (`GET`) to retrieve information, (`DELETE`) to remove an object, or (`POST`) to create a new one. In cases where your web application doesn't support `POST` or `DELETE` directly, we offer an alternative method by allowing you to specify the desired action using the query parameter `_method`.
 
 ## AUTHENTICATION
 
-Each API request will have to contain request headers that include your access token to authenticate the request.
+To authenticate your API requests, each request must include request headers with your access token.
 
-Don't have an access token? You will find your access token in the `Developers -> API Keys/Access Tokens` in menu bar.
+Don't have an access token? You can find it in the menu bar under `Developers -> API Keys/Access Tokens`.
 
-When your application can't send an Authorization header, you can use the GET parameter `access_token` to provide your access key.
+If your application is unable to send an Authorization header, you can provide your access key using the GET parameter `access_token`.
 
-> "Your API keys carry significant privileges. Please ensure to keep them 100% secure and be sure to not share your secret API keys in areas that are publicly accessible like GitHub. See [API Access Key Security](#content-api-access-key-security) for more information."
+> "Please note that your API keys carry significant privileges. It is crucial to keep them completely secure and refrain from sharing your secret API keys in publicly accessible places such as GitHub. For more information, refer to [API Access Key Security](#content-api-access-key-security)."
 
-We do provide incoming request whitelisting on our platform for our REST API. You can whitelist the IP addressess while generating the access token.
+On our platform, we offer incoming request whitelisting for our REST API. You can whitelist specific IP addresses when generating the access token.
 
 ### CURL Example
 
@@ -72,15 +61,15 @@ If possible, please use the Authorization header.
 
 ## IP ADDRESSES
 
-Our API platform is offered from a globally distributed infrastructure, so you won't be able to whitelist the IP addresses of our platform. Keep in mind that request for delivery reports and inbound messages originate from various IP addresses.
+Our API platform operates on a globally distributed infrastructure, which means you cannot whitelist the IP addresses of our platform. It's important to note that delivery reports and inbound messages may originate from various IP addresses.
 
 ## API ACCESS KEY SECURITY
 
-Given your API access key is your authentication token for using APIs, they need to be appropriately secured. One of the easiest ways to think of this is to treat your API access keys just like you would your passwords, including storing them securely and never sharing them with anyone.
+Your API access key serves as your authentication token for API usage, making it crucial to handle them securely. It's essential to treat your API access keys with the same level of care as your passwords. Ensure they are stored securely and never shared with anyone.
 
-One of the most common mistakes that is made with API keys is to inadvertently check them into public repositories on platforms such as GitHub. From here, fraudsters can find and steal your API access key and then use it to send Spam messages and also drain your account balance. There are numerous techniques to avoid this, however storing your API access key in an environment variable, passing them as command line arguments or using a secrets manager can all help to prevent this from occurring. The main takeaway is don't hard-code your API access key and don't check it into a public code repository.
+One common mistake is unintentionally exposing API keys by committing them to public repositories on platforms like GitHub. This can lead to fraudsters discovering and misusing your API access key, potentially sending spam messages or depleting your account balance. There are several techniques to mitigate this risk. Storing your API access key in an environment variable, passing it as a command line argument, or utilizing a secrets manager can all help prevent accidental exposure. Remember, avoid hard-coding your API access key and refrain from checking it into public code repositories.
 
-In a similar manner, sharing code snippets on platforms such as PasteBin, GitHub Gists or StackOverflow can inadvertently leak your API access key so ensure that you and your developers are aware of this risk.
+Similarly, be cautious when sharing code snippets on platforms such as PasteBin, GitHub Gists, or StackOverflow, as it can inadvertently expose your API access key. Ensure that both you and your developers are aware of this risk and take necessary precautions.
 
 ## RATE LIMITS
 
@@ -94,9 +83,9 @@ You can contact our support team to increase the limit. Our team will increase t
 
 ## ERROR CODES
 
-We uses standard HTTP status codes to indicate success or failure of an API request. Codes in the 2xx range indicate that a request was successfuly processed and codes in the 4xx range indicate that there was an error that resulted from the information sent (e.g. authentication, no balance or a missing or wrong parameter).
+We utilize standard HTTP status codes to indicate the outcome of an API request. HTTP status codes in the 2xx range signify that the request was successfully processed, while codes in the 4xx range indicate an error resulting from the information provided. Common examples of errors in the 4xx range include authentication issues, insufficient balance, or missing or incorrect parameters.
 
-In case of an error, the body of the response includes a JSON formatted response that tells you exactly what is wrong.
+If an error occurs, the response body will provide a JSON-formatted message that precisely identifies the issue at hand. This informative response will clearly indicate the nature of the error and provide relevant details.
 
 #### ATTRIBUTES
 

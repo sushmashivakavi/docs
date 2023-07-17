@@ -1,5 +1,5 @@
-#### Curl
-```
+{.code-block-curl}
+```shell
 curl --location --request POST '{endpoint}/api/v2/sms/templates' \
 --header 'Authorization: Bearer 7160f04c05870ee88812a435f65xxxxx' \
 --header 'Content-Type: application/json' \
@@ -12,8 +12,7 @@ curl --location --request POST '{endpoint}/api/v2/sms/templates' \
 }'
 ```
 
-#### C#
-```
+```powershell
 var client = new RestClient("{endpoint}/api/v2/sms/templates");
 client.Timeout = -1;
 var request = new RestRequest(Method.POST);
@@ -31,8 +30,7 @@ IRestResponse response = client.Execute(request);
 Console.WriteLine(response.Content);
 ```
 
-#### JavaScript
-```
+```js
 var settings = {
   "url": "{endpoint}/api/v2/sms/templates",
   "method": "POST",
@@ -55,8 +53,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-#### NodeJs
-```
+```js
 var axios = require('axios');
 var data = JSON.stringify({
   "sender": "vasavi",

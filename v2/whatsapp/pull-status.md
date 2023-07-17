@@ -18,7 +18,7 @@ you can pass any of the above params to get the dlr response.
 
 #### Example Request
 
-```curl
+```shell
 curl -X GET \
   '{endpoint}whatsapp/message/status?access_token=209eccd40e45b21xxxx&id=cdf829fd-5148-44bb-8433-xxxxx'
 ```

@@ -28,7 +28,7 @@ You can add the credits to your customers using this api.
 
 #### Example Request
 
-```curl
+```shell
   curl -X POST \
   '{endpoint}finance/balance' \
   -H 'Accept: application/json' \

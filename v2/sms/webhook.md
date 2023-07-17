@@ -1,11 +1,11 @@
 # Webhook
 
-The DLR Push API sends the delivery report of the sent message to the client’s Webhook URL using `POST` method. [create here](/developer/webhooks)
+The DLR Push API allows the delivery report of a sent message to be sent to the client's specified Webhook URL using the `POST` method  [create here](/developer/webhooks). You can create the Webhook URL by following the instructions below:
 
-To request such delivery reports, first you need to create the Webhook in webhooks Section.
-Then you will get `id` for the webhook you created.
+- Navigate to the Webhooks section and create a new Webhook.
+- Upon creation, you will receive an `id` for the newly created Webhook.
 
-pass the `webhook_id` parameter and value in the API Request then you will receive the delivery report as like below.
+To request delivery reports, include the `webhook_id` parameter and its corresponding value in your API Request. Once the request is made, you will receive the delivery report as shown below.
 
 #### Example Webhook Request to your server
 

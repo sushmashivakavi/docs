@@ -1,3 +1,4 @@
+# Search Token
 
 To check the status of past or current verification requests:
 
@@ -19,7 +20,7 @@ To check the status of past or current verification requests:
 
 #### Example Request
 
-```curl
+```shell
 curl -X GET \
   '{endpoint}verify/search/fb5e1214-7c9f-4f54-b18f-78dc7a901dec \
   -H 'Accept: application/json' \

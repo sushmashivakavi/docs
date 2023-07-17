@@ -13,9 +13,9 @@
 - [Verify](#)
 
   - [Introduction](/docs/{version}/verify)
-  <!-- - [Check](/docs/{version}/verify/check)
-  - [Search](/docs/{version}/verify/search)
-  - [Cancel](/docs/{version}/verify/cancel) -->
+  - [Validate Token](/docs/{version}/verify/check)
+  - [Search Token](/docs/{version}/verify/search)
+  - [Cancel Token](/docs/{version}/verify/cancel)
 
 - [Messaging](#)
 

@@ -29,7 +29,8 @@ Create templates using post method under your account
 | SE            | Service Explicit |
 
 #### Example Request
-#include "{version}/_samples/sms/templates/create.md"
+
+#code "{version}/_code/sms/templates/create.json"
 
 #### Example Response
 

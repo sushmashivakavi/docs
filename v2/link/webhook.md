@@ -1,10 +1,10 @@
 # WEBHOOK
 
-The WEBHOOK Push API sends the report of the smart link visits to the client’s URL in `POST` method.
+The WEBHOOK Push API enables the delivery of smart link visit reports to the client's specified URL using the `POST` method.
 
-To request such reports, you need to create webhook URL first in Webhooks section. Then select that particular webhook you created earlier while creating smart link.
+To request these reports, you must first create a webhook URL in the Webhooks section. When creating a smart link, ensure that you select the corresponding webhook that you previously created.
 
-We will send a `POST` with json format to your webhook URL with below parameters
+Upon receiving visits to the smart link, we will send a `POST` request in JSON format to the specified webhook URL. The request will contain the following parameters
 
 #### REPLACEABLE PARAMETERS
 
@@ -28,7 +28,7 @@ We will send a `POST` with json format to your webhook URL with below parameters
 
 #### Example Url
 
-```curl -X POST \ 
+```shell -X POST \ 
   https://www.domain.com/ack/receive \
   -H 'content-type: application/json' \
   -d '{

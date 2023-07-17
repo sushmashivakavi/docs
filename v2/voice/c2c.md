@@ -140,7 +140,7 @@ Callback is a functionality to get notified through an API call when a call is c
 
 #### Example Request to Client's URL
 
-```curl -X POST \
+```shell -X POST \
   https://www.domain.com/ack/receive \
   -H 'content-type: application/json' \
   -d '{

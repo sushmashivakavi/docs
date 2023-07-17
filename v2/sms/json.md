@@ -69,7 +69,7 @@ All params in send sms will support in JSON also.
 
 #### Example Request
 
-```curl
+```shell
 curl --request POST \
   --url {endpoint}sms/send/json \
   -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'
@@ -140,7 +140,7 @@ You can get group_id of the SMS campaing when you sent `name` paramter in api as
 
 #### Example Request
 
-```curl
+```shell
 curl --request POST \
   --url {endpoint}sms/send/json \
   -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'

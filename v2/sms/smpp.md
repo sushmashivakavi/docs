@@ -1,15 +1,10 @@
 # SMPP Gateway
 
-SMPP (Short Message Peer-to-Peer) is a protocol used by the telecommunications industry for
-exchanging SMS messages between Short Message Service Centers (SMSC) and External Short
-Messaging Entities (ESME). The SMPP protocol is sent through TCP/IP, which allows faster
-delivery of SMS messages.
+The SMPP (Short Message Peer-to-Peer) Gateway is a protocol utilized by the telecommunications industry for seamless exchange of SMS messages between Short Message Service Centers (SMSC) and External Short Messaging Entities (ESME). The SMPP protocol is transmitted via TCP/IP, enabling swift and efficient delivery of SMS messages.
 
 ## INTRODUCTION
 
-The Messaging Platform uses the SMPP v3.4 Protocol Specification Issue 1.5, However it has been designed to be backward compatible with SMPP v3.3.
-This document should be read in conjunction with SMPP v3.4 Specification v1.5 and
-assumes with SMPP a level of familiarity functionality.
+The Messaging Platform employs the SMPP v3.4 Protocol Specification Issue 1.5. It is worth noting that our platform is designed to maintain backward compatibility with SMPP v3.3. Therefore, it is recommended to refer to both this document and the SMPP v3.4 Specification v1.5 to ensure a comprehensive understanding of the functionality and features associated with SMPP. Prior familiarity with SMPP is assumed while reading this documentation.
 
 ## SERVER LIST
 
@@ -54,15 +49,17 @@ ensure the link stays active even when it is not in use. The Messaging Platform 
 
 ## BINDINGS AND THROUGHPUT
 
-Whenever an SMPP account has been setup for you, you’ll receive the maximum amount of binds you’re allowed to set up as well as a maximum throughput. In most cases, these values will be something like 3 binds and 50 message per seconds.
+Upon setting up an SMPP account for you, you will receive the maximum number of allowed binds and a designated maximum throughput. Typically, these values may be set to something like 3 binds and 50 messages per second.
 
-It might be interesting to note that these values are enforced on a per-server basis. That means that given the above example, you can set up 9 binds in total with a throughput of 150 messages per second when you connect to all servers.
+It's worth noting that these values are enforced on a per-server basis. In the example mentioned above, you can establish a total of 9 binds and achieve a combined throughput of 150 messages per second when connecting to all servers.
 
-Be aware that for maintenance purposes we only guarantee either that one server is up at any given time. So we advise to connect to all of them.
+Please be aware that for maintenance purposes, we can only guarantee the availability of one server at any given time. Therefore, we strongly advise connecting to all servers to ensure uninterrupted service.
 
 ## BINDINGS AND RELAYING
 
-{app}’s message relaying system is connection and server agnostic. That means that when you send an MT via a `submit_sm` PDU on connection A, you might receive the matching DLR in the form of a `deliver_sm` on connection B if both connections are bound with the same username. This is even true for connections made to different servers, so the above scenario would still be true if connection A is made to the smpp01 server and connection B to the smpp02 server.
+{app} Alerts employs a message relaying system that is connection and server agnostic. This means that when you send an MT message via a `submit_sm` PDU on connection A, you may receive the corresponding DLR in the form of a `deliver_sm` on connection B, given that both connections are bound with the same username.
+
+Importantly, this holds true even if the connections are established with different servers. For example, if connection A is made to the smpp01 server and connection B to the smpp02 server, the scenario described above would still apply.
 
 ## SUBMITTING MESSAGES
 
