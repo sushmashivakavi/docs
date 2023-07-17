@@ -1,6 +1,6 @@
 # Generating Access Token
 
-Login to the portal and go to Manage -> Api Keys
+Login to the portal and go to Manage -> API Keys
 ![alt text](/images/docs/access_token/z1.png)
 
 Click on Create new token button on right top

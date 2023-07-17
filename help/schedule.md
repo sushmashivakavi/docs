@@ -11,4 +11,4 @@ This feature also allows you to schedule an SMS, But at different time intervals
 
 ## API Schedule
 
-As mentioned earlier we also have this feature enabled in our Api. Using this API can let user schedule SMS to single as well as multiple recipients at anytime.
+As mentioned earlier we also have this feature enabled in our API. Using this API can let user schedule SMS to single as well as multiple recipients at anytime.

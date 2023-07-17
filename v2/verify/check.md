@@ -1,4 +1,4 @@
-# Verify Token
+# Validate Token
 
 To verify a sent verification token, follow these steps:
 

@@ -1,4 +1,4 @@
-# SMS Api Using File
+# SMS API Using File
 
 The SMS API supports the following:
 
