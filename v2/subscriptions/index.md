@@ -95,7 +95,7 @@ Create a Subscription using post method under your account
 
 | Name       | optional | Descriptions                          |
 | ---------- | -------- | ------------------------------------- |
-| event      | No       | Type of the event you subscribe to.   |
+| event      | No       | Type of the event you subscribe to. [[All events]](/docs/{version}/subscriptions/events)   |
 | identity   | No       | How should identity the event source. |
 | webhook_id | No       | Your Webhook Id created earlier. |
 
