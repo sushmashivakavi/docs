@@ -1,0 +1,40 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [
+        {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"long_url\": \"https://www.mobtexting.com\",\n    \"title\": \"new-smart-link\"\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/link/urls",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "link",
+            "urls"
+        ]
+    }
+}

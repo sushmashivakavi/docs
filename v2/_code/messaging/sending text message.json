@@ -1,0 +1,42 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [
+        {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n\t\"channels\": [{\n\t\t\"name\": \"sms\",\n\t\t\"from\": \"{{sender_name}}\"\n\t}],\n\t\"recipient\": {\n\t\t\"to\": \"{{receiver}}\"\n\t},\n\t\"message\": {\n        \"type\": \"text\",\n\t\t\"payload\": {\n            \"text\" : \"This is a test\"   \n\t\t}\n\t}\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/sms/message/send",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "sms",
+            "message",
+            "send"
+        ]
+    },
+    "description": "send sms"
+}

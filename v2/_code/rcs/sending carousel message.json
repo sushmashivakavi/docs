@@ -1,0 +1,46 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [
+        {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+        },
+        {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n   \"channels\": [{\n      \"name\": \"rcs\",\n      \"from\": \"{{channel.rcs.from}}\"\n   }],\n   \"recipient\": {\n      \"to\": \"{{receiver}}\"\n   },\n   \"message\": {\n        \"type\": \"carousel\",\n      \"payload\": [{\n         \"title\": \"This is the card title\",\n         \"description\": \"This is the card description\",\n            \"choices\": [\n            {\n               \"type\": \"reply\",\n               \"payload\": {\n                  \"text\": \"Click Here For No\",\n                  \"content\": \"send No\"\n               }\n            }\n         ],\n         \"body\": {\n                \"type\": \"image\",\n                \"payload\": {\n                    \"url\": \"https://mobtexting.com/assets/images/mob-logo.png\",\n                    \"caption\": \"This is the Header\",\n                    \"filename\": \"\",\n                    \"height\": \"MEDIUM\"\n                }\n         }\n      },\n      {\n         \"title\": \"This is the card title2\",\n         \"description\": \"This is the card description\",\n         \"choices\": [\n            {\n               \"type\": \"reply\",\n               \"payload\": {\n                  \"text\": \"Click Here For Yes\",\n                  \"content\": \"send Yes\"\n               }\n            }\n         ],\n         \"body\": {\n             \"type\": \"image\",\n             \"payload\": {\n                 \"url\": \"https://mobtexting.com/assets/images/sms-home.png\",\n                 \"caption\": \"This is the Header2\",\n                 \"height\": \"MEDIUM\"\n             }\n         }\n      }]\n   }\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/rcs/message/send",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "rcs",
+            "message",
+            "send"
+        ]
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "method": "PUT",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"type\": \"email\",\r\n    \"value\": \"hey126@gmail.com\"\r\n  }",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/:cId/identifiers/:iId",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            ":cId",
+            "identifiers",
+            ":iId"
+        ],
+        "variable": [
+            {
+                "key": "cId",
+                "value": "{{contact_id}}"
+            },
+            {
+                "key": "iId",
+                "value": "{{Em_identifier_id}}"
+            }
+        ]
+    }
+}

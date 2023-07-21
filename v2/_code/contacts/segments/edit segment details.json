@@ -1,0 +1,31 @@
+{
+    "method": "PUT",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"name\": \"segment1\",\r\n    \"positive_tags_operator\": \"any\",\r\n    \"positive_tags\": [\"tag11\"],\r\n    \"negative_tags_operator\": \"any\",\r\n    \"negative_tags\": [\r\n        \"tag12\"\r\n    ]\r\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/segments/:id",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            "segments",
+            ":id"
+        ],
+        "variable": [
+            {
+                "key": "id",
+                "value": "{{segment_id}}"
+            }
+        ]
+    }
+}

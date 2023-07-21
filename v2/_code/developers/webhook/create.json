@@ -1,0 +1,34 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"name\": \"webhook site\",\r\n    \"uri\": \"https://webhook.site/510f634b-84c6-43c3-a176-dad45844bebc\",\r\n    \"secret\":\"\",\r\n    \"token\": \"\",\r\n    \"status\": 1\r\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/developer/webhooks",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "developer",
+            "webhooks"
+        ]
+    }
+}

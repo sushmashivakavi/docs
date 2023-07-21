@@ -1,0 +1,40 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [
+        {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"name\": \"obd_call\",\n    \"bridge\": \"{{bridge_num}}\",\n    \"ivr_id\": \"17\",\n    \"to\": \"{{receiver}}\"\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/outgoing/send",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "outgoing",
+            "send"
+        ]
+    }
+}

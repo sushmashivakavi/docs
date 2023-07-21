@@ -1,0 +1,35 @@
+{
+    "method": "POST",
+    "header": [
+        {
+            "key": "Authorization",
+            "value": "AccessKey {{messgebird_token}}"
+        },
+        {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"type\": \"email\",\n    \"value\": \"pavi19@gmail.com\"\n  }"
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/:id/identifiers",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            ":id",
+            "identifiers"
+        ],
+        "variable": [
+            {
+                "key": "id",
+                "value": "{{contact_id}}"
+            }
+        ]
+    }
+}

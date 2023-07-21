@@ -1,0 +1,36 @@
+{
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/:cId/resubscribe/:sId",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            ":cId",
+            "resubscribe",
+            ":sId"
+        ],
+        "variable": [
+            {
+                "key": "cId",
+                "value": "{{contact_id}}"
+            },
+            {
+                "key": "sId",
+                "value": "{{Subscription_id}}"
+            }
+        ]
+    }
+}

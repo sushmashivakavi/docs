@@ -1,0 +1,34 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"sender\": \"{{sender_name}}\",\n    \"name\": \"temp\",\n    \"body\": \"This is verification{{1}} and {{2}}\",\n    \"template_id\": \"1234567\",\n    \"type\": \"ENT\"\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/sms/templates",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "sms",
+            "templates"
+        ]
+    }
+}

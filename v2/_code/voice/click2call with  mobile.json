@@ -1,0 +1,35 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"bridge\": \"{{bridge_num}}\",\n    \"from\": \"{{voice_from_num}}\",\n    \"to\": \"{{voice_to_num}}\",\n    \"record\": \"1\"\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/voice/c2c",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "voice",
+            "c2c"
+        ]
+    },
+    "description": "\t\t"
+}

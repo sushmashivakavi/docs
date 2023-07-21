@@ -1,0 +1,41 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "PUT",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"type\": \"text\",\n    \"name\": \"text_template\",\n    \"language\": \"en\",\n    \"category\": \"marketing\",\n    \"number\": \"91861xxxxxxx\",\n    \"payload\": {\n        \"text\" : \"Hi, This is Rcs update template message.\"\n    }\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/rcs/templates/:id",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "rcs",
+            "templates",
+            ":id"
+        ],
+        "variable": [
+            {
+                "key": "id",
+                "value": "{{template_id}}"
+            }
+        ]
+    }
+}

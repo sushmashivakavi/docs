@@ -1,0 +1,26 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{bearer_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "GET",
+    "header": [],
+    "url": {
+        "raw": "{{endpoint}}api/v3/auth/token/refresh",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v3",
+            "auth",
+            "token",
+            "refresh"
+        ]
+    }
+}

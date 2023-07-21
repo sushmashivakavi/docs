@@ -1,0 +1,41 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "PUT",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"name\": \"name of webhook\",\r\n    \"uri\": \"https://www.example.com\"\r\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/developer/webhooks/:id",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "developer",
+            "webhooks",
+            ":id"
+        ],
+        "variable": [
+            {
+                "key": "id",
+                "value": "{{webhook_Id}}"
+            }
+        ]
+    }
+}

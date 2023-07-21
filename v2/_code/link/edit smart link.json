@@ -1,0 +1,59 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "PUT",
+    "header": [
+        {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
+    "body": {
+        "mode": "formdata",
+        "formdata": [
+            {
+                "key": "long_url",
+                "value": "https://www.mobtexting.com",
+                "type": "text"
+            },
+            {
+                "key": "title",
+                "value": "new-smart-link",
+                "type": "text"
+            },
+            {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+            }
+        ]
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/link/urls/:id",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "link",
+            "urls",
+            ":id"
+        ],
+        "variable": [
+            {
+                "key": "id",
+                "value": "{{smartlink_id}}"
+            }
+        ]
+    }
+}

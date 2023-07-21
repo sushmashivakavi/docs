@@ -1,0 +1,34 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"type\": \"mediatemplate\",\n    \"name\": \"template_name\",\n    \"category\": \"marketing\",\n    \"language\": \"en\",\n    \"meta_approval\": true,\n    \"number\": \"918736xxxxxx\",\n    \"payload\": {\n        \"type\": \"mediatemplate\",\n        \"payload\": {\n            \"name\": \"mediatemplate_with_reply\",\n            \"language\": \"en\",\n            \"body_params\": [\n                \"body\"\n            ],\n            \"header_params\": [\n                \"header\"\n            ],\n            \"header\": {\n                \"type\": \"text\",\n                \"payload\": {\n                    \"text\": \"Header text {{#var#}}\"\n                }\n            },\n            \"body\": {\n                \"type\": \"text\",\n                \"payload\": {\n                    \"text\": \"Any doubts please contact us  {{#var#}}\"\n                }\n            },\n            \"footer\": {\n                \"type\": \"text\",\n                \"payload\": {\n                    \"text\": \"Thank you!\"\n                }\n            },\n            \"choices\": {\n                \"type\": \"reply\",\n                \"reply\": {\n                    \"type\": \"quick_reply\",\n                    \"quick_reply1\": \"Yes\",\n                    \"quick_reply2\": \"No\"\n                }\n            }\n        }\n    }\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/whatsapp/templates",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "whatsapp",
+            "templates"
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "method": "GET",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "pm.test(\"Status test pass\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\npm.test(\"Response time is less than 2000ms\", function () {\r\n    pm.expect(pm.response.responseTime).to.be.below(2000);\r\n});\r\npm.test(\"Status code name has 'OK'\", function () {\r\n    pm.response.to.have.status(\"OK\");\r\n});\r\npm.test(\"Content-Type header is application/json\", () => {\r\n  pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r\n});\r\npm.test(\"Response should be JSON\",function () {\r\n    pm.response.to.be.json;\r\n});",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/tags",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            "tags"
+        ]
+    }
+}

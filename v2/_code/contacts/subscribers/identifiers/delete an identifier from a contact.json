@@ -1,0 +1,36 @@
+{
+    "method": "DELETE",
+    "header": [
+        {
+            "key": "Authorization",
+            "value": "AccessKey {{messgebird_token}}"
+        },
+        {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+        }
+    ],
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/:id/identifiers/:Iid",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            ":id",
+            "identifiers",
+            ":Iid"
+        ],
+        "variable": [
+            {
+                "key": "id",
+                "value": "{{contact_id}}"
+            },
+            {
+                "key": "Iid",
+                "value": "{{Em_identifier_id}}"
+            }
+        ]
+    }
+}

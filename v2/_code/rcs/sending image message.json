@@ -1,0 +1,40 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        },
+        {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"rcs\",\n            \"from\": \"{{channel.rcs.from}}\"\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \"{{receiver}}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"image\",\n        \"payload\": {\n            \"url\": \"https://picsum.photos/id/237/200/300\",\n            \"caption\": \"some caption for document\",\n            \"filename\": \"Sample Image file\"\n        }\n    }\n}"
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/rcs/message/send",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "rcs",
+            "message",
+            "send"
+        ]
+    }
+}

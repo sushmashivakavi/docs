@@ -1,0 +1,46 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [
+        {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+        },
+        {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n\t\"channels\": [{\n\t\t\"name\": \"rcs\",\n\t\t\"from\": \"{{channel.rcs.from}}\"\n\t}],\n\t\"recipient\": {\n\t\t\"to\": \"{{receiver}}\"\n\t},\n\t\"message\": {\n\t\t\"type\": \"interactive\",\n\t\t\"payload\": {\n      \"category\" : \"\",\n\t\t\t\"header\": {\n\t\t\t\t\"type\": \"text\",\n\t\t\t\t\"payload\": {\n\t\t\t\t\t\"text\": \"header text\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"body\": {\n\t\t\t\t\"type\": \"text\",\n\t\t\t\t\"payload\": {\n\t\t\t\t\t\"text\": \"Please select one of the reply:\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"footer\": {\n\t\t\t\t\"type\": \"text\",\n\t\t\t\t\"payload\": {\n\t\t\t\t\t\"text\": \"header text\"\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"choices\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"text\",\n\t\t\t\t\t\"payload\": {\n\t\t\t\t\t\t\"text\": \"Click Here For Yes\",\n\t\t\t\t\t\t\"id\": \"unique-id\",\n\t\t\t\t\t\t\"content\": \"Yes\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"text\",\n\t\t\t\t\t\"payload\": {\n\t\t\t\t\t\t\"text\": \"Click Here For No\",\n\t\t\t\t\t\t\"id\": \"unique-id\",\n\t\t\t\t\t\t\"content\": \"No\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/rcs/message/send",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "rcs",
+            "message",
+            "send"
+        ]
+    }
+}

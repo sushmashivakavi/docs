@@ -1,0 +1,35 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"whatsapp\",\n            \"from\": \"{{from}}\"\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \"{{receiver}}\"\n        ]\n    },\n     \"message\" : {\n        \"type\": \"location\",\n        \"payload\" : {\n            \"longitude\": 12.912985,\n            \"latitude\": 77.599505,\n            \"name\": \"MOBtexting Pvt Ltd\",\n            \"address\": \"JP Nagar, Mini forest\"\n        }\n    }\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/whatsapp/message/send",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "whatsapp",
+            "message",
+            "send"
+        ]
+    }
+}
