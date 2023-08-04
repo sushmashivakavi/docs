@@ -1,7 +1,7 @@
 # Call Logs Report
 
 This Voice API supports the following:
-#include "_include/endpoint.md"
+#include "\_include/endpoint.md"
 
 #### GET
 
@@ -18,15 +18,12 @@ This Voice API supports the following:
 #### Filters
 
 | Name             | Descriptions                          |
-| ---------------- | ------------------------------------- |
+| ---------------- | ------------------------------------- | ------------------------------- |
 | datetime[end_at] | daterange for filtering the call logs | Ex: Aug 12, 2019 - Aug 12, 2019 |
 
 #### Example Request
 
-```
-curl -X GET \
-  "{endpoint}voice/calls?access_token=209eccd40ee3a2e14af7fe45b21xxx&datetime[end_at]=Aug 12, 2019 - Aug 12, 2019"
-```
+#code "{version}/\_code/sms/voice/cancel.json"
 
 #### Example Response
 
@@ -74,7 +71,8 @@ curl -X GET \
 ```
 
 # Recordings Report
-#include "_include/endpoint.md"
+
+#include "\_include/endpoint.md"
 
 #### GET
 
@@ -91,7 +89,7 @@ curl -X GET \
 #### Filters
 
 | Name                   | Descriptions                           |
-| ---------------------- | -------------------------------------- |
+| ---------------------- | -------------------------------------- | ------------------------------- |
 | datetime[r.created_at] | daterange for filtering the recordings | Ex: Aug 07, 2019 - Aug 13, 2019 |
 
 #### Example Request

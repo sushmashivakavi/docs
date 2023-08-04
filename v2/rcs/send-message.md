@@ -55,7 +55,7 @@
 #### HTTP Methods
 
 It will support only `POST` requests.
-#include "_include/endpoint.md"
+#include "\_include/endpoint.md"
 
 ## Sending Text Message
 
@@ -65,27 +65,7 @@ It will support only `POST` requests.
 
 #### Example Request With Text Messgae
 
-```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "rcs",
-		"from": "700969ca-0cb2-11ec-a2cxxxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-        "type": "text",
-		"payload": {
-			"text": "This is a simple text message from rcs channel"
-		}
-	}
-}'
-```
+#code "{version}/\_code/rcs/text_message.json"
 
 #### PARAMETERS
 
@@ -105,29 +85,7 @@ Using Media Message you can send image, audio, video and document files to your 
 
 #### Example Request With Image Messgae
 
-```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "rcs",
-		"from": "700969ca-0cb2-11ec-a2cxxxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-      "type": "image",
-      "payload": {
-          "url": "https://picsum.photos/id/237/200/300",
-          "caption": "Caption for image",
-          "filename": "Sample Image"
-      }
-  }
-}'
-```
+#code "{version}/\_code/rcs/image_message.json"
 
 #### PARAMETERS
 
@@ -139,7 +97,8 @@ curl -X POST \
 | url     | Publicly available Image/ Media URL                                                                                                      | Max 100 MB | Yes      |
 
 ## Send Interactive Message
-#include "_include/endpoint.md"
+
+#include "\_include/endpoint.md"
 
 We can send interactive messages like suggested replies and suggested actions using this api.
 
@@ -153,63 +112,7 @@ Suggested replies[text] have a maximum of 25 characters.
 
 The following code sends text with two suggested replies
 
-```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "rcs",
-		"from": "700969ca-0cb2-11ec-a2cxxxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "interactive",
-		"payload": {
-      "category" : "",
-			"header": {
-				"type": "text",
-				"payload": {
-					"text": "header text"
-				}
-			},
-			"body": {
-				"type": "text",
-				"payload": {
-					"text": "header text"
-				}
-			},
-			"footer": {
-				"type": "text",
-				"payload": {
-					"text": "header text"
-				}
-			},
-			"choices": [
-				{
-					"type": "text",
-					"payload": {
-						"title": "Click Here For Yes",
-						"id": "unique-id",
-						"content": "Yes"
-					}
-				},
-				{
-					"type": "text",
-					"payload": {
-						"title": "Click Here For No",
-						"id": "unique-id",
-						"content": "No"
-					}
-				}
-			]
-		}
-	}
-}'
-```
+#code "{version}/\_code/rcs/interactive_message.json"
 
 #### PARAMETERS
 
@@ -303,7 +206,8 @@ curl -X POST \
 | calender  | creates user's calender event upon click                   | N/A                                   | Yes      |
 
 ## Send Card Message
-#include "_include/endpoint.md"
+
+#include "\_include/endpoint.md"
 
 We can send RichRCard Message using below API.
 
@@ -313,103 +217,7 @@ We can send RichRCard Message using below API.
 
 #### Example Request With Card Messgae
 
-```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "rcs",
-		"from": "700969ca-0cb2-11ec-a2cxxxx"
-	}],
-	"recipient": {
-		"to": "91886713XXXX"
-	},
-	"message": {
-        "type": "card",
-		"payload": {
-			"title": "This is the card title",
-			"description": "This is the card description",
-			"body": {
-          "type": "image",
-          "payload": {
-              "url": "https://domin-name.com/your_image_path.png",
-              "caption": "some caption for image",
-              "filename": "",
-              "height": "TALL"
-          }
-			},
-            "choices": [
-                {
-					"type": "url",
-					"payload": {
-						"url": "https://example.com",
-						"title": "Click Here",
-						"id": "unique-id"
-					}
-				},
-				{
-					"type": "text",
-					"payload": {
-						"title": "Click Here For Yes",
-						"id": "unique-id"
-                        "content": "Yes"
-					}
-				},
-				{
-					"type": "reply",
-					"payload": {
-						"title": "No",
-						"id": "unique-id"
-                        "content": "No"
-					}
-				},
-				{
-					"type": "call",
-					"payload": {
-						"title": "Click Here",
-						"phone_number": "+91901995xxxx",
-						"id": "unique-id"
-					}
-				},
-				{
-					"type": "copy",
-					"payload": {
-						"title": "Click Here to copy",
-						"content": "+91901995xxxx",
-						"id": "unique-id"
-					}
-				},
-				{
-					"type": "calendar",
-					"payload": {
-						"title": "Add to Calendar",
-						"event": {
-                "date": "2020-01-31",
-                "time": "23:30",
-                "title": "Title of the event",
-                "description": "Description of the event"
-            },
-						"id": "unique-id"
-					}
-				},
-				{
-					"type": "section",
-					"payload": {
-						"title": "Click Here",
-						"rows": [{
-							"id": "unique-row-identifier-here",
-							"title": "row-title-content-here",
-							"description": "row-description-content-here"
-						}]
-					}
-				}
-			]
-		}
-	}
-}'
-```
+#code "{version}/\_code/rcs/card_message.json"
 
 #### PARAMETERS
 
@@ -426,7 +234,7 @@ curl -X POST \
 ## Send Carousel Message
 
 Carousels may contain a minimum of two and a maximum of ten rich cards.
-#include "_include/endpoint.md"
+#include "\_include/endpoint.md"
 
 We can send Carousel using below API.
 
@@ -436,67 +244,7 @@ We can send Carousel using below API.
 
 #### Example Request With Carousel Messgae
 
-```
-curl -X POST \
-  '{endpoint}rcs/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-   "channels": [{
-      "name": "rcs",
-      "from": "700969ca-0cb2-11ec-a2c0-xxxxx"
-   }],
-   "recipient": {
-      "to": "91886713XXXX"
-   },
-   "message": {
-      "type": "carousel",
-      "payload": [{
-         "title": "This is the card1 title",
-         "description": "This is the card1 description",
-            "choices": [
-            {
-               "type": "reply",
-               "payload": {
-                  "text": "Click Here For No",
-                  "content": "send No"
-               }
-            }
-         ],
-         "body": {
-              "type": "image",
-              "payload": {
-                  "url": "https://yourdomain.com/assets/images/mob-logo.png",
-                  "caption": "This is the Header",
-                  "filename": "",
-                  "height": "MEDIUM"
-              }
-         }
-      },
-      {
-         "title": "This is the card2 title",
-         "description": "This is the card2 description",
-         "choices": [
-            {
-               "type": "reply",
-               "payload": {
-                  "text": "Click Here For Yes",
-                  "content": "send Yes"
-               }
-            }
-         ],
-         "body": {
-             "type": "image",
-             "payload": {
-                 "url": "https://yourdomain.com/assets/images/sms-home.png",
-                 "caption": "This is the Header2",
-                 "height": "MEDIUM"
-             }
-         }
-      }]
-   }
-}'
-```
+#code "{version}/\_code/rcs/carousel_message.json"
 
 #### PARAMETERS
 

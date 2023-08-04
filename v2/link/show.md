@@ -1,25 +1,21 @@
 # View One Smart Links
 
 View single smart link created under your account.
-#include "_include/endpoint.md"
+#include "\_include/endpoint.md"
 
 #### GET
 
 ```
 {endpoint}link/urls/{id}
 ```
+
 Replace the {id} with the actual id of the link that you would like to see.
 
 #### PARAMETERS
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}link/urls/4' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/\_code/link/show.json"
 
 Kindly replace the token with your respective access_token and other params.
 
