@@ -112,9 +112,9 @@ Create a Webhook using post method under your account
   -d '{
     "name": "name of webhook",
     "uri": "https://www.example.com",
-    "secret"= xxxxx,
-    "token"= xxxxx,
-    "status"= 1
+    "secret": xxxxx,
+    "token": xxxxx,
+    "status": 1
 }'
 ```
 
