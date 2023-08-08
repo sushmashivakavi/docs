@@ -33,12 +33,7 @@ View all the Templates list.
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}whatsapp/templates' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/\_code/whatsapp/templates/list.json"
 
 Kindly replace the token with your respective access_token and other params.
 
@@ -853,12 +848,7 @@ Replace the {id} with the actual id of the template that you would like to delet
 
 #### Example Request
 
-```
-curl -X DELETE \
-  {endpoint}whatsapp/templates/7d77d0ef-63df-4ffb-83d6-xxxxxxxx \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/\_code/whatsapp/templates/delete.json"
 
 #### Example Response
 

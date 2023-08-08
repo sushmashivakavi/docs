@@ -6,7 +6,7 @@ To verify a sent verification token, follow these steps:
 - Check the `status` of the response to verify if the code provided by the user matches the one sent by {app}.
 
 This process can only be performed once for each token, ensuring the integrity of the verification system.
-#include "_include/endpoint.md"
+#include "\_include/endpoint.md"
 
 #### GET
 
@@ -23,12 +23,7 @@ This process can only be performed once for each token, ensuring the integrity o
 
 #### Example Request
 
-```shell
-curl -X GET \
-  '{endpoint}verify/check/41379328-d3a7-4fcd-be90-d5237f911d76/742385' \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 38e896f55670311982434e929559xxxx' \
-```
+#code "{version}/\_code/verify/verify.json"
 
 #### Example Response
 
