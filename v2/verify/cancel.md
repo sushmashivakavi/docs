@@ -1,7 +1,7 @@
 # Cancel Token
 
 Deletes an existing Verify request. You only need to supply the unique id that was returned upon creation.
-#include "_include/endpoint.md"
+#include "\_include/endpoint.md"
 
 #### GET
 
@@ -17,12 +17,7 @@ Deletes an existing Verify request. You only need to supply the unique id that w
 
 #### Example Request
 
-```shell
-curl -X GET \
-  '{endpoint}verify/cancel/41379328-d3a7-4fcd-be90-d5237f911d76' \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 38e896f55670311982434e929559xxxx'
-```
+#code "{version}/\_code/sms/verify/cancel.json"
 
 #### Example Response
 

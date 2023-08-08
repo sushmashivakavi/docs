@@ -1,7 +1,7 @@
 # Create Sound File
 
 This Voice API supports the following:
-#include "_include/endpoint.md"
+#include "\_include/endpoint.md"
 
 #### POST
 
@@ -23,12 +23,7 @@ This Voice API supports the following:
 
 #### Example Request
 
-```
-curl -X POST '{endpoint}voice/sounds?access_token=7160f04c05870ee88812a435xxxxxxxx' \
---header 'Accept: application/json' \
---form 'name=myaudiofile' \
---form 'audio=@/home/mdigital/Desktop/testsms/welcome.mp3'
-```
+#code "{version}/\_code/sms/voice/sounds.json"
 
 #### Example Response
 
