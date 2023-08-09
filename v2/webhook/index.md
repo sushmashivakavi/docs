@@ -1,7 +1,7 @@
 # View Webhooks List
 
 View all Webhooks created under your account
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -17,7 +17,7 @@ View all Webhooks created under your account
 
 #### Example Request
 
-#code "{version}/\_code/developers/webhook/view.json"
+#code "{version}/_code/developers/webhook/view.json"
 
 Kindly replace the token with your respective access_token.
 
@@ -78,7 +78,7 @@ Kindly replace the token with your respective access_token.
 ## Create Webhook
 
 Create a Webhook using post method under your account
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### POST
 
@@ -98,7 +98,7 @@ Create a Webhook using post method under your account
 
 #### Example Request
 
-#code "{version}/\_code/developers/webhook/create.json"
+#code "{version}/_code/developers/webhook/create.json"
 
 #### Example Response
 
@@ -123,7 +123,7 @@ Create a Webhook using post method under your account
 ## Edit Webhook
 
 Edit a Webhook using put method under your account
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### PUT
 
@@ -142,7 +142,7 @@ Edit a Webhook using put method under your account
 
 #### Example Request
 
-#code "{version}/\_code/developers/webhook/update.json"
+#code "{version}/_code/developers/webhook/update.json"
 
 #### Example Response
 
@@ -167,7 +167,7 @@ Edit a Webhook using put method under your account
 ## Show Webhook
 
 To show a Webhook using get method under your account
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -179,7 +179,7 @@ Replace the {id} with the actual id of the webhook that you would like to see.
 
 #### Example Request
 
-#code "{version}/\_code/developers/webhook/show.json"
+#code "{version}/_code/developers/webhook/show.json"
 
 #### Example Response
 
@@ -211,7 +211,7 @@ Replace the {id} with the actual id of the webhook that you would like to delete
 
 #### Example Request
 
-#code "{version}/\_code/developers/webhook/delete.json"
+#code "{version}/_code/developers/webhook/delete.json"
 
 #### Example Response
 

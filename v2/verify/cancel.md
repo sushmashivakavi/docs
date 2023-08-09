@@ -1,7 +1,7 @@
 # Cancel Token
 
 Deletes an existing Verify request. You only need to supply the unique id that was returned upon creation.
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -17,7 +17,7 @@ Deletes an existing Verify request. You only need to supply the unique id that w
 
 #### Example Request
 
-#code "{version}/\_code/sms/verify/cancel.json"
+#code "{version}/_code/sms/verify/cancel.json"
 
 #### Example Response
 

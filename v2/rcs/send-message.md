@@ -55,7 +55,7 @@
 #### HTTP Methods
 
 It will support only `POST` requests.
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 ## Sending Text Message
 
@@ -65,7 +65,7 @@ It will support only `POST` requests.
 
 #### Example Request With Text Messgae
 
-#code "{version}/\_code/rcs/text_message.json"
+#code "{version}/_code/rcs/text_message.json"
 
 #### PARAMETERS
 
@@ -85,7 +85,7 @@ Using Media Message you can send image, audio, video and document files to your 
 
 #### Example Request With Image Messgae
 
-#code "{version}/\_code/rcs/image_message.json"
+#code "{version}/_code/rcs/image_message.json"
 
 #### PARAMETERS
 
@@ -98,7 +98,7 @@ Using Media Message you can send image, audio, video and document files to your 
 
 ## Send Interactive Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send interactive messages like suggested replies and suggested actions using this api.
 
@@ -112,7 +112,7 @@ Suggested replies[text] have a maximum of 25 characters.
 
 The following code sends text with two suggested replies
 
-#code "{version}/\_code/rcs/interactive_message.json"
+#code "{version}/_code/rcs/interactive_message.json"
 
 #### PARAMETERS
 
@@ -207,7 +207,7 @@ curl -X POST \
 
 ## Send Card Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send RichRCard Message using below API.
 
@@ -217,7 +217,7 @@ We can send RichRCard Message using below API.
 
 #### Example Request With Card Messgae
 
-#code "{version}/\_code/rcs/card_message.json"
+#code "{version}/_code/rcs/card_message.json"
 
 #### PARAMETERS
 
@@ -234,7 +234,7 @@ We can send RichRCard Message using below API.
 ## Send Carousel Message
 
 Carousels may contain a minimum of two and a maximum of ten rich cards.
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send Carousel using below API.
 
@@ -244,7 +244,7 @@ We can send Carousel using below API.
 
 #### Example Request With Carousel Messgae
 
-#code "{version}/\_code/rcs/carousel_message.json"
+#code "{version}/_code/rcs/carousel_message.json"
 
 #### PARAMETERS
 

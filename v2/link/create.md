@@ -1,7 +1,7 @@
 # Create Smart Link
 
 Convert long url into short and smart url.
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### POST
 
@@ -20,7 +20,7 @@ Convert long url into short and smart url.
 
 #### Example Request
 
-#code "{version}/\_code/link/create.json"
+#code "{version}/_code/link/create.json"
 
 #### Example Response
 

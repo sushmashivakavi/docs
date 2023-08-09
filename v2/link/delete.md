@@ -1,6 +1,6 @@
 # Delete Smart Link
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### DELETE
 
@@ -12,7 +12,7 @@ Replace the {id} with the actual id of the link that you would like to delete.
 
 #### Example Request
 
-#code "{version}/\_code/link/delete.json"
+#code "{version}/_code/link/delete.json"
 
 #### Example Response
 

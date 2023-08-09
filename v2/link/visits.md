@@ -1,7 +1,7 @@
 # View Smart Link Visits
 
 Access the particular Link Visits
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -17,7 +17,7 @@ Access the particular Link Visits
 
 #### Example Request
 
-#code "{version}/\_code/link/visits.json"
+#code "{version}/_code/link/visits.json"
 
 Kindly replace the token with your respective access_token and other params.
 
