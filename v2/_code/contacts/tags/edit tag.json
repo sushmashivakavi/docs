@@ -1,0 +1,31 @@
+{
+	"method": "PUT",
+	"header": [],
+	"body": {
+		"mode": "raw",
+		"raw": "{\r\n   \"name\" : \"tag19\"\r\n}",
+		"options": {
+			"raw": {
+				"language": "json"
+			}
+		}
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/contacts/tags/:id",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"contacts",
+			"tags",
+			":id"
+		],
+		"variable": [
+			{
+				"key": "id",
+				"value": "{{tag_id}}"
+			}
+		]
+	}
+}

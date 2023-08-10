@@ -1,0 +1,25 @@
+{
+	"method": "GET",
+	"header": [],
+	"body": {
+		"mode": "raw",
+		"raw": "",
+		"options": {
+			"raw": {
+				"language": "json"
+			}
+		}
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/contacts/import/subscribers",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"contacts",
+			"import",
+			"subscribers"
+		]
+	}
+}
