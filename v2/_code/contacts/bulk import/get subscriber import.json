@@ -1,0 +1,42 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "GET",
+	"header": [],
+	"body": {
+		"mode": "raw",
+		"raw": "",
+		"options": {
+			"raw": {
+				"language": "json"
+			}
+		}
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/contacts/import/subscribers/:id",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"contacts",
+			"import",
+			"subscribers",
+			":id"
+		],
+		"variable": [
+			{
+				"key": "id",
+				"value": "{{import_sub_id}}"
+			}
+		]
+	}
+}

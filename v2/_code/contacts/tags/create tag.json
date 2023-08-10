@@ -1,0 +1,24 @@
+{
+	"method": "POST",
+	"header": [],
+	"body": {
+		"mode": "raw",
+		"raw": "{\r\n   \"name\" : \"tag10\"\r\n}",
+		"options": {
+			"raw": {
+				"language": "json"
+			}
+		}
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/contacts/tags",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"contacts",
+			"tags"
+		]
+	}
+}
