@@ -1,6 +1,6 @@
 # Check Account Balance
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -12,7 +12,7 @@ You can get the account balance of each service using this api.
 
 #### Example Request
 
-#code "{version}/\_code/account/balance.json"
+#code "{version}/_code/account/balance.json"
 
 #### Example Response
 

@@ -1,7 +1,7 @@
 # Create Sound File
 
 This Voice API supports the following:
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### POST
 
@@ -23,7 +23,7 @@ This Voice API supports the following:
 
 #### Example Request
 
-#code "{version}/\_code/sms/voice/sounds.json"
+#code "{version}/_code/sms/voice/sounds.json"
 
 #### Example Response
 

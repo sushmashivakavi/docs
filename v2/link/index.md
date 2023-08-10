@@ -1,7 +1,7 @@
 # View Smart Links
 
 View all smart links created under your account
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -13,7 +13,7 @@ View all smart links created under your account
 
 #### Example Request
 
-#code "{version}/\_code/link/index.json"
+#code "{version}/_code/link/index.json"
 
 Kindly replace the token with your respective access_token and other params.
 

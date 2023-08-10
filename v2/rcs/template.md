@@ -27,7 +27,7 @@ View all the Templates list.
 
 #### Example Request
 
-#code "{version}/\_code/rcs/templates/view.json"
+#code "{version}/_code/rcs/templates/view.json"
 
 Kindly replace the token with your respective access_token and other params.
 
@@ -101,7 +101,7 @@ Show the Template list.
 
 #### Example Request
 
-#code "{version}/\_code/rcs/templates/show.json"
+#code "{version}/_code/rcs/templates/show.json"
 
 Kindly replace the template_id.
 
@@ -160,7 +160,7 @@ Kindly replace the template_id.
 
 ### Example Request
 
-#code "{version}/\_code/rcs/templates/create.json"
+#code "{version}/_code/rcs/templates/create.json"
 
 ### Example Response
 
@@ -545,7 +545,7 @@ curl -X POST \
 
 ### Example Request
 
-#code "{version}/\_code/rcs/templates/edit.json"
+#code "{version}/_code/rcs/templates/edit.json"
 
 ### Example Response
 
@@ -582,7 +582,7 @@ Replace the {id} with the actual id of the template that you would like to delet
 
 #### Example Request
 
-#code "{version}/\_code/rcs/templates/delete.json"
+#code "{version}/_code/rcs/templates/delete.json"
 
 #### Example Response
 

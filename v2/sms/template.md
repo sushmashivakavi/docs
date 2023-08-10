@@ -24,7 +24,7 @@ Output Message:
 
 ## Send Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### POST
 
@@ -76,7 +76,7 @@ meta | This block contains all the optional parameters |
 
 #### Example Request
 
-#code "{version}/\_code/messaging/templates/send_template.json"
+#code "{version}/_code/messaging/templates/send_template.json"
 
 #### Example Response
 

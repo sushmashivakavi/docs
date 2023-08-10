@@ -1,7 +1,7 @@
 # Edit Smart Link
 
 Convert long url into short and smart url.
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### PUT
 
@@ -20,7 +20,7 @@ Convert long url into short and smart url.
 
 #### Example Request
 
-#code "{version}/\_code/link/edit.json"
+#code "{version}/_code/link/edit.json"
 
 #### Example Response
 

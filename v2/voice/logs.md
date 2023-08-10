@@ -1,7 +1,7 @@
 # Call Logs Report
 
 This Voice API supports the following:
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -23,7 +23,7 @@ This Voice API supports the following:
 
 #### Example Request
 
-#code "{version}/\_code/sms/voice/cancel.json"
+#code "{version}/_code/sms/voice/cancel.json"
 
 #### Example Response
 
@@ -72,7 +72,7 @@ This Voice API supports the following:
 
 # Recordings Report
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 

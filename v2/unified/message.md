@@ -58,7 +58,7 @@
 #### HTTP Methods
 
 It will support only `POST` requests.
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 ## Sending Text Message
 
@@ -120,7 +120,7 @@ curl -X POST \
 
 ## Sending Template Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 Template message is the way of sending dynamic content using variables.
 
@@ -181,7 +181,7 @@ curl -X POST \
 
 ## Send Image Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send Images as attachment using below API. The maximum image size is limited to 64 MB.
 
@@ -225,7 +225,7 @@ curl -X POST \
 
 ## Send Document Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send Document which is having valid MIME-type as attachment using below API. The maximum document size is limited to 64 MB. So anything not image, audio or video will be transmitted as document message.
 
@@ -269,7 +269,7 @@ curl -X POST \
 
 ## Send Audio Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send Audio clips as attachment using below API. The maximum audio file size is limited to max 64 MB.
 
@@ -313,7 +313,7 @@ curl -X POST \
 
 ## Send Video Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send Video clips as attachment using below API. The maximum audio file size is limited to 64 MB.
 
@@ -358,7 +358,7 @@ curl -X POST \
 
 ## Send Notification With Interactive Suggestions
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send Video clips as attachment using below API. The maximum audio file size is limited to 64 MB.
 
@@ -479,7 +479,7 @@ curl -X POST \
 
 ## Send Vcard / Contacts Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send location using below API. The maximum audio file size is limited to 64 MB.
 
@@ -546,7 +546,7 @@ curl -X POST \
 
 ## Send Location Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send location using below API. The maximum audio file size is limited to 64 MB.
 
@@ -592,7 +592,7 @@ curl -X POST \
 
 ## Send Carousel Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send Carousel using below API. The maximum audio file size is limited to 64 MB.
 
@@ -625,7 +625,7 @@ curl -X POST \
 
 ## Send Card Message
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 We can send Carousel using below API. The maximum audio file size is limited to 64 MB.
 

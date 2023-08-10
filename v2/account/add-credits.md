@@ -1,6 +1,6 @@
 # Adding Credits to Customers
 
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### POST
 
@@ -29,7 +29,7 @@ You can add the credits to your customers using this api.
 
 #### Example Request
 
-#code "{version}/\_code/account/add-credits.json"
+#code "{version}/_code/account/add-credits.json"
 
 #### Example Response
 

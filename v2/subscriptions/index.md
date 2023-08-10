@@ -1,7 +1,7 @@
 # View Subscriptions List
 
 View all Subscriptions created under your account
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -11,7 +11,7 @@ View all Subscriptions created under your account
 
 #### Example Request
 
-#code "{version}/\_code/developers/subscriptions/index.json"
+#code "{version}/_code/developers/subscriptions/index.json"
 
 Kindly replace the token with your respective access_token.
 
@@ -78,7 +78,7 @@ Kindly replace the token with your respective access_token.
 ## Create Subscription
 
 Create a Subscription using post method under your account
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### POST
 
@@ -96,7 +96,7 @@ Create a Subscription using post method under your account
 
 #### Example Request
 
-#code "{version}/\_code/developers/subscriptions/create.json"
+#code "{version}/_code/developers/subscriptions/create.json"
 
 #### Example Response
 
@@ -119,7 +119,7 @@ Create a Subscription using post method under your account
 ## Show Subscription
 
 To show a Subscription using get method under your account
-#include "\_include/endpoint.md"
+#include "_include/endpoint.md"
 
 #### GET
 
@@ -131,7 +131,7 @@ Replace the :id with the actual id of the webhook that you would like to see.
 
 #### Example Request
 
-#code "{version}/\_code/developers/subscriptions/show.json"
+#code "{version}/_code/developers/subscriptions/show.json"
 
 #### Example Response
 
@@ -161,7 +161,7 @@ Replace the :id with the actual id of the webhook that you would like to delete.
 
 #### Example Request
 
-#code "{version}/\_code/developers/subscriptions/delete.json"
+#code "{version}/_code/developers/subscriptions/delete.json"
 
 #### Example Response
 

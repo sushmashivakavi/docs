@@ -4,7 +4,7 @@ To check the status of past or current verification requests:
 
 - Send a Verify Search request containing the `id` of the verification requests you are interested in.
 - Check the `status` of the response to determine if the code the user supplied matches the one sent by {app}.
-  #include "\_include/endpoint.md"
+  #include "_include/endpoint.md"
 
 #### GET
 
@@ -20,7 +20,7 @@ To check the status of past or current verification requests:
 
 #### Example Request
 
-#code "{version}/\_code/verify/search.json"
+#code "{version}/_code/verify/search.json"
 
 #### Example Response
 

@@ -33,7 +33,7 @@ View all the Templates list.
 
 #### Example Request
 
-#code "{version}/\_code/whatsapp/templates/list.json"
+#code "{version}/_code/whatsapp/templates/list.json"
 
 Kindly replace the token with your respective access_token and other params.
 
@@ -848,7 +848,7 @@ Replace the {id} with the actual id of the template that you would like to delet
 
 #### Example Request
 
-#code "{version}/\_code/whatsapp/templates/delete.json"
+#code "{version}/_code/whatsapp/templates/delete.json"
 
 #### Example Response
 
