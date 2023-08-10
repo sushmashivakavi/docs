@@ -101,3 +101,4 @@
 
   - [Webhooks](/docs/{version}/webhook)
   - [Subscriptions](/docs/{version}/subscriptions)
+  - [Events List](/docs/{version}/event)

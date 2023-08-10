@@ -88,11 +88,11 @@ Create a Subscription using post method under your account
 
 #### PARAMETERS
 
-| Name       | optional | Descriptions                                                                             |
-| ---------- | -------- | ---------------------------------------------------------------------------------------- |
-| event      | No       | Type of the event you subscribe to. [[All events]](/docs/{version}/subscriptions/events) |
-| identity   | No       | How should identity the event source.                                                    |
-| webhook_id | No       | Your Webhook Id created earlier.                                                         |
+| Name       | optional | Descriptions                          |
+| ---------- | -------- | ------------------------------------- |
+| event      | No       | Type of the event you subscribe to. [[All events]](/docs/{version}/event)   |
+| identity   | No       | How should identity the event source. |
+| webhook_id | No       | Your Webhook Id created earlier. |
 
 #### Example Request
 
