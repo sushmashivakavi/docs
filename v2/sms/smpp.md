@@ -207,7 +207,7 @@ Status and error code which can be returned by Messaging Platform.
 | 460  | DUPLICATE             | Same content sent                                   |
 | 461  | UNDELIV               | Unknown Error                                       |
 | 462  | FAILED                | Unknown Error                                       |
-| 463  | THROTTLED             | Maximum Sent Limit is Reached                       |                  
+| 463  | THROTTLED             | Maximum Sent Limit is Reached                       |
 | 778  | REJ-MULTIPART         | All message parts are not delivered to handset      |
 | 777  | DLT-REJECTED          | Invalid Sender-Id or Invalid Template               |
 | 780  | DLT-INV-TMID          | Invalid DLT telemarketer Id                         |
@@ -220,3 +220,6 @@ Status and error code which can be returned by Messaging Platform.
 | 787  | DLT-HEADER-INACTIVE   | Sender Inactive                                     |
 | 788  | DLT-TM-INACTIVE       | Template is Inactive                                |
 | 789  | DLT-SENDER-NOT-REG-TM | Sender not registered for template                  |
+| 790  | INV-PROVISION         | Sender Invalid Provision                            |
+| 791  | INV-SERVICE           | Invalid Service Type                                |
+| 792  | INV-SCHEDULE          | Invalid Schedule                                    |
