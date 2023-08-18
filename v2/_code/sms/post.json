@@ -1,0 +1,40 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "POST",
+	"header": [
+		{
+			"key": "Accept",
+			"value": "application/json"
+		}
+	],
+	"body": {
+		"mode": "raw",
+		"raw": "{\n     \"sender\":\"{{sender_name}}\",\n     \"to\":\"{{reciver}}\",\n     \"service\":\"MKT\",\n     \"message\":\"Your OTP is 123456\"\n}",
+		"options": {
+			"raw": {
+				"language": "json"
+			}
+		}
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/sms/send",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"sms",
+			"send"
+		]
+	},
+	"description": "send sms"
+}

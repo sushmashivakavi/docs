@@ -11,12 +11,7 @@ View all Blocklists
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}sms/suppressions/templates' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx'
-```
+#code "{version}/_code/sms/suppressions/list.json"
 
 Kindly replace the token with your respective access_token and other params.
 
@@ -90,17 +85,7 @@ Create block template using POST method.
 
 #### Example Request
 
-```
-curl -X POST\
-  '{endpoint}sms/suppressions/templates' \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "template_id": "12xxxxx",
-    "status": "1"
-}'
-```
+#code "{version}/_code/sms/suppressions/create.json"
 
 #### Example Response
 
@@ -139,18 +124,7 @@ Replace the {id} with the actual id of the receiver that you would like to Edit.
 
 #### Example Request
 
-```
-curl -X PUT \
-  '{endpoint}sms/suppressions/templates/2' \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "template_id": "12xxxxx",
-    "status": "1"
-}'
-
-```
+#code "{version}/_code/sms/suppressions/edit.json"
 
 #### Example Response
 
@@ -180,12 +154,7 @@ View one created block template
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}sms/suppressions/templates/2' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx'
-```
+#code "{version}/_code/sms/suppressions/view.json"
 
 Kindly replace the token with your respective access_token .
 
@@ -217,14 +186,7 @@ Import block templates by uploading a file
 
 #### Example Request
 
-```
-curl -X POST\
-  '{endpoint}sms/suppressions/templates/import' \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx' \
-  -H 'Content-Type: application/form-data' \
-  -F 'file=@"yourfilepath/templates.xlsx"'
-```
+#code "{version}/_code/sms/suppressions/import.json"
 
 #### PARAMETERS
 
@@ -258,12 +220,7 @@ Replace the {id} with the actual id of the block template's id that you would li
 
 #### Example Request
 
-```
-curl -X DELETE \
-  '{endpoint}sms/suppressions/templates/2' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx'
-```
+#code "{version}/_code/sms/suppressions/delete.json"
 
 #### Example Response
 
@@ -289,12 +246,7 @@ Delete all templates at once
 
 #### Example Request
 
-```
-curl -X DELETE \
-  '{endpoint}sms/suppressions/templates' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 7160f04c0587xxxxxxxxxxxxxxxx'
-```
+#code "{version}/_code/sms/suppressions/cleanup.json"
 
 #### Example Response
 

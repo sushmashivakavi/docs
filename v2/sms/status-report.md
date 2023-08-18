@@ -19,10 +19,7 @@ you can pass any of the above params to get the report.
 
 #### Example Request
 
-```shell
-curl -X GET \
-  '{endpoint}sms/report?daterange=2019-06-19|2019-06-22&access_token=209eccd40e45b21xxxx'
-```
+#include "{version}/_code/sms/status_report.json"
 
 #### Example Response
 

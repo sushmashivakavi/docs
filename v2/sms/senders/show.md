@@ -11,12 +11,7 @@ View one Sender-ids created under your account
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}sms/senders/ff467e28-7170-4a72-952e-c999cxxxxxx' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/_code/sms/senders/view.json"
 
 Kindly replace the token with your respective access_token.
 

@@ -1,0 +1,42 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "PUT",
+	"header": [],
+	"body": {
+		"mode": "raw",
+		"raw": "{\n    \"template_id\": \"435353453\"\n}",
+		"options": {
+			"raw": {
+				"language": "json"
+			}
+		}
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/sms/suppressions/templates/:id",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"sms",
+			"suppressions",
+			"templates",
+			":id"
+		],
+		"variable": [
+			{
+				"key": "id",
+				"value": "{{created_block_template_id}}"
+			}
+		]
+	}
+}

@@ -23,7 +23,7 @@ This Voice API supports the following:
 
 #### Example Request
 
-#code "{version}/_code/sms/voice/sounds.json"
+#code "{version}/_code/voice/sounds.json"
 
 #### Example Response
 

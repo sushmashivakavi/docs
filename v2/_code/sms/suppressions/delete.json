@@ -1,0 +1,33 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "DELETE",
+	"header": [],
+	"url": {
+		"raw": "{{endpoint}}api/v2/sms/suppressions/templates/:id",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"sms",
+			"suppressions",
+			"templates",
+			":id"
+		],
+		"variable": [
+			{
+				"key": "id",
+				"value": "{{created_block_template_id}}"
+			}
+		]
+	}
+}

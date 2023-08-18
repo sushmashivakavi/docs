@@ -21,10 +21,7 @@ It will support `GET` request.
 
 #### Example Request
 
-```
-curl -X GET \
-  "{domain}/api/{version}/outgoing/callstatus&id=047d8cfc-77d1-4f6c-bfb5-e81f1a1343a7:1"
-```
+#code "{version}/_code/reach/callstatus.json"
 
 #### Example Response
 

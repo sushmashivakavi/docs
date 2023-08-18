@@ -19,12 +19,7 @@ View all Country wise pricing list.
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}sms/pricing' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/_code/sms/pricing.json"
 
 Kindly replace the token with your respective access_token and other params.
 

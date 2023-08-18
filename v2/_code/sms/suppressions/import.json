@@ -1,0 +1,43 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "POST",
+	"header": [],
+	"body": {
+		"mode": "formdata",
+		"formdata": [
+			{
+				"key": "file",
+				"type": "file",
+				"src": "/C:/Users/Pavithra/Downloads/CorrectBlockTemplate.csv"
+			},
+			{
+				"key": "file",
+				"type": "file",
+				"src": [],
+				"disabled": true
+			}
+		]
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/sms/suppressions/templates/import",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"sms",
+			"suppressions",
+			"templates",
+			"import"
+		]
+	}
+}
