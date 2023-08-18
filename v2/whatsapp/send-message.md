@@ -74,27 +74,7 @@ It will support only `POST` requests.
 
 #### Example Request With Text Message
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120xxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-        "type": "text",
-		"payload": {
-			"text": "This is a simple text message from whatsapp channel"
-		}
-	}
-}'
-```
+#code "{version}/_code/whatsapp/send_message/text_type.json"
 
 ## Sending Template Message
 #include "_include/endpoint.md"
@@ -116,34 +96,7 @@ curl -X POST \
 
 #### Example Request With Templates
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "channels": [
-        {
-            "name": "whatsapp",
-            "from": "91901912xxxx"
-        }
-    ],
-    "recipient": {
-        "to": [
-            "91XXXXXXx"
-        ]
-    },
-    "message": {
-        "type": "template",
-        "payload": {
-            "name": "template_alias_name",
-            "language": "en",
-            "header_params" : ["Hello"],
-            "body_params" : ["Dear", "Customer"]
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/send_message/template_type.json"
 
 #### Example Request With Authentication Template
 
@@ -354,29 +307,7 @@ curl -X POST \
 
 #### Example Request With Image Message
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120xxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "image",
-		"payload": {
-			"url": "https://www.buildquickbots.com/whatsapp/media/sample/jpg/sample01.jpg",
-			"caption": "some caption for image",
-            "filename": "Sample Image file"
-		}
-	}
-}'
-```
+#code "{version}/_code/whatsapp/send_message/image_type.json"
 
 ## Send Document Message
 #include "_include/endpoint.md"
@@ -398,29 +329,7 @@ We can send Document which is having valid MIME-type as attachment using below A
 
 #### Example Request With Document Message
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120xxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "document",
-		"payload": {
-			"url": "https://www.buildquickbots.com/whatsapp/media/sample/pdf/sample01.pdf",
-			"caption": "some caption for document",
-			"filename": ""
-		}
-	}
-}'
-```
+#code "{version}/_code/whatsapp/send_message/document_type.json"
 
 ## Send Audio Message
 #include "_include/endpoint.md"
@@ -442,29 +351,7 @@ We can send Audio clips as attachment using below API.
 
 #### Example Request With Audio Message
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120xxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "audio",
-		"payload": {
-			"url": "https://www.buildquickbots.com/whatsapp/media/sample/audio/sample02.mp3",
-			"caption": "some caption for document",
-			"filename": ""
-		}
-	}
-}'
-```
+#code "{version}/_code/whatsapp/send_message/audio_type.json"
 
 ## Send Video Message
 #include "_include/endpoint.md"
@@ -486,29 +373,7 @@ We can send Video clips as attachment using below API.
 
 #### Example Request With Video Message
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120xxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "video",
-		"payload": {
-			"url": "https://www.buildquickbots.com/whatsapp/media/sample/video/sample01.mp4",
-			"caption": "some caption for document",
-			"filename": ""
-		}
-	}
-}'
-```
+#code "{version}/_code/whatsapp/send_message/video_type.json"
 
 ## Send Notification With Interactive Suggestions
 #include "_include/endpoint.md"
@@ -527,137 +392,11 @@ curl -X POST \
 
 #### Example Request With Interactive Reply Message
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120xxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "interactive",
-		"payload": {
-			"type": "reply",
-			"header": {
-				"type": "text",
-				"payload": {
-					"text": "Hello User,"
-				}
-			},
-			"body": {
-				"type": "text",
-				"payload": {
-					"text": "Do you like the whatsapp?"
-				}
-			},
-			"footer": {
-				"type": "text",
-				"payload": {
-					"text": "Thank you"
-				}
-			},
-			"choices": [
-				{
-					"type": "reply",
-					"payload": {
-						"title": "Yes",
-						"id": "1"
-					}
-				},
-				{
-					"type": "reply",
-					"payload": {
-						"title": "No",
-						"id": "2"
-					}
-				}
-			]
-		}
-	}
-}'
-```
+#code "{version}/_code/whatsapp/send_message/interactive_type.json"
 
 #### Example Request With Interactive List Messages
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120xxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "interactive",
-		"payload": {
-			"type": "list",
-			"header": {
-				"type": "text",
-				"payload": {
-					"text": "Hello User,"
-				}
-			},
-			"body": {
-				"type": "text",
-				"payload": {
-					"text": "What is your favorite colour?"
-				}
-			},
-			"footer": {
-				"type": "text",
-				"payload": {
-					"text": "Thank you"
-				}
-			},
-			"choices": [
-				{
-					"type": "button",
-					"payload": {
-						"title": "Choose the option",
-						"rows": [{
-							"id": "15",
-							"title": "Green",
-							"description": "Yes, Green is my favorite"
-						}]
-					}
-				},
-				{
-					"type": "section",
-					"payload": {
-						"title": "Section2 Title",
-						"rows": [{
-							"id": "16",
-							"title": "Red",
-							"description": "Yes, Red is my favorite"
-						},
-						{
-							"id": "16",
-							"title": "Black",
-							"description": "Yes, Black is my favorite"
-						},
-						{
-							"id": "16",
-							"title": "Blue",
-							"description": "Yes, Blue is my favorite"
-						}]
-					}
-				}
-			]
-		}
-	}
-}'
-```
+#code "{version}/_code/whatsapp/send_message/interactive_list.json"
 
 ## Send Vcard / Contacts Message
 #include "_include/endpoint.md"
@@ -680,57 +419,7 @@ curl -X POST \
 
 #### Example Request With Vcard Message
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120xxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-	"message": {
-		"type": "contacts",
-		"payload": {
-			"addresses": [{
-				"city": "Bangalore",
-				"country": "India",
-				"countryCode": "in",
-				"state": "KA",
-				"type": "Office",
-				"zip": "56***"
-			}],
-			"name": {
-				"firstName": "Peter",
-				"lastName": "Parker",
-				"formattedName": "Peter Parker"
-			},
-			"phones": [{
-				"phone": "91901xxxxxxx",
-				"type": "WORK"
-			}],
-			"org": {
-                "company": "Company_name",
-                "department": "Product",
-                "title": "Manager"
-            },
-			"birthday": "1993-08-18",
-			"emails": [{
-				"email": "hello@domain-name.com",
-				"type": "WORK"
-			}],
-			"urls": [{
-				"url": "https://www.domin-name.com",
-				"type": "WORK"
-			}]
-		}
-	}
-}'
-```
+#code "{version}/_code/whatsapp/send_message/contact_message.json"
 
 ## Send Location Message
 #include "_include/endpoint.md"
@@ -750,27 +439,5 @@ curl -X POST \
 
 #### Example Request With Location Message
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-	"channels": [{
-		"name": "whatsapp",
-		"from": "919019120xxx"
-	}],
-	"recipient": {
-		"to": "91XXXXXX"
-	},
-    "message" : {
-        "type": "location",
-        "payload" : {
-            "longitude": 12.912985,
-            "latitude": 77.599505,
-            "name": "Company Pvt Ltd",
-            "address": "JP Nagar, Mini forest"
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/send_message/location_message.json"
+

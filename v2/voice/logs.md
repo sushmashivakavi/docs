@@ -23,7 +23,7 @@ This Voice API supports the following:
 
 #### Example Request
 
-#code "{version}/_code/sms/voice/cancel.json"
+#code "{version}/_code/voice/logs/call_logs.json"
 
 #### Example Response
 
@@ -94,10 +94,7 @@ This Voice API supports the following:
 
 #### Example Request
 
-```
-curl -X GET \
-  "{endpoint}voice/recordings?access_token=209eccd40ee3a2e14af7fe45b21xxx&datetime[r.created_at]=Jun 07, 2019 - Aug 13, 2019"
-```
+#code "{version}/_code/voice/logs/recording_logs.json"
 
 #### Example Response
 

@@ -1,0 +1,34 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "POST",
+	"header": [],
+	"body": {
+		"mode": "raw",
+		"raw": "{\n    \"type\": \"text\",\n    \"name\": \"new_text1\",\n    \"category\": \"Marketing\",\n    \"language\": \"en\",\n    \"number\": \"{{from}}\",\n    \"payload\": {\n        \"type\": \"text\",\n        \"payload\": {\n            \"text\": \"This is a simple text message from whatsapp channel\"\n        }\n    }\n}",
+		"options": {
+			"raw": {
+				"language": "json"
+			}
+		}
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/whatsapp/templates",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"whatsapp",
+			"templates"
+		]
+	}
+}

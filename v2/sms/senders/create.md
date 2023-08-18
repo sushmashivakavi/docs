@@ -21,7 +21,7 @@ Create sender-ids using post method under your account
 
 #### Example Request
 
-#include "{version}/_samples/sms/senders/createsender.md"
+#code "{version}/_code/sms/senders/create.json"
 
 #### Example Response
 

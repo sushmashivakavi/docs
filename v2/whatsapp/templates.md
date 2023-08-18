@@ -177,221 +177,19 @@ Kindly replace the token with your respective access_token and other params.
 
 #### Type Text
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "template",
-    "name": "template_name",
-    "category": "marketing",
-    "language": "en",
-    "is_conversation": false,
-    "number": "918736xxxxxx",
-    "payload": {
-        "header": {
-            "type": "text",
-            "payload": {
-                "text": "Header text"
-            },
-            "params": []
-        },
-        "body": {
-            "type": "text",
-            "payload": {
-                "text": "Any doubts please contact us"
-            },
-            "params": []
-        },
-        "footer": {
-            "type": "text",
-            "payload": {
-                "text": "Thank you!"
-            }
-        },
-        "choices": {
-            "type": "actions",
-            "actions": [
-                {
-                    "type": "phone_number",
-                    "phone_number_text": "Any queries call",
-                    "phone_number": "+918783xxxxxx"
-                },
-                {
-                    "type": "url",
-                    "website_url_type": "Static",
-                    "website_button_text": "More info visit",
-                    "website_url": "www.example.com"
-                }
-            ]
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/templates/button/text_type.json"
 
 #### Type Image
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "template",
-    "name": "template_name",
-    "category": "marketing",
-    "language": "en",
-    "is_conversation": false,
-    "number": "918736xxxxxx",
-    "payload": {
-        "header": {
-            "type": "image",
-            "payload": {
-                "url": "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg"
-            }
-        },
-        "body": {
-            "type": "text",
-            "payload": {
-                "text": "Any doubts please contact us"
-            },
-            "params": []
-        },
-        "footer": {
-            "type": "text",
-            "payload": {
-                "text": "Thank you!"
-            }
-        },
-        "choices": {
-            "type": "actions",
-            "actions": [
-                {
-                    "type": "phone_number",
-                    "phone_number_text": "Any queries call",
-                    "phone_number": "+918783xxxxxx"
-                },
-                {
-                    "type": "url",
-                    "website_url_type": "Static",
-                    "website_button_text": "More info visit",
-                    "website_url": "www.example.com"
-                }
-            ]
-        }
-    }
-}'
-
-```
+#code "{version}/_code/whatsapp/templates/button/image_type.json"
 
 #### Type Video
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "template",
-    "name": "template_name",
-    "category": "marketing",
-    "language": "en",
-    "is_conversation": false,
-    "number": "918736xxxxxx",
-    "payload": {
-        "header": {
-            "type": "video",
-            "payload": {
-                "url": "https://www.example/sample/video/sample.mp4"
-            }
-        },
-        "body": {
-            "type": "text",
-            "payload": {
-                "text": "Any doubts please contact us"
-            },
-            "params": []
-        },
-        "footer": {
-            "type": "text",
-            "payload": {
-                "text": "Thank you!"
-            }
-        },
-        "choices": {
-            "type": "actions",
-            "actions": [
-                {
-                    "type": "phone_number",
-                    "phone_number_text": "Any queries call",
-                    "phone_number": "+918783xxxxxx"
-                },
-                {
-                    "type": "url",
-                    "website_url_type": "Static",
-                    "website_button_text": "More info visit",
-                    "website_url": "www.example.com"
-                }
-            ]
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/templates/button/video_type.json"
 
 #### Type Document
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "template",
-    "name": "template_name",
-    "category": "marketing",
-    "language": "en",
-    "is_conversation": false,
-    "number": "918736xxxxxx",
-    "payload": {
-        "header": {
-            "type": "document",
-            "payload": {
-                "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-            }
-        },
-        "body": {
-            "type": "text",
-            "payload": {
-                "text": "Any doubts please contact us"
-            },
-            "params": []
-        },
-        "footer": {
-            "type": "text",
-            "payload": {
-                "text": "Thank you!"
-            }
-        },
-        "choices": {
-            "type": "actions",
-            "actions": [
-                {
-                    "type": "phone_number",
-                    "phone_number_text": "Any queries call",
-                    "phone_number": "+918736xxxxxx"
-                },
-                {
-                    "type": "url",
-                    "website_url_type": "Static",
-                    "website_button_text": "More info visit",
-                    "website_url": "www.example.com"
-                }
-            ]
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/templates/button/document_type.json"
 
 #### PARAMETERS
 
@@ -411,189 +209,19 @@ curl -X POST \
 
 #### Type Text
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "template",
-    "name": "template_name",
-    "category": "marketing",
-    "language": "en",
-    "is_conversation": false,
-    "number": "918736xxxxxx",
-    "payload": {
-        "header": {
-            "type": "text",
-            "payload": {
-                "text": "Header text"
-            },
-            "params": []
-        },
-        "body": {
-            "type": "text",
-            "payload": {
-                "text": "Any doubts please contact us"
-            },
-            "params": []
-        },
-        "footer": {
-            "type": "text",
-            "payload": {
-                "text": "Thank you!"
-            }
-        },
-        "choices": {
-            "type": "reply",
-            "reply": {
-                "type": "quick_reply",
-                "quick_reply1": "Yes",
-                "quick_reply2": "No"
-            }
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/templates/reply/text_type.json"
 
 #### Type Image
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "template",
-    "name": "template_name_test",
-    "category": "marketing",
-    "language": "en",
-    "is_conversation": false,
-    "number": "918736xxxxxx",
-    "payload": {
-        "header": {
-            "type": "image",
-            "payload": {
-                "url": "https://www.pakainfo.com/wp-content/uploads/2021/09/image-url-for-testing.jpg"
-            }
-        },
-        "body": {
-            "type": "text",
-            "payload": {
-                "text": "Any doubts please contact us"
-            },
-            "params": []
-        },
-        "footer": {
-            "type": "text",
-            "payload": {
-                "text": "Thank you!"
-            }
-        },
-        "choices": {
-            "type": "reply",
-            "reply": {
-                "type": "quick_reply",
-                "quick_reply1": "Yes",
-                "quick_reply2": "No"
-            }
-        }
-    }
-}'
-
-```
+#code "{version}/_code/whatsapp/templates/reply/image_type.json"
 
 #### Type Video
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "template",
-    "name": "template_name",
-    "category": "marketing",
-    "language": "en",
-    "is_conversation": false,
-    "number": "918736xxxxxx",
-    "payload": {
-        "header": {
-            "type": "video",
-            "payload": {
-                "url": "https://www.buildquickbots.com/whatsapp/media/sample/video/sample01.mp4"
-            }
-        },
-        "body": {
-            "type": "text",
-            "payload": {
-                "text": "Any doubts please contact us"
-            },
-            "params": []
-        },
-        "footer": {
-            "type": "text",
-            "payload": {
-                "text": "Thank you!"
-            }
-        },
-        "choices": {
-            "type": "reply",
-            "reply": {
-                "type": "quick_reply",
-                "quick_reply1": "Yes",
-                "quick_reply2": "No"
-            }
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/templates/reply/video_type.json"
 
 #### Type Document
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "template",
-    "name": "template_name",
-    "category": "marketing",
-    "language": "en",
-    "is_conversation": false,
-    "number": "918736xxxxxx",
-    "payload": {
-        "header": {
-            "type": "document",
-            "payload": {
-                "url": "https://www.orimi.com/pdf-test.pdf"
-            }
-        },
-        "body": {
-            "type": "text",
-            "payload": {
-                "text": "Any doubts please contact us"
-            },
-            "params": []
-        },
-        "footer": {
-            "type": "text",
-            "payload": {
-                "text": "Thank you!"
-            }
-        },
-        "choices": {
-            "type": "reply",
-            "reply": {
-                "type": "quick_reply",
-                "quick_reply1": "Yes",
-                "quick_reply2": "No"
-            }
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/templates/reply/document_type.json"
 
 ### Example Response
 
@@ -634,40 +262,7 @@ curl -X POST \
 
 ### Example Request
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "template",
-    "name": "template_name",
-    "category": "authentication",
-    "language": "en",
-    "is_conversation": false,
-    "number": "918736xxxxxx",
-    "payload": {
-        "body": {
-            "type": "text",
-            "payload": {
-                "text": "@{{code}} is your verification code."
-            },
-            "params": [
-                "replacement_code"
-            ]
-        },
-        "choices": {
-            "type": "otp",
-            "otp": {
-                "otp_type": "copy_code",
-                "text": "Copy your Code"
-            },
-            "code_expire": "5",
-            "security": "true"
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/templates/copy_code.json"
 
 ### Example Response
 
@@ -703,26 +298,7 @@ curl -X POST \
 
 ### Example Request
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "text",
-    "name": "new_text",
-    "category": "marketing",
-    "language": "en",
-    "number": "91861xxxxxxxx",
-    "is_conversation" : true,
-    "payload": {
-        "type": "text",
-        "payload": {
-            "text": "This is a simple text message from whatsapp channel"
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/templates/create_text.json"
 
 ### Example Response
 
@@ -749,26 +325,7 @@ In body content message should be json format.
 
 ### Example Request
 
-```
-curl -X POST \
-  '{endpoint}whatsapp/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "json",
-    "name": "new_json",
-    "category": "marketing",
-    "language": "en",
-    "number": "91861xxxxxxxx",
-    "is_conversation" : false,
-    "payload": {
-        "type": "json",
-        "payload" : {
-            "text" : {"name" : "hlo"}
-        }
-    }
-}'
-```
+#code "{version}/_code/whatsapp/templates/create_json.json"
 
 ### Example Response
 

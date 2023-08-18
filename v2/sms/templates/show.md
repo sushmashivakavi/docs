@@ -11,12 +11,7 @@ View one template created under your account
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}sms/templates/b23769e6-019f-48f4-aae9-ec00a5xxxxxx' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/_code/sms/templates/view.json"
 
 Kindly replace the token with your respective access_token .
 

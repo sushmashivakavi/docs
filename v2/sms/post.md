@@ -44,18 +44,7 @@ Before you begin sending SMS messages through this API, we recommend testing you
 
 #### Example Request
 
-```
-curl -X POST '{endpoint}sms/send' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/json' \
-    -d '{
-     "sender":"TXTSMS",
-     "to":"917026267xxx",
-     "service":"MKT",
-     "message":"Your OTP is 123456"
-}'
-```
+#code "{version}/_code/sms/post.json"
 
 #### Example Response
 

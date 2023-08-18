@@ -1,0 +1,44 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "POST",
+	"header": [
+		{
+			"key": "Content-Type",
+			"value": "application/json"
+		},
+		{
+			"key": "Authorization",
+			"value": "Bearer {{api_key}}"
+		}
+	],
+	"body": {
+		"mode": "raw",
+		"raw": "{\r\n    \"bridge\": \"{{bridge_num}}\",\r\n    \"to\":\"{{receiver}}\",\r\n    \"text\": \"Hi## This is the text to speech using ##outgoing api\",\r\n    \"options\": {\r\n        \"language\": \"en-US\",\r\n        \"break\": {\r\n            \"identifier\": \"##\",\r\n            \"time\": 1\r\n        }\r\n    }\r\n}",
+		"options": {
+			"raw": {
+				"language": "json"
+			}
+		}
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/outgoing/tts",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"outgoing",
+			"tts"
+		]
+	},
+	"description": "## Parameters\n\n#### Request\n\n| Name | Type | | Description \n|---------|------|-----| ----------------\n| textToPlay | string |  Mandatory  | text which will be used to play to a destination number. You can add some pause by specifying a XML tag <break/> with attribute name 'time' |\n| breakInText  | object |  Optional  | definition of the break that you can add in the text to Play  |\n| >breakSeparator | string |  Optional | pattern of the break  |\n| >breakDuration | number |  Optional  | duration of the break time. breakDuration is mentioned in ms. By default, breakDuration is set to 250 (ms)  |\n| destNumber | number |  Mandatory  | phone number in E164 format on which the call will be placed in order to play the text  |\n| callingNumber | number |  Mandatory  | phone number in E164 format which will be used as calling party number  |\n| displayNumber | number |  Mandatory  | phone number in E164 format which will be used as displayed number, usually it is same as callingNumber  |\n| iteration| object |  Optional  | specification of the iteractions to be applied to the text to play  |\n| >iterationsNumber | number |  Optional  | number of iterations the text will be played. By default, iterationsNumber is set to 1   |\n| >iterationsBreak | string |  Optional  | break time between 2 iterations of the text. iterationsBreak is mentioned in ms. By default, iterationsBreak is set to 250 (ms)  |\n| voiceId| string |  Optional  |  id of the voice in which the text will be played, these Ids can be chosen from this list: Nicole, Kevin, Enrique, Tatyana, Russell, Olivia, Lotte, Geraint, Carmen, Mads, Penelope, Mia, Joanna, Matthew, Brian, Seoyeon, Ruben, Ricardo, Maxim, Lea, Giorgio, Carla, Naja, Maja, Astrid, Ivy, Kimberly, Chantal, Amy, Vicki, Marlene, Ewa, Conchita, Camila, Karl, Zeina, Miguel, Mathieu, Justin, Lucia, Jacek, Bianca, Takumi, Ines, Gwyneth, Cristiano, Mizuki, Celine, Zhiyu, Jan, Liv, Joey, Raveena, Filiz, Dora, Salli, Aditi, Vitoria, Emma, Lupe, Hans, Kendra. Default value: Joanna [for English language]|\n| voice | object |  Optional  | specification of the voice in which the text will be played. User can specify either voiceId or the language. |\n| > language  | string  |  Optional  | language in which the text will be played.  Possible values are English, French, German, Dutch, Spanish, Italian, Portuguese, Russian  |\n| > gender  | string  |  Optional  | gender of the voice in which the text will be played. Possible values are Female and Male  |\n| clientCorrelator  | string  |  Optional  | parameter with a unique value for each message you transmit. If you transmit a second API call with the same correlator, BICS will not call the recipient in case the first attempt succeeded. Correlators stay valid for 24 hours. It is used in case of a network issue occurs when you are sending a TTS API request and you don’t receive your http response. In this case you do not know whether the call was effectively sent. This is solved with this attribute clientCorrelator. |\n\n\n#### Response\n\n| Name | Type | Description \n|---------|------|----------------\n| message  | string | Response message from BICS platform contains the callID in case of call is triggered successfully towards network |\n| status   | string | Status of the request. ok or any error encountered |\n| callID   | string | Global unique ID which represents the individual call initiated by this API request |"
+}

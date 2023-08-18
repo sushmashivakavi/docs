@@ -1,0 +1,39 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "POST",
+	"header": [
+		{
+			"key": "Accept",
+			"value": "application/json"
+		}
+	],
+	"body": {
+		"mode": "raw",
+		"raw": "{\n    \"bridge\": \"{{bridge_num}}\",\n    \"to\": \"{{receiver}}\",\n    \"audio\": \"{{audio_Id}}\",\n    \"name\": \"obd_api_call\"\n}",
+		"options": {
+			"raw": {
+				"language": "json"
+			}
+		}
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/outgoing/send",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"outgoing",
+			"send"
+		]
+	}
+}

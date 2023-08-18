@@ -22,7 +22,8 @@ Replace the {id} with the actual id of the template that you would like to Edit.
 | is_english  | No      | Input the is_english (0, 1)
 
 #### Example Request
-#include "{version}/_samples/sms/templates/edit.md"
+
+#code "{version}/_code/sms/templates/edit.json"
 
 #### Example Response
 

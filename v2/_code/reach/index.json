@@ -1,0 +1,46 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "POST",
+	"header": [
+		{
+			"key": "Accept",
+			"value": "application/json",
+			"type": "text"
+		}
+	],
+	"body": {
+		"mode": "formdata",
+		"formdata": [
+			{
+				"key": "name",
+				"value": "name_of_sound_file",
+				"type": "text"
+			},
+			{
+				"key": "audio",
+				"type": "file",
+				"src": "/C:/Users/Acer/Downloads/0ac1f3a2-f3fc-4fab-8e73-a1015ff84c90.mp3"
+			}
+		]
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/voice/sounds",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"voice",
+			"sounds"
+		]
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "GET",
+	"header": [],
+	"url": {
+		"raw": "{{endpoint}}api/v2/voice/recordings?datetime[r.created_at]=Apr 01, 2021 - Apr 12, 2021",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"voice",
+			"recordings"
+		],
+		"query": [
+			{
+				"key": "datetime[r.created_at]",
+				"value": "Apr 01, 2021 - Apr 12, 2021"
+			}
+		]
+	},
+	"description": "\t\t"
+}

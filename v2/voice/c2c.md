@@ -28,11 +28,11 @@
 
 #### Example C2C Using to as Mobile Number
 
-#code "{version}/_code/sms/voice/c2c_as_mobile.json"
+#code "{version}/_code/voice/c2c_as_mobile.json"
 
 #### Example C2C Using to as Flow ID
 
-#code "{version}/_code/sms/voice/c2c_as_flowid.json"
+#code "{version}/_code/voice/c2c_as_flowid.json"
 
 #### Example Response
 

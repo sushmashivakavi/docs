@@ -73,24 +73,7 @@ meta      | This block contains all the optional parameters                     
 
 #### Example Request
 
-```
-  curl -X POST \
-    '{endpoint}rcs/send/template' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'content-type: application/json' \
-    -d '{
-      "alias": "template-name",
-      "recipient": {
-        "to": ["9189195xxxx","9189196xxxx"]
-      },
-      "data" : {
-        "name" : "Demo",
-        "email" : "Demo@gmail.com",
-        "phone" : "8123xxxxxxx"
-      }
-    }'
-```
+#code "{version}/_code/rcs/send_template.json"
 
 #### Example Response
 

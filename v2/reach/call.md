@@ -27,53 +27,19 @@
 
 ## Example Request Using Audio File ID
 
-```
-curl -X POST '{endpoint}outgoing/send' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/json' \
-    -d '{
-    "bridge":"91806828XXXX",
-    "to":"918867135XXXX",
-    "audio":"39888925-718e-43bb-a8b1-d4a3XXXXX",
-    "name":"obd_api_call"
-}'
-```
+#code "{version}/_code/reach/call/with_audio_id.json"
 
 - Here `39888925-718e-43bb-a8b1-d4a3XXXXX` is the sound file id uploaded in Reach > Sounds Section.
 
 ## Example Request Using IVR Journey ID
 
-```
-curl -X POST '{endpoint}outgoing/send' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/json' \
-    -d '{
-    "bridge":"91806828XXXX",
-    "to":"918867135XXXX",
-    "flow_id":"23",
-    "name":"obd_api_call"
-}'
-```
+#code "{version}/_code/reach/call/with_ivr_id.json"
 
 - Here `flow_id` `23` is the ivr Jouney Id created in Engage > Studio Section
 
 ## Example of IVR Journey ID and variables
 
-```
-curl -X POST '{endpoint}outgoing/send' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/json' \
-    -d '{
-    "bridge":"91806828XXXX",
-    "to":"918867135XXXX",
-    "flow_id":"24",
-    "variables[Name]":"YourName",
-    "variables[otp]":"123456"
-}'
-```
+#code "{version}/_code/reach/call/with_ivr_and_variables.json"
 
 - Here `flow_id` `24` is the Ivr Journey ID created in Engage > Studio Section
 
@@ -85,18 +51,7 @@ curl -X POST '{endpoint}outgoing/send' \
 
 ## Example of Custom Audio File Location
 
-```
-curl -X POST '{endpoint}outgoing/send' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/json' \
-    -d '{
-    "bridge":"91806828XXXX",
-    "to":"918867135XXXX",
-    "audio":"http://youraudiofilelocation.mp3",
-    "name":"obd_api_call"
-}'
-```
+#code "{version}/_code/reach/call/with_audio_file_location.json"
 
 - Here `audio` parameter accepts publicly accessable audio file location and must start with either `http` or `https`.
 

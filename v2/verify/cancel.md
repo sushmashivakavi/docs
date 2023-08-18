@@ -17,7 +17,7 @@ Deletes an existing Verify request. You only need to supply the unique id that w
 
 #### Example Request
 
-#code "{version}/_code/sms/verify/cancel.json"
+#code "{version}/_code/verify/cancel.json"
 
 #### Example Response
 

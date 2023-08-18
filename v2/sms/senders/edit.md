@@ -19,7 +19,9 @@ Edit sender-ids using put method under your account
 | service      | No       | The short code of the service name. ex: (MKT) [full list](/docs/{version}/#content-products) |
 
 #### Example Request
-#include "{version}/_samples/sms/senders/edit.md"
+
+#code "{version}/_code/sms/senders/edit.json"
+
 #### Example Response
 
 ```json
