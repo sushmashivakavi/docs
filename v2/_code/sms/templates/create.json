@@ -13,7 +13,7 @@
   "header": [],
   "body": {
     "mode": "raw",
-    "raw": "{\n    \"type\": \"template\",\n    \"name\": \"new_template\",\n    \"category\": \"Marketing\",\n    \"language\": \"en\",\n    \"number\": \"{{from}}\",\n    \"payload\": {\n        \"type\": \"text\",\n        \"payload\": {\n            \"text\": \"Hello @{{var}}, This is a simple text message from whatsapp channel\",\n            \"body_params\": [\"user\"]\n        }\n    }\n}",
+    "raw": "{\n    \"sender\": \"{{sender_name}}\",\n    \"name\": \"temp\",\n    \"body\": \"This is verification{{1}} and {{2}}\",\n    \"template_id\": \"1234567\",\n    \"type\": \"ENT\"\n}",
     "options": {
       "raw": {
         "language": "json"
@@ -21,8 +21,14 @@
     }
   },
   "url": {
-    "raw": "{{endpoint}}api/v2/whatsapp/templates",
-    "host": ["{{endpoint}}api"],
-    "path": ["v2", "whatsapp", "templates"]
+    "raw": "{{endpoint}}api/v2/sms/templates",
+    "host": [
+      "{{endpoint}}api"
+    ],
+    "path": [
+      "v2",
+      "sms",
+      "templates"
+    ]
   }
 }
