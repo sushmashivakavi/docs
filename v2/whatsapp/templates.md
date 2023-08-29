@@ -149,12 +149,12 @@ Kindly replace the token with your respective access_token and other params.
 | is_conversation                     | No       | if `true`, approval not required from Meta                                                          |
 | number                              | No       | business number Ex:(91861xxxxxxxx)                                                                  |
 | payload.header.type                 | No       | `text`, `image`, `video` and `document`                                                             |
-| payload.header.payload.text         | yes      | The header content, header contain only one variable incase type is `text`.                         |
+| payload.header.payload.text         | yes      | The header content, header contain only one variable incase type is `text`. (It accepts only `60 chars`.)                        |
 | payload.header.params               | yes      | if type is `text`, support only one variable replacement.                                           |
 | payload.header.payload.url          | No       | if header types `image`, `video` or `document`, link url                                            |
 | payload.body                        | No       | Body content is mandatory                                                                           |
 | payload.body.type                   | No       | `text`                                                                                              |
-| payload.body.payload.text           | No       | The body content, body contains multiple variables (one variable is required if category `utility`) |
+| payload.body.payload.text           | No       | The body content, body contains multiple variables (one variable is required if category `utility`) (It accepts only `1024 chars`.) |
 | payload.body.params                 | No       | if body content has variables provide the values for each variable                                  |
 | payload.footer                      | Yes      | Footer is optional                                                                                  |
 | payload.footer.type                 | Yes      | `text`                                                                                              |
