@@ -146,7 +146,7 @@ Kindly replace the token with your respective access_token and other params.
 | type        | formats                                            | limits                 |
 | ----------- | -------------------------------------------------- | ---------------------- |
 | file        | .doc, .docx, .rtf, .dot, .dotx, .odt ,odf, .fodt, .txt, .info, .pdf,.xps, .pdax, .eps, .xls, .xlsx, .ods, .fods, .csv, .xlsm, .xltx    | Max 200 MB             |
-| image       | .jpg, .jpeg, .png, .bmp, .gif, .svg, .webp         | No limit (gif - 24MB)  |
+| image       | .jpg, .jpeg, .png, .bmp, .gif, .svg, .webp .(recommended size 800x800) | No limit (gif - 24MB)  |
 | video       | .3gp, .m4v, .mov, .mp4                   | 200MB (duration max 600 seconds) |
 
 #### PARAMETERS
@@ -327,7 +327,7 @@ curl -X POST \
 | name        | created template name (can not be changed)         | `string`              | Yes      |
 | category    | template category (can be changed)                 | `string`              | Yes      |
 | message     | message payload (can be changed)                   | `object`              | Yes      |
-| type        | `text`, `interactive`, `video` etc.. | `string`              | Yes      |
+| type        | `text`, `interactive`, `video` etc. | `string`              | Yes      |
 
 ### Example Request
 
@@ -376,6 +376,3 @@ Replace the {id} with the actual id of the template that you would like to delet
   "data": []
 }
 ```
-
-
-
