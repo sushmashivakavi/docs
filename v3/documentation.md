@@ -102,6 +102,15 @@
   - [Visits](/docs/v2/link/visits)
   - [Webhook](/docs/v2/link/webhook)
 
+- [Viber](#)
+
+  - [Introduction](/docs/v2/viber)
+  - [Send Notification](/docs/v2/viber/send-message)
+  - [Status Info](/docs/v2/viber/status)
+  - [Webhook](/docs/v2/viber/webhooks)
+  - [Pull DLR](/docs/v2/whatsapp/pull-status)
+  - [Optout](/docs/v2/viber/optout)
+  - [Pricing List](/docs/v2/viber/pricing)
 <!--
 - Number Lookup
 

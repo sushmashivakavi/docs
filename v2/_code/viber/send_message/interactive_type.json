@@ -1,0 +1,35 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"viber\",\n            \"from\": \"{{from}}\",\n            \"meta\": {\n                \"category\": \"promotional\"\n            }\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \"{{receiver}}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"interactive\",\n        \"payload\": {\n            \"header\": {\n                \"type\": \"image\",\n                \"payload\": {\n                    \"url\": \"https://www.gstatic.com/webp/gallery/4.sm.jpg\"\n                    }\n                }\n                \n            ]\n        }\n    }\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/viber/message/send",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "viber",
+            "message",
+            "send"
+        ]
+    }
+}
