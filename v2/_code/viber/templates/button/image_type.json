@@ -1,34 +1,32 @@
 {
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "{{access_token}}",
-				"type": "string"
-			}
-		]
-	},
-	"method": "POST",
-	"header": [],
-	"body": {
-		"mode": "raw",
-		"raw": "{\n    \"name\": \"template_name\",\n    \"category\": \"promotional\",\n    \"message\": {\n        \"type\": \"interactive\",\n        \"payload\": {\n            \"header\": {\n                \"type\": \"image\",\n                \"payload\": {\n                    \"url\": \"https://www.gstatic.com/webp/gallery/4.sm.jpg\"\n                }\n            },\n            \"body\": {\n                \"type\": \"text\",\n                \"payload\": {\n                    \"text\": \"Welcome to viber service\"\n                }\n            },\n            \"choices\": [\n                {\n                    \"type\": \"button\",\n                    \"payload\": {\n                        \"title\": \"click here\",\n                        \"url\": \"www.viber.com\"\n                    }\n                }\n            ]\n        }\n    }\n}",
-		"options": {
-			"raw": {
-				"language": "json"
-			}
-		}
-	},
-	"url": {
-		"raw": "{{endpoint}}api/v2/viber/templates",
-		"host": [
-			"{{endpoint}}api"
-		],
-		"path": [
-			"v2",
-			"viber",
-			"templates"
-		]
-	}
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{ access_token }}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"name\": \"template_name\",\n    \"category\": \"promotional\",\n    \"message\": {\n        \"type\": \"interactive\",\n        \"payload\": {\n            \"header\": {\n                \"type\": \"image\",\n                \"payload\": {\n                    \"url\": \"https://www.gstatic.com/webp/gallery/4.sm.jpg\"\n                }\n            },\n            \"body\": {\n                \"type\": \"text\",\n                \"payload\": {\n                    \"text\": \"Welcome to viber service\"\n                }\n            },\n            \"choices\": [\n                {\n                    \"type\": \"button\",\n                    \"payload\": {\n                        \"title\": \"click here\",\n                        \"url\": \"www.viber.com\"\n                    }\n                }\n            ]\n        }\n    }\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{ endpoint }}api/v2/viber/templates",
+        "host": ["{{ endpoint }}api"],
+        "path": [
+            "v2",
+            "viber",
+            "templates"
+        ]
+    }
 }

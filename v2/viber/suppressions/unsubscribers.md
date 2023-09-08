@@ -29,7 +29,7 @@ Kindly replace the token with your respective access_token and other params.
     "message": "Unsubscribers list",
     "data": [
         {
-            "id": "0e3fdaad-2b46-4dcf-8b14-xxxxxxxxxxxx",
+            "id": "1",
             "iso": "IN",
             "receiver": "9198xxxxxxxx",
             "type": "xxxxxxx",
@@ -117,7 +117,7 @@ curl -X POST\
   "code": 200,
   "message": "Receiver added successfully",
   "data": {
-    "id": "848c22a0-6969-455a-b5dc-4b119016b55b",
+    "id": "1XXX",
     "iso": "IN",
     "receiver": "9198xxxxxxxx",
     "type": "tag",
@@ -172,7 +172,7 @@ curl -X PUT \
   "code": 200,
   "message": "Receiver update successfully",
   "data": {
-    "id": "848c22a0-6969-455a-b5dc-4b119016b55b",
+    "id": "1XXX",
     "iso": "IN",
     "receiver": "9198xxxxxxxx",
     "type": "tag",
@@ -212,7 +212,7 @@ Kindly replace the token with your respective access_token .
   "code": 200,
   "message": "Unsubscribers data",
   "data": {
-    "id": "0e3fdaad-2b46-4dcf-8b14-xxxxxxxxxxxx",
+    "id": "1XX",
     "iso": "IN",
     "receiver": "9198xxxxxxxx",
     "type": "xxxxxxx",

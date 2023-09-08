@@ -19,21 +19,26 @@
 `Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
 
 
-```
+```json
 {
-	"channels": [{
-		"name": "viber",
-		"from": "700969ca-0cb2-11ec-a2cxxxx", //Account ID
-        "meta" : {
-			"category":"category",
-            "foreign_id":"your-custom-id",
-            "ttl":60
-        }
-	}]
+  "channels": [
+      {
+          "name": "viber",
+          "from": "700969ca-0cb2-11ec-a2cxxxx", //Account ID
+          "meta": {
+              "category": "category",
+              "foreign_id": "your-custom-id",
+              "ttl": 60
+          }
+      }
+  ],
 	"recipient": {
-		"group_id": "{segment_id}",
-		"to": ["91XXXXXX", "91XXXXXX"]
-	}
+        "group_id": "{segment_id}",
+        "to": [
+            "91XXXXXX",
+            "91XXXXXX"
+        ]
+  }
 }
 ```
 

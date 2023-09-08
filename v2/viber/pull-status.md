@@ -18,9 +18,11 @@ you can pass any of the above params to get the dlr response.
 
 #### Example Request
 
-```shell
+```
 curl -X GET \
-  '{endpoint}viber/message/status?access_token=209eccd40e45b21xxxx&id=cdf829fd-5148-44bb-8433-xxxxx'
+  '{endpoint}/api/v2/viber/message/status?id=32ab6aef-bd93-4842-9213-a94cbXXXXXXX' \
+    --H 'Accept: application/json' \
+    --H 'Authorization: Bearer f53205d8f8887eda78274b2aXXXXXXXX'
 ```
 
 #### Example Response
@@ -33,8 +35,8 @@ curl -X GET \
         {
             "id": "cdf829fd-5148-44bb-8433-xxxxx",
             "channel": "viber",
-            "from": "919019121XXXX",
-            "to": "918867135684",
+            "from": "fcd50045-46f3-11ee-b0b3-0050569fb961",
+            "to": "9188XXXXXXXX",
             "credits": "1.0000",
             "created_at": "2021-09-07T00:07:50.000000Z",
             "foreign_id": "MsT356dI2hRzm9fTdBJeodbw",

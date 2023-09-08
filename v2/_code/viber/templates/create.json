@@ -4,7 +4,7 @@
         "bearer": [
             {
                 "key": "token",
-                "value": "{{access_token}}",
+                "value": "{{ access_token }}",
                 "type": "string"
             }
         ]
@@ -13,7 +13,7 @@
     "header": [],
     "body": {
         "mode": "raw",
-        "raw": "{\n    \"name\": \"template_name\",\n    \"category\": \"template\",\n    \"message\": {\n        \"type\": \"text\",\n        \"payload\": {\n            \"text\": \"Welcome to {{var}} service\"\n        }\n    }\n}",
+        "raw": "{\n    \"name\": \"template_name\",\n    \"category\": \"template\",\n    \"message\": {\n        \"type\": \"text\",\n        \"payload\": {\n            \"text\": \"Welcome to  {{ var }}service\"\n        }\n    }\n}",
         "options": {
             "raw": {
                 "language": "json"
@@ -21,10 +21,8 @@
         }
     },
     "url": {
-        "raw": "{{endpoint}}api/v2/viber/templates",
-        "host": [
-            "{{endpoint}}api"
-        ],
+        "raw": "{{ endpoint }}api/v2/viber/templates",
+        "host": ["{{ endpoint }}api"],
         "path": [
             "v2",
             "viber",

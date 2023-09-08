@@ -4,7 +4,7 @@
         "bearer": [
             {
                 "key": "token",
-                "value": "{{access_token}}",
+                "value": "{{ access_token }}",
                 "type": "string"
             }
         ]
@@ -14,8 +14,7 @@
         {
             "key": "Content-Type",
             "value": "application/json"
-        },
-        {
+        }, {
             "key": "Accept",
             "value": "application/json",
             "type": "text"
@@ -23,13 +22,11 @@
     ],
     "body": {
         "mode": "raw",
-        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"viber\",\n            \"from\": \"{{from}}\",\n            \"meta\": {\n                \"category\": \"promotional\"\n            }\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \"{{receiver}}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"video\",\n        \"payload\": {\n            \"url\": \"https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4\",\n            \"thumbnail\": \"https://videoUrlAddress.com/thumbnail.jpg\"\n        }\n    }\n}"
+        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"viber\",\n            \"from\": \" {{ from }}\",\n            \"meta\": {\n                \"category\": \"promotional\"\n            }\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \" {{ receiver }}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"video\",\n        \"payload\": {\n            \"url\": \"https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4\",\n            \"thumbnail\": \"https://videoUrlAddress.com/thumbnail.jpg\"\n        }\n    }\n}"
     },
     "url": {
-        "raw": "{{endpoint}}api/v2/viber/message/send",
-        "host": [
-            "{{endpoint}}api"
-        ],
+        "raw": "{{ endpoint }}api/v2/viber/message/send",
+        "host": ["{{ endpoint }}api"],
         "path": [
             "v2",
             "viber",
