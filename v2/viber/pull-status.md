@@ -1,0 +1,49 @@
+# PULL DELIVERY STATUS
+#include "_include/endpoint.md"
+
+#### GET
+
+```
+{endpoint}viber/message/status?id=cdf829fd-5148-44bb-8433-xxxxx
+```
+
+#### ACCEPTED PARAMETERS
+
+| Name     | Descriptions                         |
+| -------- | ------------------------------------ |
+| id       | Message Id we have given in response |
+| mobile   | Mobile number with country code      |
+
+you can pass any of the above params to get the dlr response.
+
+#### Example Request
+
+```
+curl -X GET \
+  '{endpoint}/api/v2/viber/message/status?id=32ab6aef-bd93-4842-9213-a94cbXXXXXXX' \
+    --H 'Accept: application/json' \
+    --H 'Authorization: Bearer f53205d8f8887eda78274b2aXXXXXXXX'
+```
+
+#### Example Response
+
+```json
+{
+    "status": "200",
+    "message": "OK",
+    "data": [
+        {
+            "id": "cdf829fd-5148-44bb-8433-xxxxx",
+            "channel": "viber",
+            "from": "fcd50045-46f3-11ee-b0b3-0050569fb961",
+            "to": "9188XXXXXXXX",
+            "credits": "1.0000",
+            "created_at": "2021-09-07T00:07:50.000000Z",
+            "foreign_id": "MsT356dI2hRzm9fTdBJeodbw",
+            "status": "delivered",
+            "delivered_at": "2021-09-07 11:07:55",
+            "read_at": "2021-09-07T05:37:58.000000Z"
+        }
+    ]
+}
+```
