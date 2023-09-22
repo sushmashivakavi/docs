@@ -1,0 +1,31 @@
+{
+	"method": "POST",
+	"header": [],
+	"body": {
+		"mode": "formdata",
+		"formdata": [
+			{
+				"key": "file",
+				"type": "file",
+				"src": "/C:/Users/Pavithra/Downloads/subsribe20Th.xlsx"
+			},
+			{
+				"key": "replace_tags",
+				"value": "",
+				"type": "text"
+			}
+		]
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/contacts/import/subscribers",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"contacts",
+			"import",
+			"subscribers"
+		]
+	}
+}

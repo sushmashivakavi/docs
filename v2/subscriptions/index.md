@@ -11,12 +11,7 @@ View all Subscriptions created under your account
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}developer/subscriptions' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/_code/developers/subscriptions/index.json"
 
 Kindly replace the token with your respective access_token.
 
@@ -95,23 +90,13 @@ Create a Subscription using post method under your account
 
 | Name       | optional | Descriptions                          |
 | ---------- | -------- | ------------------------------------- |
-| event      | No       | Type of the event you subscribe to. [[All events]](/docs/{version}/subscriptions/events)   |
+| event      | No       | Type of the event you subscribe to. [[All events]](/docs/{version}/event)   |
 | identity   | No       | How should identity the event source. |
 | webhook_id | No       | Your Webhook Id created earlier. |
 
 #### Example Request
 
-```
-  curl -X POST \
-  {endpoint}developer/webhook/create \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxxx' \
-  --data-raw '{
-        "event": "vmn:message:in",
-        "identity" : "all",
-        "webhook_id" : "dd4b91af-167d-48e6-901d-ae181ff6e80d"
-    }'
-```
+#code "{version}/_code/developers/subscriptions/create.json"
 
 #### Example Response
 
@@ -146,11 +131,7 @@ Replace the :id with the actual id of the webhook that you would like to see.
 
 #### Example Request
 
-```
-curl -X GET \
-  {endpoint}developer/subscriptions/b7e42a8e-b6df-4a5e-ac42-xxxxxxxxxxxx \
-  -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxx' \
-```
+#code "{version}/_code/developers/subscriptions/show.json"
 
 #### Example Response
 
@@ -180,11 +161,7 @@ Replace the :id with the actual id of the webhook that you would like to delete.
 
 #### Example Request
 
-```
-curl -X DELETE \
-  {endpoint}developer/subscriptions/b7e42a8e-b6df-4a5e-ac42-xxxxxxxxxxxx \
-  -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxx' \
-```
+#code "{version}/_code/developers/subscriptions/delete.json"
 
 #### Example Response
 

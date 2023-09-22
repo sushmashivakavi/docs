@@ -1,0 +1,15 @@
+{
+    "method": "GET",
+    "header": [],
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/segments",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            "segments"
+        ]
+    }
+}

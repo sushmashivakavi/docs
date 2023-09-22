@@ -16,7 +16,8 @@ View all templates created under your account
 | filter[name] | Yes      | Name of the template. |
 
 #### Example Request
-#include "{version}/_samples/sms/templates/index.md"
+
+#code "{version}/_code/sms/templates/list.json"
 
 #### Example Response
 

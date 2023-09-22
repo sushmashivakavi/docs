@@ -1,0 +1,31 @@
+{
+    "method": "GET",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"email\": \"\",\r\n    \"phone\": \"+919000000006\",\r\n    \"first_name\": \"neha\",\r\n    \"middle_name\": \"kiran\",\r\n    \"last_name\": \"arya\",\r\n    \"tags\": [\r\n        \"tag4\"\r\n    ]\r\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/tags/:id",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            "tags",
+            ":id"
+        ],
+        "variable": [
+            {
+                "key": "id",
+                "value": "{{tag_id}}"
+            }
+        ]
+    }
+}

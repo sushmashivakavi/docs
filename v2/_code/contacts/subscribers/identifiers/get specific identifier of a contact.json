@@ -1,0 +1,36 @@
+{
+    "method": "GET",
+    "header": [
+        {
+            "key": "Authorization",
+            "value": "AccessKey {{messgebird_token}}"
+        },
+        {
+            "key": "Content-Type",
+            "value": "application/json; charset=utf-8"
+        }
+    ],
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/:id/identifiers/:iId",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            ":id",
+            "identifiers",
+            ":iId"
+        ],
+        "variable": [
+            {
+                "key": "id",
+                "value": "{{contact_id}}"
+            },
+            {
+                "key": "iId",
+                "value": "{{identifier_id}}"
+            }
+        ]
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "method": "PUT",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"email\" : \"madhu1234@gmail\",\r\n    \"phone\" : \"+919998887709\",\r\n    \"first_name\": \"madhu\",\r\n    \"middle_name\": \"\",\r\n    \"last_name\": \"B S\",\r\n    \"company\" : \"\",\r\n    \"attributes\" : {\r\n        \"pin\" : \"\"\r\n    },\r\n    \"tags\": [\r\n        \"\",\"\"\r\n    ]\r\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/:id",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            ":id"
+        ],
+        "variable": [
+            {
+                "key": "id",
+                "value": "{{contact_id}}"
+            }
+        ]
+    }
+}

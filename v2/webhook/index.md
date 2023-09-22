@@ -17,12 +17,7 @@ View all Webhooks created under your account
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}developer/webhooks' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/_code/developers/webhook/view.json"
 
 Kindly replace the token with your respective access_token.
 
@@ -103,20 +98,7 @@ Create a Webhook using post method under your account
 
 #### Example Request
 
-```
-  curl -X POST \
-  {endpoint}developer/webhook/create \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxxx' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "name": "name of webhook",
-    "uri": "https://www.example.com",
-    "secret"= xxxxx,
-    "token"= xxxxx,
-    "status"= 1
-}'
-```
+#code "{version}/_code/developers/webhook/create.json"
 
 #### Example Response
 
@@ -160,17 +142,7 @@ Edit a Webhook using put method under your account
 
 #### Example Request
 
-```
-curl -X PUT \
-  {endpoint}developer/webhooks/93af9991-f1cc-4b36-abd5-xxxxxx \
-  -H 'Accept: application/json' \
-  -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "name": "name of webhook",
-    "uri": "https://www.example.com",
-}'
-```
+#code "{version}/_code/developers/webhook/update.json"
 
 #### Example Response
 
@@ -207,11 +179,7 @@ Replace the {id} with the actual id of the webhook that you would like to see.
 
 #### Example Request
 
-```
-curl -X GET \
-  {endpoint}developer/webhooks/b7e42a8e-b6df-4a5e-ac42-xxxxxxxxxxxx \
-  -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxx' \
-```
+#code "{version}/_code/developers/webhook/show.json"
 
 #### Example Response
 
@@ -243,11 +211,7 @@ Replace the {id} with the actual id of the webhook that you would like to delete
 
 #### Example Request
 
-```
-curl -X DELETE \
-  {endpoint}developer/webhooks/b7e42a8e-b6df-4a5e-ac42-xxxxxxxxxxxx \
-  -H 'Authorization: Bearer 5b02112fb7xxxxxxxxxxxxxxx' \
-```
+#code "{version}/_code/developers/webhook/delete.json"
 
 #### Example Response
 

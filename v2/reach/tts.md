@@ -34,23 +34,7 @@ Using Text2Speech API we can trigger a call using text as input and that text wi
 
 ## Example Request Using Break Characters
 
-```
-curl -X POST '{endpoint}outgoing/tts' \
-    -H 'authorization: Bearer 46fd72850fXXXXXX' \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -d '{
-    "bridge": "9172007XXX",
-    "to": 918867XXXXXX,
-    "text": "Hi## This is the text to speech using ##outgoing api",
-    "options": {
-        "break": {
-            "identifier": "##",
-            "time": 1
-        }
-    }
-}'
-```
+#code "{version}/_code/reach/tts/with_breakin_text.json"
 
 #### Example Response
 
@@ -77,27 +61,7 @@ curl -X POST '{endpoint}outgoing/tts' \
 
 ## Example Request Using Voice options
 
-```
-curl -X POST '{endpoint}outgoing/tts' \
-    -H 'authorization: Bearer 46fd72850fXXXXXX' \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -d '{
-    "bridge": "9172007XXX",
-    "to": 918867XXXXXX,
-    "text": "Hi## This is the text to speech using ##outgoing api",
-    "options": {
-        "break": {
-            "identifier": "##",
-            "time": 1
-        },
-        "voice": {
-            "language": "german",
-            "gender":"male"
-        }
-    }
-}'
-```
+#code "{version}/_code/reach/tts/with_voice_id.json"
 
 #### Example Response
 
@@ -124,24 +88,7 @@ curl -X POST '{endpoint}outgoing/tts' \
 
 ## Example Request Using Iteration of text
 
-```
-curl -X POST '{endpoint}outgoing/tts' \
-    -H 'authorization: Bearer 46fd72850fXXXXXX' \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -d '{
-    "bridge": "9172007XXX",
-    "to": 918867XXXXXX,
-    "text": "Hi## This is the text to speech using ##outgoing api",
-    "options": {
-        "break": {
-            "identifier": "##",
-            "time": 1
-        },
-        "iteration_tries": 2
-    }
-}'
-```
+#code "{version}/_code/reach/tts/with_Iteration_text.json"
 
 #### Example Response
 

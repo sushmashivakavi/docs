@@ -72,6 +72,16 @@
   - [Optout](/docs/v2/whatsapp/optout)
   - [Pricing List](/docs/v2/whatsapp/pricing)
 
+- [Viber](#)
+
+  - [Introduction](/docs/v2/viber)
+  - [Send Notification](/docs/v2/viber/send-message)
+  - [Status Info](/docs/v2/viber/status)
+  - [Unsubscribers](/docs/{version}/viber/suppressions/unsubscribers)
+  - [Webhook](/docs/v2/viber/webhooks)
+  - [Pull DLR](/docs/v2/whatsapp/pull-status)
+  - [Pricing List](/docs/v2/viber/pricing)
+
 <!--
 - MIP
 

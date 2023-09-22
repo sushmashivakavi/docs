@@ -1,0 +1,23 @@
+{
+    "method": "GET",
+    "header": [],
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/segments/:id/subscribers",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            "segments",
+            ":id",
+            "subscribers"
+        ],
+        "variable": [
+            {
+                "key": "id",
+                "value": "{{segment_id}}"
+            }
+        ]
+    }
+}

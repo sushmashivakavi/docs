@@ -27,12 +27,7 @@ View all the Templates list.
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}rcs/templates' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/_code/rcs/templates/view.json"
 
 Kindly replace the token with your respective access_token and other params.
 
@@ -106,12 +101,7 @@ Show the Template list.
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}rcs/templates/2cf9e59f-d4f1-47ba-81d3-a288f31ca164' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/_code/rcs/templates/show.json"
 
 Kindly replace the template_id.
 
@@ -170,23 +160,7 @@ Kindly replace the template_id.
 
 ### Example Request
 
-```
-curl -X POST \
-  '{endpoint}rcs/templates' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "text",
-    "name": "text123",
-    "language": "en",
-    "category": "marketing",
-    "number": "91861xxxxxxx",
-    "is_conversation": 1,
-    "payload": {
-        "text" : "Hi, This is Rcs test message."
-    }
-}'
-```
+#code "{version}/_code/rcs/templates/create.json"
 
 ### Example Response
 
@@ -571,22 +545,7 @@ curl -X POST \
 
 ### Example Request
 
-```
-curl -X PUT \
-  '{endpoint}rcs/templates/3b58b499-e184-4cdf-9226-8ddae27e0821' \
-  -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "type": "text",
-    "name": "text123",
-    "language": "en",
-    "category": "marketing",
-    "number": "91861xxxxxxx",
-    "payload": {
-        "text" : "Hi, This is Rcs update test message."
-    }
-}'
-```
+#code "{version}/_code/rcs/templates/edit.json"
 
 ### Example Response
 
@@ -623,12 +582,7 @@ Replace the {id} with the actual id of the template that you would like to delet
 
 #### Example Request
 
-```
-curl -X DELETE \
-  {endpoint}rcs/templates/7d77d0ef-63df-4ffb-83d6-xxxxxxxx \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/_code/rcs/templates/delete.json"
 
 #### Example Response
 

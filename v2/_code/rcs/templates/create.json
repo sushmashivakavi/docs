@@ -1,0 +1,34 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"type\": \"text\",\n    \"name\": \"text_template\",\n    \"language\": \"en\",\n    \"category\": \"marketing\",\n    \"number\": \"{{rcs_agent_num}}\",\n    \"payload\": {\n        \"text\" : \"Hi, This is Rcs create template message.\"\n    }\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/rcs/templates",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "rcs",
+            "templates"
+        ]
+    }
+}

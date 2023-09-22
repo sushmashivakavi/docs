@@ -1,0 +1,23 @@
+{
+	"method": "DELETE",
+	"header": [],
+	"url": {
+		"raw": "{{endpoint}}api/v2/contacts/import/subscribers/:id",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"contacts",
+			"import",
+			"subscribers",
+			":id"
+		],
+		"variable": [
+			{
+				"key": "id",
+				"value": "{{import_sub_id}}"
+			}
+		]
+	}
+}

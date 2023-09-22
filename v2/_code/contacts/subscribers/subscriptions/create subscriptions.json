@@ -1,0 +1,41 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"subscriptions\": [\r\n        {\r\n            \"channel\": \"whatsapp\",\r\n            \"channel_id\" : \"whatsapp\",\r\n            \"identifier_id\": \"{{Em_identifier_id}}\"\r\n        },\r\n        {\r\n            \"channel\": \"whatsapp\",\r\n            \"channel_id\" : \"whatsapp\",\r\n            \"identifier_id\": \"{{identifier_id}}\"\r\n        }\r\n    ]\r\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/:cId/subscriptions",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            ":cId",
+            "subscriptions"
+        ],
+        "variable": [
+            {
+                "key": "cId",
+                "value": "{{contact_id}}"
+            }
+        ]
+    }
+}

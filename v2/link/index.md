@@ -13,12 +13,7 @@ View all smart links created under your account
 
 #### Example Request
 
-```
-curl -X GET \
-  '{endpoint}link/urls' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-```
+#code "{version}/_code/link/index.json"
 
 Kindly replace the token with your respective access_token and other params.
 

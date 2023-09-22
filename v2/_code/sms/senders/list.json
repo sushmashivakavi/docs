@@ -1,0 +1,29 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "GET",
+	"header": [],
+	"body": {
+		"mode": "formdata",
+		"formdata": []
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/sms/senders",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"sms",
+			"senders"
+		]
+	}
+}

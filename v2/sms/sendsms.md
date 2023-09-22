@@ -82,7 +82,7 @@ It will support only `POST` requests.
 
 #### Example Request With Text Message
 
-#include "{version}/_samples/sms/sendsms.md"
+#code "{version}/_code/sms/sendsms.json"
 
 #### PARAMETERS
 

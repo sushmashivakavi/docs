@@ -1,0 +1,39 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [
+        {
+            "key": "Accept",
+            "value": "application/json"
+        },
+        {
+            "key": "content-type",
+            "value": "application/json"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n      \"alias\": \"template-name\",\n      \"recipient\": {\n        \"to\": [\"{{receiver}}\",\"{{another_reciver}}\"]\n      },\n      \"data\" : {\n        \"name\" : \"Demo\",\n        \"email\" : \"Demo@gmail.com\",\n        \"phone\" : \"{{receiver}}\"\n      }\n    }"
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/rcs/send/template",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "rcs",
+            "send",
+            "template"
+        ]
+    }
+}

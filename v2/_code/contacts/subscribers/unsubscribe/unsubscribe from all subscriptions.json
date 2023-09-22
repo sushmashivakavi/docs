@@ -1,0 +1,31 @@
+{
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/:cId/unsubscribe",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            ":cId",
+            "unsubscribe"
+        ],
+        "variable": [
+            {
+                "key": "cId",
+                "value": "{{contact_id}}"
+            }
+        ]
+    }
+}

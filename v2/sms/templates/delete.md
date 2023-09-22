@@ -13,7 +13,7 @@ Replace the {id} with the actual id of the template that you would like to delet
 
 #### Example Request
 
-#include "{version}/_samples/sms/templates/delete.md"
+#code "{version}/_code/sms/templates/delete.json"
 
 #### Example Response
 

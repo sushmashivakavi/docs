@@ -1,0 +1,31 @@
+{
+    "method": "GET",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": ""
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts/:cid/subscriptions/:id",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts",
+            ":cid",
+            "subscriptions",
+            ":id"
+        ],
+        "variable": [
+            {
+                "key": "cid",
+                "value": "{{contact_id}}"
+            },
+            {
+                "key": "id",
+                "value": "{{Subscription_id}}"
+            }
+        ]
+    }
+}

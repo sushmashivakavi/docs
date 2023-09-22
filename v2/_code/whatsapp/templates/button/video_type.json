@@ -1,0 +1,34 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "POST",
+	"header": [],
+	"body": {
+		"mode": "raw",
+		"raw": "{\n    \"type\": \"template\",\n    \"name\": \"template_name\",\n    \"category\": \"marketing\",\n    \"language\": \"en\",\n    \"is_conversation\": false,\n    \"number\": \"918736xxxxxx\",\n    \"payload\": {\n        \"header\": {\n            \"type\": \"video\",\n            \"payload\": {\n                \"url\": \"https://www.example/sample/video/sample.mp4\"\n            }\n        },\n        \"body\": {\n            \"type\": \"text\",\n            \"payload\": {\n                \"text\": \"Any doubts please contact us\"\n            },\n            \"params\": []\n        },\n        \"footer\": {\n            \"type\": \"text\",\n            \"payload\": {\n                \"text\": \"Thank you!\"\n            }\n        },\n        \"choices\": {\n            \"type\": \"actions\",\n            \"actions\": [\n                {\n                    \"type\": \"phone_number\",\n                    \"phone_number_text\": \"Any queries call\",\n                    \"phone_number\": \"+918783xxxxxx\"\n                },\n                {\n                    \"type\": \"url\",\n                    \"website_url_type\": \"Static\",\n                    \"website_button_text\": \"More info visit\",\n                    \"website_url\": \"www.example.com\"\n                }\n            ]\n        }\n    }\n}",
+		"options": {
+			"raw": {
+				"language": "json"
+			}
+		}
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/whatsapp/templates",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"whatsapp",
+			"templates"
+		]
+	}
+}

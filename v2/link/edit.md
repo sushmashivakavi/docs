@@ -20,19 +20,7 @@ Convert long url into short and smart url.
 
 #### Example Request
 
-```
-curl -X POST \
-  '{endpoint}link/urls/{id}' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 5b02112fb7xxxxxxxxx'
-    -H 'Content-Type: application/json' \
-    -d '{
-      "long_url": "https://www.example.com",
-      "title": "testing",
-      "webhook_id": "5558",
-      "is_advanced": "1"
-}'
-```
+#code "{version}/_code/link/edit.json"
 
 #### Example Response
 

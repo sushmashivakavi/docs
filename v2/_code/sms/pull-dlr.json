@@ -1,0 +1,46 @@
+{
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"method": "GET",
+	"header": [
+		{
+			"key": "Accept",
+			"value": "application/json",
+			"type": "text"
+		}
+	],
+	"body": {
+		"mode": "formdata",
+		"formdata": []
+	},
+	"url": {
+		"raw": "{{endpoint}}api/v2/sms/status?mobile={{receiver}}&id={{message_id}}",
+		"host": [
+			"{{endpoint}}api"
+		],
+		"path": [
+			"v2",
+			"sms",
+			"status"
+		],
+		"query": [
+			{
+				"key": "mobile",
+				"value": "{{receiver}}"
+			},
+			{
+				"key": "id",
+				"value": "{{message_id}}",
+				"description": "Message Id will come here"
+			}
+		]
+	}
+}

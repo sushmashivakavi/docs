@@ -1,0 +1,46 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [
+        {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+        },
+        {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n\t\"channels\": [{\n\t\t\"name\": \"rcs\",\n\t\t\"from\": \"{{channel.rcs.from}}\"\n\t}],\n\t\"recipient\": {\n\t\t\"to\": \"{{receiver}}\"\n\t},\n\t\"message\": {\n        \"type\": \"card\",\n\t\t\"payload\": {\n\t\t\t\"title\": \"This is the card title Oct 20\",\n\t\t\t\"description\": \"Have you heard of BICS Cpass ?\",\n\t\t\t\"body\": {\n                \"type\": \"image\",\n                \"payload\": {\n                    \"url\": \"https://picsum.photos/id/237/200/300\",\n                    \"caption\": \"Do you know about BICS RCS Service?\",\n                    \"filename\": \"\",\n                    \"height\": \"TALL\"\n                }\n\t\t\t},\n            \"choices\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"reply\",\n\t\t\t\t\t\"payload\": {\n\t\t\t\t\t\t\"text\": \"Click Here For Yes\",\n\t\t\t\t\t\t\"id\": \"unique-id\",\n\t\t\t\t\t\t\"content\":\"yes\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"reply\",\n\t\t\t\t\t\"payload\": {\n\t\t\t\t\t\t\"text\": \"Click Here For No\",\n\t\t\t\t\t\t\"id\": \"unique-id\",\n\t\t\t\t\t\t\"content\":\"no\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/rcs/message/send",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "rcs",
+            "message",
+            "send"
+        ]
+    }
+}

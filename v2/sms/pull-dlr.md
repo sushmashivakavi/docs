@@ -23,10 +23,7 @@ you can pass any of the above params to get the dlr response.
 
 #### Example Request
 
-```shell
-curl -X GET \
-  '{endpoint}sms/status?id=469ea920-ccd1-xxxx&access_token=209eccd40e45b21xxxx'
-```
+#code "{version}/_code/sms/pull-dlr.json"
 
 #### Example Response
 

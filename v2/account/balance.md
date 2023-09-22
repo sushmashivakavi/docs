@@ -1,4 +1,5 @@
 # Check Account Balance
+
 #include "_include/endpoint.md"
 
 #### GET
@@ -11,11 +12,7 @@ You can get the account balance of each service using this api.
 
 #### Example Request
 
-```shell
-  curl -X GET \
-  "{endpoint}finance/balance" \
-  -H 'Authorization: Bearer 209eccd40ee3a2e14af7fe45b21xxx'
-```
+#code "{version}/_code/account/balance.json"
 
 #### Example Response
 

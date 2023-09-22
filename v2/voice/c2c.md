@@ -1,4 +1,5 @@
 # Click2Call/Number Masking
+
 #include "_include/endpoint.md"
 
 #### POST
@@ -27,35 +28,11 @@
 
 #### Example C2C Using to as Mobile Number
 
-```
-curl -X POST '{endpoint}voice/c2c' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/json' \
-    -d '{
-    "bridge":"91806828XXXX",
-    "from":"918867135XXXX",
-    "to":"91702626XXXX",
-    "webhook_id":"124555-78787-XXXXX",
-    "record":"1"
-}'
-```
+#code "{version}/_code/voice/c2c_as_mobile.json"
 
 #### Example C2C Using to as Flow ID
 
-```
-curl -X POST '{endpoint}voice/c2c' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
-    -H 'Content-Type: application/json' \
-    -d '{
-    "bridge":"91806828XXXX",
-    "from":"918867135XXXX",
-    "to":"flow:220",
-    "webhook_id":"124555-78787-XXXXX",
-    "record":"1"
-}'
-```
+#code "{version}/_code/voice/c2c_as_flowid.json"
 
 #### Example Response
 

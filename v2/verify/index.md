@@ -43,11 +43,12 @@ To initiate the verification process for a recipient, simply create a new Verify
       "wait": 60
     },
     {
-      "name": "tts",
+      "name": "voice",
       "from": "91806828XXX",
       "recipient": {
         "to": "9189195xxxx"
       },
+      "flow_id": "5876",
       "language": "en_US",
       "order": 2,
       "wait": 60

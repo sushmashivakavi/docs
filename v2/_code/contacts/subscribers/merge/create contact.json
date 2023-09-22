@@ -1,0 +1,23 @@
+{
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\r\n    \"identity\": \"Madhu\",\r\n    \"email\" : \"madhu@gmail.com\",\r\n    \"phone\": \"+919731935848\",\r\n    \"postal_code\" : \"547008\",\r\n    \"birth_date\" : \"1994-03-16\",\r\n    \"first_name\": \"madhu\",\r\n    \"middle_name\": \"\",\r\n    \"last_name\": \"BS\",\r\n    \"gender\" : \"Female\",\r\n    \"attributes\": {\r\n        \"membership\": \"platinum\",\r\n        \"status\": \"vip\",\r\n        \"customerNumber\": \"\"\r\n    },\r\n    \"tags\": [\"premium\"]\r\n    \r\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/contacts",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "contacts"
+        ]
+    }
+}
