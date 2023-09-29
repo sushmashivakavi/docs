@@ -34,8 +34,43 @@ To request delivery reports, include the `webhook_id` parameter and its correspo
 - The method used for sending the delivery report onto the client’s URL is `POST`.
 
 We try 3 times with interval of 30 minutes for failed requests. Continues failure requests will be ignored.
+# Compose Webhook
 
-#### Below Parameters can be used while creating a webhook
+For users seeking enhanced customization, compose webhook will help to receive the customized webhook payload to precisely match your preferences and requirements.
+
+# Compose
+- Navigate to the Webhooks section and click on the Compose Webhook.
+- Give the identification name.
+- To set up the Compose Webhook, you need to provide a callback URL. This URL is where the composed payload will be sent.
+- In the url you can pass the replaced variables.
+
+```
+  https://www.domain.com/ack/receive?id=@{{id}}&mobile=@{{mobile}}&status=@{{status}}  
+``` 
+```
+  https://www.domain.com/ack/receive?message_id=@{{id}}&mobile_number=@{{mobile}}&message_status=@{{status}}
+```
+- HTTP Method: Specify the HTTP method for the webhook request, such as GET, POST or PUT.
+- Headers: Define custom headers if needed, like Authorization headers or custom headers.
+- Body Format: Choose between JSON or FormData for the payload.
+- Upon creation, you will receive an `id` for the newly created Webhook.
+- To request delivery reports, include the `webhook_id` parameter and its corresponding value in your API Request. Once the request is made, you will receive the delivery report as you configured.
+- here keys you can give any name but value should be availebe in the below replaced variable.
+
+#### Example Compose Webhook Request
+```
+  curl -X POST \
+  https://www.domain.com/ack/receive?id=@{{id}} \
+  -H 'content-type: application/json' \
+  -H "Authorization: Bearer %token%", \
+  -d '{
+      "id": "@{{id}}",
+      "mobile": "@{{mobile}}",
+      "message_status": "@{{status}}",
+      "credits": "@{{credits}}",
+    }'
+``` 
+#### Below Replaced Parameters can be used while creating or composing a webhook
 
 | Name          | Description                                             |
 | ------------- | ------------------------------------------------------- |
