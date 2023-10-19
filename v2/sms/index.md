@@ -24,6 +24,7 @@ All phone numbers in the APIs use E.164 format. This means that numbers:
 
 - Omit both a leading `+` and the international access code such as `00`.
 - Contain no special characters, such as a space, `()` or `-`
+- Please provide the country code for the Philippines or set it as the default country on your profile for phone number validation on a campaign. 
 
 For example, a US number would have the format `14155550101`. A UK number would have the format `447700900123`.
 
