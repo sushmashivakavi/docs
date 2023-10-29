@@ -5,3 +5,5 @@ The "default country prefix" feature allows you to set a default country code fo
 It is particularly valuable for bulk campaigns, where users deal with a list of phone numbers from same country, as it saves time, reduces errors, and ensures effective communication.
 
 With our feature, you also have the flexibility to override the default country code when needed.
+
+Note : Please provide the country code for the Philippines or set it as the default country on your profile for phone number validation on a campaign.
