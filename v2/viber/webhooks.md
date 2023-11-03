@@ -56,16 +56,21 @@ If you wish to have your callbacks signed and have made the proper configuration
     "recipient": {
       "from": "919019120xxx",
       "user": {
-        "id": "unique-user-id",
+        "id": "unique-id",
+        "identifier_id": "unique-identifier-id",
+        "subscriber_id": "unique-subscriber-id",
+        "identity": "unique-user-identity",
         "username": "username",
         "first_name": "user first name",
+        "middle_name": "user middle name",
         "last_name": "user last name",
-        "email": null,
+        "email": "user email",
         "phone": "user phone number",
+        "attributes": "user attributes",
         "user_info": {
-          "picture": "url-of-profile-picture",
-          "gender": null,
-          "title": "user status or designation"
+          "picture": "null",
+          "gender": "user-gender",
+          "title": "null"
         }
       }
     },
@@ -95,16 +100,21 @@ If you wish to have your callbacks signed and have made the proper configuration
     "recipient": {
       "from": "919019120xxx",
       "user": {
-        "id": "unique-user-id",
+        "id": "unique-id",
+        "identifier_id": "unique-identifier-id",
+        "subscriber_id": "unique-subscriber-id",
+        "identity": "unique-user-identity",
         "username": "username",
         "first_name": "user first name",
+        "middle_name": "user middle name",
         "last_name": "user last name",
-        "email": null,
+        "email": "user email",
         "phone": "user phone number",
+        "attributes": "user attributes",
         "user_info": {
-          "picture": "url-of-profile-picture",
-          "gender": null,
-          "title": "user status or designation"
+          "picture": "null",
+          "gender": "user-gender",
+          "title": "null"
         }
       }
     },
