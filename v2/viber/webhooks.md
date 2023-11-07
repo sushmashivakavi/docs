@@ -1,8 +1,8 @@
 # Webhooks
 
-Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the WhatsApp Business API client sees the event, collects the data, and immediately sends a notification (HTTP request) to the Webhook URL specified in the application settings updating the status of sent messages or indicating when you receive a message.
+Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the Viber Business API client sees the event, collects the data, and immediately sends a notification (HTTP request) to the Webhook URL specified in the application settings updating the status of sent messages or indicating when you receive a message.
 
-> It is important that your Webhook returns an HTTPS 2xx OK response to notifications. Otherwise the WhatsApp Business API client considers that notification as failed and tries again after a delay.
+> It is important that your Webhook returns an HTTPS 2xx OK response to notifications. Otherwise the Viber Business API client considers that notification as failed and tries again after a delay.
 
 ## Retrying failed webhooks
 
@@ -24,11 +24,11 @@ If you wish to have your callbacks signed and have made the proper configuration
 
 ```json
 {
-  "event": "whatsapp:message:status",
+  "event": "viber:message:status",
   "payload": {
     "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
-    "channel": "whatsapp",
-    "from": "919019120xxx",
+    "channel": "viber",
+    "from": "700969ca-0cb2-11ec-a2cxxxx",
     "to": "9190199xxxxx",
     "status": "sent|delivered|read|failed|deleted",
     "delivered_at": "2021-06-18T14:48:06.886358Z",
@@ -44,17 +44,17 @@ If you wish to have your callbacks signed and have made the proper configuration
 
 ```json
 {
-  "event": "whatsapp:message:in",
+  "event": "viber:message:in",
   "payload": {
     "id": "our-message-id",
     "channels": [
       {
-        "name": "whatsapp",
-        "to": "919019120xxx"
+        "name": "viber",
+        "to": "700969ca-0cb2-11ec-a2cxxxx"
       }
     ],
     "recipient": {
-      "from": "91XXXXXX",
+      "from": "919019120xxx",
       "user": {
         "id": "unique-id",
         "identifier_id": "unique-identifier-id",
@@ -77,7 +77,7 @@ If you wish to have your callbacks signed and have made the proper configuration
     "message": {
       "type": "text",
       "payload": {
-        "text": "This is a simple text message from whatsapp channel"
+        "text": "This is a simple text message from viber channel"
       }
     }
   }
@@ -88,17 +88,17 @@ If you wish to have your callbacks signed and have made the proper configuration
 
 ```json
 {
-  "event": "whatsapp:message:in",
+  "event": "viber:message:in",
   "payload": {
     "id": "our-message-id",
     "channels": [
       {
-        "name": "whatsapp",
-        "to": "919019120xxx"
+        "name": "viber",
+        "to": "700969ca-0cb2-11ec-a2cxxxx"
       }
     ],
     "recipient": {
-      "from": "91XXXXXX",
+      "from": "919019120xxx",
       "user": {
         "id": "unique-id",
         "identifier_id": "unique-identifier-id",
@@ -122,17 +122,15 @@ If you wish to have your callbacks signed and have made the proper configuration
       "type": "image",
       "payload": {
         "url": "https://domin-name.com/your_image_path.png",
-        "caption": "some caption for image",
-        "filename": ""
       }
     }
   }
 }
 ```
-
 ## Compose Webhook
 
 For users seeking enhanced customization, compose webhook will help to receive the customized webhook payload to precisely match your preferences and requirements.
+
 ### Compose
 - Navigate to the Webhooks section and click on the Compose Webhook.
 - Give the identification name.
@@ -140,7 +138,7 @@ For users seeking enhanced customization, compose webhook will help to receive t
 - In the url you can pass the replaced variables.
 
 ```
-  https://www.domain.com/ack/receive?id=@{{id}}&mobile=@{{payload.mobile}}&status=@{{payload.status}}  
+  https://www.domain.com/ack/receive?id=@{{payload.id}}&mobile=@{{payload.mobile}}&status=@{{payload.status}}  
 ``` 
 ```
   https://www.domain.com/ack/receive?message_id=@{{payload.id}}&mobile_number=@{{payload.mobile}}&message_status=@{{payload.status}}
@@ -165,7 +163,7 @@ For users seeking enhanced customization, compose webhook will help to receive t
       "read_at": "@{{payload.read_at}}"
     }'
 ``` 
-#### Replaced variables can be used while creating or composing a webhook
+#### Replaced Parameters can be used while creating or composing a webhook
 
 | Name          | Description                                             |
 | ------------- | ------------------------------------------------------- |

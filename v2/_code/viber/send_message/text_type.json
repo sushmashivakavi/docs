@@ -1,0 +1,37 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{ access_token }}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        }, {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"viber\",\n            \"from\": \" {{ from }}\",\n            \"meta\": {\n                \"category\": \"transactional\"\n            }\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \" {{ receiver }}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"text\",\n        \"payload\": {\n            \"text\": \"Welcome to viber messaging!!\"\n        }\n    }\n}"
+    },
+    "url": {
+        "raw": "{{ endpoint }}api/v2/viber/message/send",
+        "host": ["{{ endpoint }}api"],
+        "path": [
+            "v2",
+            "viber",
+            "message",
+            "send"
+        ]
+    }
+}
