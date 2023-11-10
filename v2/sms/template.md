@@ -76,7 +76,7 @@ meta | This block contains all the optional parameters |
 
 #### Example Request
 
-#code "{version}/_code/messaging/templates/send_template.json"
+#code "{version}/_code/sms/send_template.json"
 
 #### Example Response
 
