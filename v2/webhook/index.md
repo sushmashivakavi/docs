@@ -201,7 +201,7 @@ Replace the {id} with the actual id of the webhook that you would like to see.
 }
 ```
 
-## DELETE
+## Delete Webhook
 
 ```
 {endpoint}developer/webhooks/{id}
