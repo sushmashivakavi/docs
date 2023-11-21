@@ -1,5 +1,28 @@
 # Viber Template
 
+Template messages are transactional messages sent by a service based on a predefined
+message structure. Currently templates are open to Russia, Ukraine and Belarus only.
+When a service sends messages in any country that supports templates, a transactional rate
+will be applied only when all of the following conditions are met:
+
+● The message is sent according to a structure that was approved by the Viber team for
+the specific service and the template is in active status. The template approval process is
+done via the Commercial Account Management Portal (CAMP).
+
+● One of the template message types — 301, 303 or 304 — is used in the message
+request.
+Sending with these types triggers a matching mechanism, which checks the message
+text to match a template out of the templates which were uploaded for the service ID.
+
+#### Template Matching
+
+Viber’s template matching process uses official regex libraries and follows official regex rules.
+There are a few exceptions that relate to the cleaning process, which we added to improve the
+template matching performance. In case of an exception, the algorithm will mark the template
+as invalid and won’t upload it to the system.
+
+**_NOTE:_** Templates for Belarus, Ukraine and Russia needs to be pre-approved by Viber
+
 ## API Endpoint
 
 ```
