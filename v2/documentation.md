@@ -45,6 +45,7 @@
 
   - [Gateway](/docs/{version}/sms/smpp)
   - [Error Codes](/docs/{version}/sms/smpp#content-delivery-reports)
+  - [Subscription](/docs/{version}/subscriptions#content-create-subscription-for-outbound-sms-messages)
 
 - [Whatsapp](#)
 
