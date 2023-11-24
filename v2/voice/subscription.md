@@ -1,4 +1,4 @@
-## Create Subscription for Outbound SMS Messages
+## Create Subscription for CDR Acknowledgements 
 
 Create a Subscription using post method under your account
 #include "_include/endpoint.md"
@@ -19,7 +19,7 @@ Create a Subscription using post method under your account
 
 #### Example Request
 
-#code "{version}/_code/developers/subscriptions/create_outbound_sms.json"
+#code "{version}/_code/voice/create_voice_subs.json"
 
 #### Example Response
 
@@ -30,7 +30,7 @@ Create a Subscription using post method under your account
   "message": "Subscription Saved Successfully",
   "data": {
     "id": 3,
-    "event": "sms:message:status",
+    "event": "voice:message:out",
     "identity": "all",
     "payload": [],
     "webhook_id": "dd4b91af-167d-48e6-901d-ae181ff6e80d",

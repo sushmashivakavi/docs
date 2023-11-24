@@ -1,0 +1,34 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n        \"event\": \"whatsapp:message:in\",\n        \"identity\" : \"all\",\n        \"webhook_id\" : \"{{webhook_Id}}\"\n}",
+        "options": {
+            "raw": {
+                "language": "json"
+            }
+        }
+    },
+    "url": {
+        "raw": "{{endpoint}}api/v2/developer/subscriptions",
+        "host": [
+            "{{endpoint}}api"
+        ],
+        "path": [
+            "v2",
+            "developer",
+            "subscriptions"
+        ]
+    }
+}
