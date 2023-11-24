@@ -15,7 +15,7 @@ Create a Subscription using post method under your account
 | ---------- | -------- | ------------------------------------- |
 | event      | Yes       | Type of the event you subscribe to. [[All events]](/docs/{version}/event)   |
 | identity   | Yes       | How should identity the event source. |
-| webhook_id | Yes       | Your Webhook Id created earlier. |
+| webhook_id | Yes       | Your Webhook Id created earlier. [[Create Webhook]](/docs/{version}/webhook#content-create-webhook) |
 
 #### Example Request
 

@@ -1,6 +1,6 @@
 # Webhooks
 
-Webhooks are customizable HTTP callbacks that are defined by the user and triggered by specific events. When the designated trigger event takes place, the RCS API client detects the event, gathers the relevant data, and promptly sends a notification (in the form of an HTTP request) to the Webhook URL specified in the application settings. This notification serves to update the status of sent messages or inform you when a new message is received.
+Webhooks are customizable HTTP callbacks that are defined by the user and triggered by specific events. When the designated trigger event takes place, the RCS API client detects the event, gathers the relevant data, and promptly sends a notification (in the form of an HTTP request) to the Webhook URL specified in the application settings. This notification serves to update the status of sent messages or inform you when a new message is received, [click here](/docs/{version}/webhook) to create webhook.
 
 > It is crucial to ensure that your Webhook returns an HTTPS 2xx OK response when receiving notifications. If the response is not received or does not meet the required criteria, the RCS API client interprets it as a failed notification and attempts to resend it after a certain delay.
 
