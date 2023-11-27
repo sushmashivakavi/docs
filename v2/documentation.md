@@ -45,6 +45,7 @@
 
   - [Gateway](/docs/{version}/sms/smpp)
   - [Error Codes](/docs/{version}/sms/smpp#content-delivery-reports)
+  - [Subscription](/docs/{version}/sms/subscription)
 
 - [Whatsapp](#)
 
@@ -58,6 +59,7 @@
   - [Pricing List](/docs/{version}/whatsapp/pricing)
   - [Templates](/docs/{version}/whatsapp/templates)
   - [Unsubscribers](/docs/{version}/whatsapp/suppressions/unsubscribers)
+  - [Subscription](/docs/{version}/whatsapp/subscription)
 
 - [RCS](#)
 
@@ -71,6 +73,7 @@
   - [Pricing List](/docs/{version}/rcs/pricing)
   - [Template](/docs/{version}/rcs/template)
   - [Unsubscribers](/docs/{version}/rcs/suppressions/unsubscribers)
+  - [Subscription](/docs/{version}/rcs/subscription)
 
 - [Engage (Voice)](#)
 
@@ -86,6 +89,7 @@
   - [Pricing List](/docs/{version}/voice/pricing)
   - [Unsubscribers](/docs/{version}/reach/suppressions/unsubscribers)
   - [VoiceId List](/docs/{version}/voice/voices)
+  - [Subscription](/docs/{version}/voice/subscription)
 
 - [Link](#)
 
