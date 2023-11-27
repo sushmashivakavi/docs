@@ -22,7 +22,7 @@
 | ---------- | ----------------------------------------------------------------------------- |
 | name       | name of the campaign                                                          |
 | interval   | Retry interval time Expected Values : 5, 15, 30, 45, 60 (Minutes) : Default 0 |
-| webhook_id | Id of the webhook created in webhook section [View Webhooks Page](/webhooks)  |
+| webhook_id | Id of the webhook created in webhook section [View Webhooks Page](/webhooks), Instead of passing webhook_id everytime in the payload, refer to [create subscription](/docs/{version}/subscriptions#content-create-subscription)  |
 | variables  | Array of the variables which can be used in flow                              |
 
 ## Example Request Using Audio File ID

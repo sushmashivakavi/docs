@@ -68,10 +68,8 @@ You can send template message using `POST` method content in body.
 
 | Name | Descriptions |
 | ---- | ------------ |
-
-|
-meta | This block contains all the optional parameters |
-| webhook_id | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator. [read more](/docs/{version}/sms/webhook) | |
+|meta | This block contains all the optional parameters |
+| webhook_id | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator [read more](/docs/{version}/sms/webhook), Instead of passing webhook_id everytime in the payload, refer to [create subscription](/docs/{version}/subscriptions#content-create-subscription) | |
 | foreign_id | Custom id for reference from customer.|
 
 #### Example Request
