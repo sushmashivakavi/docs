@@ -13,7 +13,7 @@
     "header": [],
     "body": {
         "mode": "raw",
-        "raw": "{\n        \"event\": \"sms:message:status\",\n        \"identity\" : \"all\",\n        \"webhook_id\" : \"180ebbb5-9b6f-4c51-a98a-**********\"\n}",
+        "raw": "{\n        \"event\": \"voice:message:out\",\n        \"identity\" : \"all\",\n        \"webhook_id\" : \"280ebbb5-9b6f-4c51-a98a-**********\"\n}",
         "options": {
             "raw": {
                 "language": "json"

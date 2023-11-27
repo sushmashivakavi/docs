@@ -1,6 +1,6 @@
 # Webhooks
 
-Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the WhatsApp Business API client sees the event, collects the data, and immediately sends a notification (HTTP request) to the Webhook URL specified in the application settings updating the status of sent messages or indicating when you receive a message.
+Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the WhatsApp Business API client sees the event, collects the data, and immediately sends a notification (HTTP request) to the Webhook URL specified in the application settings updating the status of sent messages or indicating when you receive a message, [click here](/docs/{version}/webhook) to create webhook.
 
 > It is important that your Webhook returns an HTTPS 2xx OK response to notifications. Otherwise the WhatsApp Business API client considers that notification as failed and tries again after a delay.
 

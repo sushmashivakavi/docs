@@ -80,6 +80,8 @@ Kindly replace the token with your respective access_token.
 Create a Subscription using post method under your account
 #include "_include/endpoint.md"
 
+> Before creating subscription, please make sure you have already created Webhook, refer to [Create Webhook](/docs/{version}/webhook#content-create-webhook)
+
 #### POST
 
 ```

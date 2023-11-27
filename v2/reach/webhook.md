@@ -4,7 +4,7 @@ The WEBHOOK Push API sends the report of the Click2Call to the client’s URL in
 
 To request such reports, you need to create webhook URL first in Webhooks section. Then pass that particular `webhook_id` you created earlier while making a call through API.
 
-We will send a `POST` with json format to your webhook URL with below parameters
+We will send a `POST` with json format to your webhook URL with below parameters, [click here](/docs/{version}/webhook) to create webhook.
 
 ## Example Webhook Url
 
