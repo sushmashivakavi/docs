@@ -152,7 +152,7 @@ For users seeking enhanced customization, compose webhook will help to receive t
 - To request delivery reports, include the `webhook_id` parameter and its corresponding value in your API Request. Once the request is made, you will receive the delivery report as you configured.
 - here keys you can give any name but value should be availebe in the below replaced variables `Ex: @{{payload.mobile}}`.
 
-### Example Compose Webhook Request
+### Compose Webhook Request
 ```
   curl -X POST \
   https://www.domain.com/ack/receive?id=@{{payload.id}} \
