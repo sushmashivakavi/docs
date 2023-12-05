@@ -60,7 +60,7 @@ You can send template message using `POST` method content in body.
 | --------- | ----------------------------------------------------------------------------------- |
 | alias     | alias of the registered template. (Required if `id` not present)                    |
 | id        | id of the registered template. (Required if `alias` not present)                    |
-| recipient | This block contains contacts informations                                           |
+| recipient | This block contains contacts information                                          |
 | group_id  | Segment id which contain list of phone numbers (Required if `to` param not present) |
 | to        | Receiver mobile numbers (Required if `group_id` param not present)                  |
 | data      | Variable values for replacing in template content                                   |
@@ -72,6 +72,7 @@ You can send template message using `POST` method content in body.
 |meta | This block contains all the optional parameters |
 | webhook_id | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator [read more](/docs/{version}/sms/webhook), Instead of passing webhook_id everytime in the payload, refer to [create subscription](/docs/{version}/subscriptions#content-create-subscription) | |
 | foreign_id | Custom id for reference from customer.|
+| tags | opt-out the message based on the tags.|
 
 #### Example Request
 
