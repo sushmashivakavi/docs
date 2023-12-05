@@ -71,6 +71,7 @@ You can send template message using `POST` method content in body.
 meta      | This block contains all the optional parameters                                                                                                                                             |
 | webhook_id | The `id` of the webhook created in Webhook Section for which the response to be sent after delivery report from operator [read more](/docs/{version}/rcs/webhooks), Instead of passing webhook_id everytime in the payload, refer to [create subscription](/docs/{version}/subscriptions#content-create-subscription) |                                                                                         |
 | foreign_id     | Custom id for reference from customer.|
+| tags | opt-out the message based on the tags.|
 
 #### Example Request
 
