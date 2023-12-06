@@ -26,7 +26,7 @@ Output Message:
 #### POST
 
 ```
-{endpoint}whatsapp/send/template
+{endpoint}viber/send/template
 ```
 
 You can send template message using `POST` method content in body.
@@ -41,11 +41,12 @@ You can send template message using `POST` method content in body.
         "to": ["91XXXXXX", "91XXXXXX"]
     },
     "data": {
-        "name": "MKT",
+        "name": "name",
         "email": "1234XXXXXXX",
         "message":"89XXXXXXXXXXX"
     },
     "meta": {
+        "from": "700969ca-0cb2-11ec-a2cxxxx",
         "webhook_id": "0798d163-7ca2-4mb6-8c16-c62866xxxxxxx",
         "tags": ["tag1", "tag2"]
     }
@@ -62,14 +63,14 @@ You can send template message using `POST` method content in body.
 | group_id    |	Segment id which contain list of phone numbers (Required if `to` param not present)                      |
 | to	        | Receiver mobile numbers (Required if `group_id` param not present)                                             |
 | data        | Variable values for replacing in template content                                                       |
+| meta        | This block contains commercial account/sender information                                                         |
+| from        | Commercial account/sender ID                                                       |
 
 #### OPTIONAL PARAMETERS
 
 | Name       | Descriptions                                                                                                                                                            |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-|
-meta      | This block contains all the optional parameters                                                                                                                                             |
-| webhook_id | The `id` of the webhook created in Webhook Section for which the response to be sent after delivery report from operator [read more](/docs/{version}/whatsapp/webhooks), Instead of passing webhook_id everytime in the payload, refer to [create subscription](/docs/{version}/subscriptions#content-create-subscription) |                                                                                         |
+| webhook_id | The `id` of the webhook created in Webhook Section for which the response to be sent after delivery report from operator. [read more](/docs/{version}/viber/webhooks) |                                                                                         |
 | foreign_id     | Custom id for reference from customer.|
 | tags | opt-out the message based on the tags.|
 
@@ -77,7 +78,7 @@ meta      | This block contains all the optional parameters                     
 
 ```
   curl -X POST \
-    '{endpoint}whatsapp/send/template' \
+    '{endpoint}viber/send/template' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer 38e896f55670311982434e929559bxxxx' \
     -H 'content-type: application/json' \
@@ -92,6 +93,7 @@ meta      | This block contains all the optional parameters                     
         "phone" : "8123xxxxxxx"
       },
       "meta": {
+        "from": "700969ca-0cb2-11ec-a2cxxxx",
         "tags": ["tag1", "tag2"]
       }
     }'
@@ -106,8 +108,8 @@ meta      | This block contains all the optional parameters                     
     "data": [
         {
             "id": "883137c2-7b9c-4e72-8454-1059f06xxxxx",
-            "channel": "whatsapp",
-            "from": "9170020xxxxx",
+            "channel": "viber",
+            "from": "700969ca-0cb2-11ec-a2cxxxx",
             "recipient": "9189195xxxx",
             "credits": 0,
             "created_at": "2023-01-26T07:24:25.532476Z",
@@ -115,14 +117,14 @@ meta      | This block contains all the optional parameters                     
             "status": "notallowed"
         },
         {
-            "id": "269d3c38-9e8a-4ed1-b81e-7cb6b31xxxxx",
-            "channel": "whatsapp",
-            "from": "9170020xxxxx",
+            "id": "5ec99a11-ca18-44ad-a0fa-3250e36b8a20",
+            "channel": "viber",
+            "from": "700969ca-0cb2-11ec-a2cxxxx",
             "recipient": "9189196xxxx",
-            "credits": 0,
-            "created_at": "2023-01-26T07:24:25.535833Z",
+            "credits": "0.2500",
+            "created_at": "2023-08-22T11:38:21.089049Z",
             "foreign_id": null,
-            "status": "notallowed"
+            "status": "queued"
         }
     ]
 }

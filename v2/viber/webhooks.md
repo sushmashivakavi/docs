@@ -1,14 +1,14 @@
 # Webhooks
 
-Webhooks are customizable HTTP callbacks that are defined by the user and triggered by specific events. When the designated trigger event takes place, the RCS API client detects the event, gathers the relevant data, and promptly sends a notification (in the form of an HTTP request) to the Webhook URL specified in the application settings. This notification serves to update the status of sent messages or inform you when a new message is received, [click here](/docs/{version}/webhook) to create webhook.
+Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the Viber Business API client sees the event, collects the data, and immediately sends a notification (HTTP request) to the Webhook URL specified in the application settings updating the status of sent messages or indicating when you receive a message.
 
-> It is crucial to ensure that your Webhook returns an HTTPS 2xx OK response when receiving notifications. If the response is not received or does not meet the required criteria, the RCS API client interprets it as a failed notification and attempts to resend it after a certain delay.
+> It is important that your Webhook returns an HTTPS 2xx OK response to notifications. Otherwise the Viber Business API client considers that notification as failed and tries again after a delay.
 
 ## Retrying failed webhooks
 
-If the webhook fails to send a response with a 2xx status code, or if the remote app does not respond within 3 seconds, the package considers the call as failed. In such cases, we will make two additional attempts to send the webhook call.
+When the app to which we're sending the webhook fails to send a response with a 2xx status code the package will consider the call as failed. The call will also be considered failed if the remote app doesn't respond within 3 seconds. When a webhook call fails, we'll retry the call two more times.
 
-To avoid overwhelming the remote app, we introduce a delay between each retry attempt. By default, we wait 10 seconds between the first and second attempt, 100 seconds between the third and fourth attempt, 1000 seconds between the fourth and fifth attempt, and so on. The maximum wait time is set at 100,000 seconds, equivalent to approximately 27 hours. This ensures that we do not excessively burden the remote app while allowing for reasonable retry intervals.
+To not hammer the remote app we'll wait some time between each attempt. By default, we wait 10 seconds between the first and second attempt, 100 seconds between the third and the fourth, 1000 between the fourth and the fifth and so on. The maximum amount of seconds that we'll wait is 100 000, which is about 27 hours.
 
 ## Signature
 
@@ -24,10 +24,10 @@ If you wish to have your callbacks signed and have made the proper configuration
 
 ```json
 {
-  "event": "rcs:message:status",
+  "event": "viber:message:status",
   "payload": {
     "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
-    "channel": "rcs",
+    "channel": "viber",
     "from": "700969ca-0cb2-11ec-a2cxxxx",
     "to": "9190199xxxxx",
     "status": "sent|delivered|read|failed|deleted",
@@ -44,17 +44,17 @@ If you wish to have your callbacks signed and have made the proper configuration
 
 ```json
 {
-  "event": "rcs:message:in",
+  "event": "viber:message:in",
   "payload": {
     "id": "our-message-id",
     "channels": [
       {
-        "name": "rcs",
-        "to": "919019120xxx"
+        "name": "viber",
+        "to": "700969ca-0cb2-11ec-a2cxxxx"
       }
     ],
     "recipient": {
-      "from": "91XXXXXX",
+      "from": "919019120xxx",
       "user": {
         "id": "unique-id",
         "identifier_id": "unique-identifier-id",
@@ -77,7 +77,7 @@ If you wish to have your callbacks signed and have made the proper configuration
     "message": {
       "type": "text",
       "payload": {
-        "text": "This is a simple text message from whatsapp channel"
+        "text": "This is a simple text message from viber channel"
       }
     }
   }
@@ -88,17 +88,17 @@ If you wish to have your callbacks signed and have made the proper configuration
 
 ```json
 {
-  "event": "rcs:message:in",
+  "event": "viber:message:in",
   "payload": {
     "id": "our-message-id",
     "channels": [
       {
-        "name": "rcs",
-        "to": "919019120xxx"
+        "name": "viber",
+        "to": "700969ca-0cb2-11ec-a2cxxxx"
       }
     ],
     "recipient": {
-      "from": "91XXXXXX",
+      "from": "919019120xxx",
       "user": {
         "id": "unique-id",
         "identifier_id": "unique-identifier-id",
@@ -122,14 +122,11 @@ If you wish to have your callbacks signed and have made the proper configuration
       "type": "image",
       "payload": {
         "url": "https://domin-name.com/your_image_path.png",
-        "caption": "some caption for image",
-        "filename": ""
       }
     }
   }
 }
 ```
-
 ## Compose Webhook
 
 For users seeking enhanced customization, compose webhook will help to receive the customized webhook payload to precisely match your preferences and requirements.

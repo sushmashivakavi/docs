@@ -22,18 +22,23 @@ We will send a `POST` with below json format to your webhook URL.
     "recipient": {
       "from": "918074XXXXXX",
       "user": {
-        "id": "unique-user-id",
-        "username": "username",
-        "first_name": "user first name",
-        "last_name": "user last name",
-        "email": null,
-        "phone": "user phone number",
-        "user_info": {
-          "picture": "url-of-profile-picture",
-          "gender": null,
-          "title": "user status or designation"
+          "id": "unique-id",
+          "identifier_id": "unique-identifier-id",
+          "subscriber_id": "unique-subscriber-id",
+          "identity": "unique-user-identity",
+          "username": "username",
+          "first_name": "user first name",
+          "middle_name": "user middle name",
+          "last_name": "user last name",
+          "email": "user email",
+          "phone": "user phone number",
+          "attributes": "user attributes",
+          "user_info": {
+            "picture": "null",
+            "gender": "user-gender",
+            "title": "null"
+          }
         }
-      }
     },
     "message": {
       "type": "text",

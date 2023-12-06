@@ -223,3 +223,8 @@ Status and error code which can be returned by Messaging Platform.
 | 790  | INV-PROVISION         | Sender Invalid Provision                            |
 | 791  | INV-SERVICE           | Invalid Service Type                                |
 | 792  | INV-SCHEDULE          | Invalid Schedule                                    |
+
+
+
+
+> "Subscribe here to get SMPP messages DLRS via Webhook, refer to [Subscription](/docs/{version}/subscriptions#content-create-subscription-for-outbound-sms-messages)"

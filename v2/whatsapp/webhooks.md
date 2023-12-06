@@ -1,6 +1,6 @@
 # Webhooks
 
-Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the WhatsApp Business API client sees the event, collects the data, and immediately sends a notification (HTTP request) to the Webhook URL specified in the application settings updating the status of sent messages or indicating when you receive a message.
+Webhooks are user-defined HTTP callbacks that are triggered by specific events. Whenever that trigger event occurs, the WhatsApp Business API client sees the event, collects the data, and immediately sends a notification (HTTP request) to the Webhook URL specified in the application settings updating the status of sent messages or indicating when you receive a message, [click here](/docs/{version}/webhook) to create webhook.
 
 > It is important that your Webhook returns an HTTPS 2xx OK response to notifications. Otherwise the WhatsApp Business API client considers that notification as failed and tries again after a delay.
 
@@ -56,16 +56,21 @@ If you wish to have your callbacks signed and have made the proper configuration
     "recipient": {
       "from": "91XXXXXX",
       "user": {
-        "id": "unique-user-id",
+        "id": "unique-id",
+        "identifier_id": "unique-identifier-id",
+        "subscriber_id": "unique-subscriber-id",
+        "identity": "unique-user-identity",
         "username": "username",
         "first_name": "user first name",
+        "middle_name": "user middle name",
         "last_name": "user last name",
-        "email": null,
+        "email": "user email",
         "phone": "user phone number",
+        "attributes": "user attributes",
         "user_info": {
-          "picture": "url-of-profile-picture",
-          "gender": null,
-          "title": "user status or designation"
+          "picture": "null",
+          "gender": "user-gender",
+          "title": "null"
         }
       }
     },
@@ -95,16 +100,21 @@ If you wish to have your callbacks signed and have made the proper configuration
     "recipient": {
       "from": "91XXXXXX",
       "user": {
-        "id": "unique-user-id",
+        "id": "unique-id",
+        "identifier_id": "unique-identifier-id",
+        "subscriber_id": "unique-subscriber-id",
+        "identity": "unique-user-identity",
         "username": "username",
         "first_name": "user first name",
+        "middle_name": "user middle name",
         "last_name": "user last name",
-        "email": null,
+        "email": "user email",
         "phone": "user phone number",
+        "attributes": "user attributes",
         "user_info": {
-          "picture": "url-of-profile-picture",
-          "gender": null,
-          "title": "user status or designation"
+          "picture": "null",
+          "gender": "user-gender",
+          "title": "null"
         }
       }
     },
@@ -119,3 +129,52 @@ If you wish to have your callbacks signed and have made the proper configuration
   }
 }
 ```
+
+## Compose Webhook
+
+For users seeking enhanced customization, compose webhook will help to receive the customized webhook payload to precisely match your preferences and requirements.
+### Compose
+- Navigate to the Webhooks section and click on the Compose Webhook.
+- Give the identification name.
+- To set up the Compose Webhook, you need to provide a callback URL. This URL is where the composed payload will be sent.
+- In the url you can pass the replaced variables.
+
+```
+  https://www.domain.com/ack/receive?id=@{{id}}&mobile=@{{payload.mobile}}&status=@{{payload.status}}  
+``` 
+```
+  https://www.domain.com/ack/receive?message_id=@{{payload.id}}&mobile_number=@{{payload.mobile}}&message_status=@{{payload.status}}
+```
+- HTTP Method: Specify the HTTP method for the webhook request, such as GET, POST or PUT.
+- Headers: Define custom headers if needed, like Authorization headers or custom headers.
+- Body Format: Choose between JSON or FormData for the payload.
+- Upon creation, you will receive an `id` for the newly created Webhook.
+- To request delivery reports, include the `webhook_id` parameter and its corresponding value in your API Request. Once the request is made, you will receive the delivery report as you configured.
+- here keys you can give any name but value should be availebe in the below replaced variables `Ex: @{{payload.mobile}}`.
+
+### Compose Webhook Request
+```
+  curl -X POST \
+  https://www.domain.com/ack/receive?id=@{{payload.id}} \
+  -H 'content-type: application/json' \
+  -H "Authorization: Bearer %token%", \
+  -d '{
+      "id": "@{{payload.id}}",
+      "mobile": "@{{payload.mobile}}",
+      "message_status": "@{{payload.status}}",
+      "read_at": "@{{payload.read_at}}"
+    }'
+``` 
+#### Replaced variables can be used while creating or composing a webhook
+
+| Name          | Description                                             |
+| ------------- | ------------------------------------------------------- |
+| id            | Message Id generated by us                              |
+| from          | Whtsapp business number                                 |
+| to            | Mobile number with country code                         |
+| status        | sent\|delivered\|read\|failed\|deleted                  |
+| delivered_at  | Delivered to handset time                               |
+| read_at       | user message read time                                  |
+| processed_at  | Processed time                                          |
+| submit_time   | Sent to operator time                                   |
+| foreign_id    | your-business-identifier                                |

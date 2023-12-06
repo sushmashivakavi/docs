@@ -4,7 +4,7 @@
         "bearer": [
             {
                 "key": "token",
-                "value": "{{access_token}}",
+                "value": "{{ access_token }}",
                 "type": "string"
             }
         ]
@@ -12,20 +12,18 @@
     "method": "DELETE",
     "header": [],
     "url": {
-        "raw": "{{endpoint}}api/v2/developer/webhooks/:id",
-        "host": [
-            "{{endpoint}}api"
-        ],
+        "raw": "{{ endpoint }}api/v2/viber/templates/:id",
+        "host": ["{{ endpoint }}api"],
         "path": [
             "v2",
-            "developer",
-            "webhooks",
+            "viber",
+            "templates",
             ":id"
         ],
         "variable": [
             {
                 "key": "id",
-                "value": "{{webhook_Id}}"
+                "value": "{{ viber_template_id }}"
             }
         ]
     }
