@@ -102,6 +102,42 @@ Create block template using POST method.
 }
 ```
 
+## Error responses of create block template
+#### Template ID required
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The template id field is required.",
+    "errors": {
+        "template_id": [
+            "The template id field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Template not approved
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Template is not approved or does not belongs to you.",
+    "data": []
+}
+```
+
+#### Template exists
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Block template already exits.",
+    "data": []
+}
+```
+
 ## Edit Block Template
 
 Edit block template using put method.
@@ -138,6 +174,32 @@ Replace the {id} with the actual id of the receiver that you would like to Edit.
     "template_id": "12xxxxx",
     "status": 1
   }
+}
+```
+
+## Error responses of edit block template
+#### Template ID required
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The template id field is required.",
+    "errors": {
+        "template_id": [
+            "The template id field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Template not approved
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Template is not approved or does not belongs to you.",
+    "data": []
 }
 ```
 
@@ -205,6 +267,32 @@ Import block templates by uploading a file
 }
 ```
 
+## Error responses of import
+#### File required
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The file field is required.",
+    "errors": {
+        "file": [
+            "The file field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Template Id exists
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Template Id already exists or template does not belongs to you.",
+    "data": []
+}
+```
+
 ## Delete Block Template
 
 Delete block template using delete method
@@ -233,6 +321,17 @@ Replace the {id} with the actual id of the block template's id that you would li
 }
 ```
 
+## Error responses of delete template
+#### Template not found
+```json
+{
+  "status": "OK",
+  "code": 422,
+  "message": "Template not found in block list.",
+  "data": []
+}
+```
+
 ## Cleanup Templates
 
 Delete all templates at once
@@ -255,6 +354,18 @@ Delete all templates at once
   "status": "OK",
   "code": 200,
   "message": "Deleted Successfully",
+  "data": []
+}
+```
+
+## Error reponse of cleanup template
+#### No data found
+
+```json
+{
+  "status": "OK",
+  "code": 422,
+  "message": "No data found.",
   "data": []
 }
 ```

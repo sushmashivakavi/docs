@@ -89,3 +89,24 @@ You will be limited the records 100 per page.
     }
 }
 ```
+
+## Error Responses
+#### Invalid Request
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid request",
+    "data": []
+}
+```
+#### Invalid Time Format
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid time format",
+    "data": []
+}
+```

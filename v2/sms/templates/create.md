@@ -60,3 +60,39 @@ Create templates using post method under your account
     }
 }
 ```
+
+## Error Responses
+#### Missing Sender
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The sender field is required.",
+    "errors": {
+        "sender": [
+            "The sender field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Invalid Sender ID
+```json
+{
+    "status": "ERROR",
+    "code": 404,
+    "message": "Enter a valid sender ID.",
+    "data": []
+}
+```
+
+#### Exceeding no. of characters
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The body may not be greater than 2000 characters.",
+    "data": []
+}
+```

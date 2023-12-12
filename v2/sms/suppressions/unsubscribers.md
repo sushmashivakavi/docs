@@ -125,6 +125,47 @@ curl -X POST\
 }
 ```
 
+## Error Responses of create unsubscriber
+#### Missign Receiver
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The receiver field is required.",
+    "errors": {
+        "receiver": [
+            "The receiver field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Invalid Number
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The number is invalid",
+    "data": []
+}
+```
+
+#### Invalid Type
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The selected type is invalid.",
+    "errors": {
+        "type": [
+            "The selected type is invalid."
+        ]
+    },
+    "data": []
+}
+``` 
+
 ## Edit Unsubscriber
 
 Edit receiver using put method.
@@ -177,6 +218,47 @@ curl -X PUT \
     "value": "promo1",
     "created_at": "2023-04-11T12:50:17.000000Z"
   }
+}
+```
+
+## Error Responses of edit unsubscriber
+#### Missign Receiver
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The receiver field is required.",
+    "errors": {
+        "receiver": [
+            "The receiver field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Invalid Number
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The number is invalid",
+    "data": []
+}
+```
+
+#### Invalid Type
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The selected type is invalid.",
+    "errors": {
+        "type": [
+            "The selected type is invalid."
+        ]
+    },
+    "data": []
 }
 ```
 
@@ -259,6 +341,62 @@ curl -X POST\
 }
 ```
 
+## Error responses of import unsubscriber
+#### File is required
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The file field is required.",
+    "errors": {
+        "file": [
+            "The file field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Missign Receiver
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The receiver field is required.",
+    "errors": {
+        "receiver": [
+            "The receiver field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Invalid Number
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The number is invalid",
+    "data": []
+}
+```
+
+#### Invalid Type
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The selected type is invalid.",
+    "errors": {
+        "type": [
+            "The selected type is invalid."
+        ]
+    },
+    "data": []
+}
+``` 
+
 ## Delete Unsubscriber
 
 Delete receiver using delete method
@@ -292,6 +430,17 @@ curl -X DELETE \
 }
 ```
 
+## Error reponses of delete unsubscriber
+#### Receiver not found
+```json
+{
+  "status": "OK",
+  "code": 404,
+  "message": "Receiver not found in optout list.",
+  "data": []
+}
+```
+
 ## Cleanup Unsubscriber
 
 Delete all receiver at once
@@ -319,6 +468,17 @@ curl -X DELETE \
   "status": "OK",
   "code": 200,
   "message": "Deleted Successfully",
+  "data": []
+}
+```
+
+## Error responses of cleanup unsubscriber
+#### No data found
+```json
+{
+  "status": "OK",
+  "code": 422,
+  "message": "No data found.",
   "data": []
 }
 ```

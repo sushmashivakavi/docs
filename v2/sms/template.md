@@ -108,3 +108,252 @@ You can send template message using `POST` method content in body.
   ]
 }
 ```
+
+## Error Responses
+#### Invalid Payload
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid Payload, 'alias' or 'id' field is required.",
+    "data": []
+}
+```
+#### Invalid Template
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Template does not exist with this details.",
+    "data": []
+}
+```
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid Template Match",
+    "data": []
+}
+```
+#### Missing Mobile Number
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Missing mobile number.",
+    "data": []
+}
+```
+
+#### Missing Message
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Missing message.",
+    "data": []
+}
+```
+
+#### Invalid Time Format
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid time format",
+    "data": []
+}
+```
+
+#### Missing Sender
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Missing sender.",
+    "data": []
+}
+```
+
+#### Missing Receipent
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Missing receipent.",
+    "data": []
+}
+```
+
+#### Missing Data Column
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Missing Data Column.",
+    "data": []
+}
+```
+
+#### Number of tags exceed
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Number of tags selected cannot exceed 3.",
+    "data": []
+}
+```
+
+#### Invalid Type Value
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid type value, choose any one from (N, U, A)",
+    "data": []
+}
+```
+
+#### Inavlid Flash Value
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid flash value, choose either 1 or 0",
+    "data": []
+}
+```
+
+#### Invalid Webhook ID
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid Webhook id",
+    "data": []
+}
+```
+
+#### Missing Sender ID
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Missing senderid.",
+    "data": []
+}
+```
+
+#### Invalid Sender
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid Sender or Sender not allowed",
+    "data": []
+}
+```
+
+#### Exceeding max. units of message
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Message length is :message_units units. It should not exceed the :max_units units.",
+    "data": []
+}
+```
+
+#### Exceeding max. length of message
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Message length is exceeding. Max %s characters allowed.",
+    "data": []
+}
+```
+
+#### Invalid Schedule Time
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid schedule time. Minimum 5 min time gap is required and 3 months from now.",
+    "data": []
+}
+```
+
+#### Exceeding batch size
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Batch size should be greater or equal to 1000",
+    "data": []
+}
+```
+
+#### Batch interval
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Batch interval should be in multiples of 5. minimum 5 minute",
+    "data": []
+}
+```
+
+#### Service Timings
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "This service only allowed between :min and :max. Please schedule your message in these timings",
+    "data": []
+}
+```
+
+#### Invalid Mobile
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "No Valid mobile numbers found",
+    "data": []
+}
+```
+
+#### Usage Limit
+
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Your daily usage limit exceeded.",
+    "data": []
+}
+```

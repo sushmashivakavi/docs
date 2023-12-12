@@ -53,3 +53,14 @@ Replace the {id} with the actual id of the template that you would like to Edit.
     }
 }
 ```
+
+## Error Responses
+#### Exceeding no. of characters
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The body may not be greater than 2000 characters.",
+    "data": []
+}
+```

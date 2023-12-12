@@ -52,3 +52,114 @@ Create sender-ids using post method under your account
     }
 }
 ```
+
+## Error Responses
+#### Name Required
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The name field is required.",
+    "errors": {
+        "name": [
+            "The name field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Service Required
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The service field is required.",
+    "errors": {
+        "service": [
+            "The service field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Country Code Required
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The country code field is required.",
+    "errors": {
+        "country_code": [
+            "The country code field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Entity ID Required
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The entity id field is required.",
+    "errors": {
+        "entity_id": [
+            "The entity id field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Name exceeding no. of characters 
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The name must not be greater than 6 characters.",
+    "errors": {
+        "name": [
+            "The name must not be greater than 6 characters."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Entity Name Required
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "The entity name field is required.",
+    "errors": {
+        "entity_name": [
+            "The entity name field is required."
+        ]
+    },
+    "data": []
+}
+```
+
+#### Invalid Service Id
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Invalid Service Id.",
+    "data": []
+}
+```
+
+#### Sender is blocked
+```json
+{
+    "status": "ERROR",
+    "code": 422,
+    "message": "Sender is blocked. Try another.",
+    "data": []
+}
+```

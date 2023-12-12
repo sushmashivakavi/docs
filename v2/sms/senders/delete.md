@@ -25,3 +25,14 @@ Replace the {id} with the actual id of the sender that you would like to delete.
     "data": []
 }
 ```
+
+## Error Responses
+#### Cannot Delete
+```json
+{
+    "status": "ERROR",
+    "code": 403,
+    "message": "Sorry. You can\'t delete the approved sender",
+    "data": []
+}
+```
