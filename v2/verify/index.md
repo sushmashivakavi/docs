@@ -52,13 +52,22 @@ To initiate the verification process for a recipient, simply create a new Verify
       "language": "en_US",
       "order": 2,
       "wait": 60
+    },
+    {
+      "name": "viber",
+      "from": "adef759b-fbb3-4452-9aed-518d1cxxxxx",
+      "recipient": {
+        "to": "9189195xxxx"
+      },
+      "order": 3,
+      "wait": 60
     }
   ],
   "payload": {
     "length": 5,
     "timeout": 60,
     "token": "12345",
-    "ip_address": "192.168.*.*",
+    "ip_address": "192.168.*.*"
   }
 }
 ```
@@ -77,20 +86,19 @@ To initiate the verification process for a recipient, simply create a new Verify
 | Name     | Description                                                                                                               |
 | -------- | ------------------------------------------------------------------------------------------------------------------------- | --- |
 | template | Custom Message for sending otp if message object not specifed in verify config. use {token} in content for replacing otp. |     |
-| order     | Order of channels [starts from 0]. It will trigger channels in specified order. | |
-| wait     | Waiting time [in seconds] for triggering otp via alternate channel if first channel not successful. Default 30 seconds | |
-| language | Language in which TTS should play | |
-| token | Token length should be equal to defined length
+| order    | Order of channels [starts from 0]. It will trigger channels in specified order.                                           |     |
+| wait     | Waiting time [in seconds] for triggering otp via alternate channel if first channel not successful. Default 30 seconds    |     |
+| language | Language in which TTS should play                                                                                         |     |
+| token    | Token length should be equal to defined length                                                                            |
 
 #### Example Response
 
 ```json
 {
-  "id": "fb5e1214-7c9f-4f54-b18f-78dc7a901dec",
-  "status": "sent",
-  "to": "919019955xxx",
-  "reference": null,
-  "created_at": "2019-01-31 14:41:48",
-  "expire_at": "2019-01-31 14:43:48"
+    "id": "bdd56db3-ecd3-4d20-8ab5-988bdc76795a",
+    "status": "sent",
+    "foreign_id": null,
+    "created_at": "2023-12-05 08:24:48",
+    "expire_at": "2023-12-05 08:26:48"
 }
 ```

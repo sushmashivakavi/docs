@@ -7,7 +7,7 @@ The DLR Push API allows the delivery report of a sent message to be sent to the 
 
 To request delivery reports, include the `webhook_id` parameter and its corresponding value in your API Request. Once the request is made, you will receive the delivery report as shown below.
 
-#### Example Webhook Request to your server
+## Example Webhook Request to your server
 
 ```
 
@@ -21,6 +21,9 @@ To request delivery reports, include the `webhook_id` parameter and its correspo
       "status": "DELIVRD",
       "credits": "2.0000",
       "units": 2,
+      "deliv_at": "1701086585",
+      "sent_at": "1701063180",
+      "submit_at": "1701059582",
       "deliv_time": "2021-04-09 16:27:51",
       "sent_time": "2021-04-09 16:27:35",
       "submit_time": "2021-04-09 16:27:39",
@@ -34,11 +37,11 @@ To request delivery reports, include the `webhook_id` parameter and its correspo
 - The method used for sending the delivery report onto the client’s URL is `POST`.
 
 We try 3 times with interval of 30 minutes for failed requests. Continues failure requests will be ignored.
-# Compose Webhook
+## Compose Webhook
 
 For users seeking enhanced customization, compose webhook will help to receive the customized webhook payload to precisely match your preferences and requirements.
 
-# Compose
+#### Compose
 - Navigate to the Webhooks section and click on the Compose Webhook.
 - Give the identification name.
 - To set up the Compose Webhook, you need to provide a callback URL. This URL is where the composed payload will be sent.
@@ -57,7 +60,7 @@ For users seeking enhanced customization, compose webhook will help to receive t
 - To request delivery reports, include the `webhook_id` parameter and its corresponding value in your API Request. Once the request is made, you will receive the delivery report as you configured.
 - here keys you can give any name but value should be availebe in the below replaced variable.
 
-#### Example Compose Webhook Request
+## Compose Webhook Request
 ```
   curl -X POST \
   https://www.domain.com/ack/receive?id=@{{id}} \
