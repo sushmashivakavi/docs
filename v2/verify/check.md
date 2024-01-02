@@ -42,9 +42,10 @@ This process can only be performed once for each token, ensuring the integrity o
 
 #### FAILURE CODES
 
-| Code | Status          | Status Description                            |
-| ---- | --------------- | --------------------------------------------- |
-| 401  | Unauthenticated | Authetication Error                           |
-| 200  | failed          | when you passed invalid `id` value            |
-| 200  | expired         | `token` expired                               |
-| 200  | invalid         | when you passed wrong `token` for verificaton |
+| Code | Status               | Status Description                             |
+| ---- | -------------------- | ---------------------------------------------- |
+| 401  | Unauthenticated      | Authentication Error                           |
+| 200  | failed               | when you passed invalid `id` value             |
+| 200  | expired              | `token` expired                                |
+| 200  | invalid              | when you passed wrong `token` for verification |
+| 200  | OTP already verified | when you already verified the `OTP`            |

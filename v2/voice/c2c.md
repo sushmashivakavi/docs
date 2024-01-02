@@ -21,7 +21,7 @@
 | Name       | Descriptions                                             |
 | ---------- | -------------------------------------------------------- |
 | mid        | Message id for reference                                 |
-| webhook_id | Webhook ID for pushing the call data once call completed |
+| webhook_id | Webhook ID for pushing the call data once call completed, Instead of passing webhook_id everytime in the payload, refer to [create subscription](/docs/{version}/subscriptions#content-create-subscription) |
 | variables  | `Array` of the variables which can be used in flow       |
 | record     | Record this conversation (default `0`). allowed: 0 or 1  |
 | duration   | Limit the call duration in minutes. default (none)       |

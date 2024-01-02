@@ -12,10 +12,10 @@ The Messaging Platform employs the SMPP v3.4 Protocol Specification Issue 1.5. I
 
 Here is an overview of the available servers:
 
-| Hostname            | Port |
-| ------------------- | ---- |
-| smpp1.{smpp_domain} | 3634 |
-| smpp2.{smpp_domain} | 3634 |
+| Hostname            | Plain Port | TLS Port |
+| ------------------- | ---------- | -------- |
+| smpp1.{smpp_domain} | 3634       | 3635     |
+| smpp2.{smpp_domain} | 3634       | 3635     |
 
 ## Additional TLV (For Indian Routes)
 
@@ -63,7 +63,7 @@ Importantly, this holds true even if the connections are established with differ
 
 ## SUBMITTING MESSAGES
 
-#### Submission Types:
+#### Submission Types
 
 Messages may be submitted with either `submit_sm` or `data_sm`, using either the
 short_message or message_payload fields. The message length may not exceed the
@@ -223,3 +223,5 @@ Status and error code which can be returned by Messaging Platform.
 | 790  | INV-PROVISION         | Sender Invalid Provision                            |
 | 791  | INV-SERVICE           | Invalid Service Type                                |
 | 792  | INV-SCHEDULE          | Invalid Schedule                                    |
+
+> "Subscribe here to get SMPP messages DLRS via Webhook, refer to [Subscription](/docs/{version}/subscriptions#content-create-subscription-for-outbound-sms-messages)"

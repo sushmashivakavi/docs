@@ -47,7 +47,8 @@ You can send template message using `POST` method content in body.
     },
     "meta": {
         "from": "700969ca-0cb2-11ec-a2cxxxx",
-        "webhook_id": "0798d163-7ca2-4mb6-8c16-c62866xxxxxxx"
+        "webhook_id": "0798d163-7ca2-4mb6-8c16-c62866xxxxxxx",
+        "tags": ["tag1", "tag2"]
     }
 }
 ```
@@ -71,6 +72,7 @@ You can send template message using `POST` method content in body.
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 | webhook_id | The `id` of the webhook created in Webhook Section for which the response to be sent after delivery report from operator. [read more](/docs/{version}/viber/webhooks) |                                                                                         |
 | foreign_id     | Custom id for reference from customer.|
+| tags | opt-out the message based on the tags.|
 
 #### Example Request
 
@@ -91,7 +93,8 @@ You can send template message using `POST` method content in body.
         "phone" : "8123xxxxxxx"
       },
       "meta": {
-        "from": "700969ca-0cb2-11ec-a2cxxxx"
+        "from": "700969ca-0cb2-11ec-a2cxxxx",
+        "tags": ["tag1", "tag2"]
       }
     }'
 ```

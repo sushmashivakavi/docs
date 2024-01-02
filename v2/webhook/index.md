@@ -80,6 +80,9 @@ Kindly replace the token with your respective access_token.
 Create a Webhook using post method under your account
 #include "_include/endpoint.md"
 
+> Note: If you are thinking to pass Webhook ID in request everytime instead you can create subscription for that event,
+ refer to [create subscription](/docs/{version}/subscriptions#content-create-subscription)
+
 #### POST
 
 ```
@@ -201,7 +204,7 @@ Replace the {id} with the actual id of the webhook that you would like to see.
 }
 ```
 
-## DELETE
+## Delete Webhook
 
 ```
 {endpoint}developer/webhooks/{id}
