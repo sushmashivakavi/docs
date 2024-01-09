@@ -59,6 +59,7 @@ To initiate the verification process for a recipient, simply create a new Verify
       "recipient": {
         "to": "9189195xxxx"
       },
+      "ttl": 30,
       "order": 3,
       "wait": 60
     }
@@ -90,6 +91,7 @@ To initiate the verification process for a recipient, simply create a new Verify
 | wait     | Waiting time [in seconds] for triggering otp via alternate channel if first channel not successful. Default 30 seconds    |     |
 | language | Language in which TTS should play                                                                                         |     |
 | token    | Token length should be equal to defined length                                                                            |
+| ttl      | Time To Live(TTL) should be min 30 to max 1,209,600 seconds                                                                           |
 
 #### Example Response
 

@@ -12,7 +12,7 @@
 | recipient | This block contains contacts information related to channel | N/A  				| Yes			|
 | meta | This block contains category information related to message type | N/A  				| Yes			|
 | category |  `transactional` or `promotional`  | `string`                | Yes             |
-| ttl    | If no TTL value is set, should be min 30 & max 1,209,600 seconds | `string` | No |
+| ttl    | If TTL value is set it should be min 30 to max 1,209,600 seconds | `string` | No |
 | group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param is not present  |
 | to        | Receiver mobile numbers                            | `array`             | Yes, if `group_id` is not present |
 
