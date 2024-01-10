@@ -15,11 +15,11 @@ Replace the {id} with the actual id of the template that you would like to Edit.
 
 | Name        | Optinal | Descriptions                                                     |
 | ----------- | ------- | ---------------------------------------------------------------- |
-| name        | No      | Input the name of the template that you would like to refer with |
-| body        | No      | Input the body of the sms(template)                              |
+| name        | Yes      | Input the name of the template that you would like to refer with |
+| body        | Yes      | Input the body of the sms(template)                              |
 | template_id | Mixed   | DLT Template id (required for india)                             |
 | type        | Mixed   | Type of the template like (P, T, SI, SE)(required for india)     |
-| is_english  | No      | Input the is_english (0, 1)
+| is_english  | Yes     | Input the is_english (0, 1)
 
 #### Example Request
 
