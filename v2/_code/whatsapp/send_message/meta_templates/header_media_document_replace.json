@@ -1,0 +1,40 @@
+{
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "{{access_token}}",
+                "type": "string"
+            }
+        ]
+    },
+    "method": "POST",
+    "header": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        },
+        {
+            "key": "Accept",
+            "value": "application/json"
+        }
+    ],
+    "body": {
+        "mode": "raw",
+        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"whatsapp\",\n            \"from\": \"{{from}}\"\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \"{{receiver}}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"template\",\n        \"payload\": {\n            \"name\": \"template_alias_name\",\n            \"language\": \"en\",\n            \"header_params\": {\n                \"type\": \"document\",\n                \"payload\": {\n                    \"url\": \"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf\",\n                    \"filename\": \"Sample PDF file\"\n                }\n            },\n            \"body_params\": []\n        }\n    }\n}"
+    },
+    "url": {
+        "raw": "{{endpoint}}/api/v2/whatsapp/message/send",
+        "host": [
+            "{{endpoint}}"
+        ],
+        "path": [
+            "api",
+            "v2",
+            "whatsapp",
+            "message",
+            "send"
+        ]
+    }
+}

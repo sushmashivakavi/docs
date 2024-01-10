@@ -15,7 +15,6 @@
 
 `Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
 
-
 ```
 {
 	"channels": [{
@@ -76,7 +75,8 @@ It will support only `POST` requests.
 
 #code "{version}/_code/whatsapp/send_message/text_type.json"
 
-## Sending Template Message
+## Send Image Message
+
 #include "_include/endpoint.md"
 
 ```
@@ -85,48 +85,157 @@ It will support only `POST` requests.
 
 #### PARAMETERS
 
-| Name          | Description                                                                                                                                                                                         | Limits                                                                | Required                                               |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------ |
-| name          | Template `Alias` Name                                                                                                                                                                               | N/A                                                                   | yes                                                    |
-| language      | Language to send the template in. Default `en`                                                                                                                                                      | N/A                                                                   | No                                                     |
-| header_params | Only one header replace variable value.                                                                                                                                                             | Up to 1024 characters for all parameters and predefined template text | Yes incase only templates contain header variable      |
-| body_params   | Up to 1024 characters for all parameters that are predefined template text, if `authentication` template has only one replace variable value.                                                       | Up to 1024 characters for all parameters and predefined template text | Yes incase only template contains body with no headers |
-| components    | This block contains header, body, footer sections payload as per predefined template.                                                                                                               | Up to 1024 characters for all parameters and predefined template text | Yes incase Template contains headers and footers       |
-| ttl           | Time to live of the template message. If the receiver has not opened the template message before the time to live expires, the message will be deleted. Default 30 Days. Need to specify in Seconds | Can be more than 1 day i.e 86400 sec                                  | No                                                     |
+| Name     | Description                                                                                                                                                                      | Limits | Required |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
+| url      | Public url of the image file. Either HTTP/HTTPS link.                                                                                                                            | 5 MB   | Yes      |
+| type     | `image/jpg`, `image/jpeg` and `image/png`                                                                                                                                        | YES    | YES      |
+| caption  | some text for image caption                                                                                                                                                      | N/A    | No       |
+| filename | Media file name                                                                                                                                                                  | N/A    | No       |
+| pixels   | vertically crops images with the 1:91:1 aspect ratio: 800×418 pixels. To communicate effectively, design the image such that the crux information is at the center of the image. | YES    | YES      |
 
-#### Example Request With Templates
+#### Example Request With Image Message
 
-#code "{version}/_code/whatsapp/send_message/template_type.json"
+#code "{version}/_code/whatsapp/send_message/image_type.json"
 
-#### Example Request With Authentication Template
+## Send Document Message
+
+#include "_include/endpoint.md"
+
+We can send Document which is having valid MIME-type as attachment using below API. So anything not image, audio or video will be transmitted as document message.
 
 ```
-curl -X POST \
-  '{endpoint}whatsapp/message/send' \
-  -H 'authorization: Bearer d9e1cac3812186b353c5022xxxxx' \
-  -H 'content-type: application/json' \
-  -d '{
-    "channels": [
-        {
-            "name": "whatsapp",
-            "from": "91901912xxxx"
-        }
-    ],
-    "recipient": {
-        "to": [
-            "91XXXXXXx"
-        ]
-    },
-    "message": {
-        "type": "template",
-        "payload": {
-            "name": "template_alias_name",
-            "language": "en",
-            "body_params" : [23455]
-        }
-    }
-}'
+{endpoint}whatsapp/message/send
 ```
+
+#### PARAMETERS
+
+| Name     | Description                                                 | Limits              | Required |
+| -------- | ----------------------------------------------------------- | ------------------- | -------- |
+| url      | Public url of the document file. Either HTTP or HTTPS link. | Max File size 100MB | Yes      |
+| type     | Any valid MIME-type                                         | N/A                 | No       |
+| caption  | some text for document caption                              | N/A                 | No       |
+| filename | Media file name                                             | N/A                 | No       |
+
+#### Example Request With Document Message
+
+#code "{version}/_code/whatsapp/send_message/document_type.json"
+
+## Send Audio Message
+
+#include "_include/endpoint.md"
+
+We can send Audio clips as attachment using below API.
+
+```
+{endpoint}whatsapp/message/send
+```
+
+#### PARAMETERS
+
+| Name     | Description                                                                                             | Limits    | Required |
+| -------- | ------------------------------------------------------------------------------------------------------- | --------- | -------- |
+| url      | Public url of the audio file. Either HTTP or HTTPS link.                                                | Upto 16MB | Yes      |
+| type     | `audio/aac, audio/mp4, audio/amr, audio/mpeg; codecs=opus.` (The base audio/ogg type is not supported.) | YES       | YES      |
+| caption  | some text for audio caption                                                                             | N/A       | No       |
+| filename | Media file name                                                                                         | N/A       | No       |
+
+#### Example Request With Audio Message
+
+#code "{version}/_code/whatsapp/send_message/audio_type.json"
+
+## Send Video Message
+
+#include "_include/endpoint.md"
+
+We can send Video clips as attachment using below API.
+
+```
+{endpoint}whatsapp/message/send
+```
+
+#### PARAMETERS
+
+| Name     | Description                                                                            | Limits    | Required |
+| -------- | -------------------------------------------------------------------------------------- | --------- | -------- |
+| url      | Public url of the video file. Either HTTP or HTTPS link.                               | Upto 16MB | Yes      |
+| type     | `video/mp4, video/3gpp` (Only `H.264` video codec and `AAC` audio codec is supported.) | YES       | Yes      |
+| caption  | some text for audio caption                                                            | N/A       | No       |
+| filename | Media file name                                                                        | N/A       | No       |
+
+#### Example Request With Video Message
+
+#code "{version}/_code/whatsapp/send_message/video_type.json"
+
+## Send Notification With Interactive Suggestions
+
+#include "_include/endpoint.md"
+
+```
+{endpoint}whatsapp/message/send
+```
+
+#### PARAMETERS
+
+| Name         | Description                                                                                                                                     | Limits | Required |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
+| choices      | this block contains options list of the message                                                                                                 | N/A    | Yes      |
+| payload.type | if reply message type value should be `reply`, or list message type value should be `list`                                                      | N/A    | Yes      |
+| choices.type | if reply message type value should be `reply`, or list message type value first object should be `button` and second object should be `section` | N/A    | Yes      |
+
+#### Example Request With Interactive Reply Message
+
+#code "{version}/_code/whatsapp/send_message/interactive_type.json"
+
+#### Example Request With Interactive List Messages
+
+#code "{version}/_code/whatsapp/send_message/interactive_list.json"
+
+## Send Vcard / Contacts Message
+
+#include "_include/endpoint.md"
+
+```
+{endpoint}whatsapp/message/send
+```
+
+#### PARAMETERS
+
+| Name     | Description                         | Limits | Required |
+| -------- | ----------------------------------- | ------ | -------- |
+| phone    | Mobile numbers saved in mobile      | N/A    | Yes      |
+| name     | Person name                         | N/A    | Yes      |
+| address  | Address details of the contact      | N/A    | Yes      |
+| org      | Organization details of the contact | N/A    | Yes      |
+| emails   | emails details of the contact       | N/A    | Yes      |
+| urls     | urls details of the contact         | N/A    | Yes      |
+| birthday | birthday details of the contact     | N/A    | No       |
+
+#### Example Request With Vcard Message
+
+#code "{version}/_code/whatsapp/send_message/contact_message.json"
+
+## Send Location Message
+
+#include "_include/endpoint.md"
+
+```
+{endpoint}whatsapp/message/send
+```
+
+#### PARAMETERS
+
+| Name      | Description                           | Limits | Required |
+| --------- | ------------------------------------- | ------ | -------- |
+| longitude | Longitude of the location coordinates | N/A    | Yes      |
+| latitude  | Latitude of the location coordinates  | N/A    | No       |
+| name      | Address name                          | N/A    | No       |
+| address   | Textual representation of location    | N/A    | No       |
+
+#### Example Request With Location Message
+
+#code "{version}/_code/whatsapp/send_message/location_message.json"
+
+## Sending Template Message (Highly Structured Message)
 
 #### Example Request With Template "HSM" (Highly Structured Message)
 
@@ -287,157 +396,3 @@ curl -X POST \
 	}
 }'
 ```
-
-## Send Image Message
-#include "_include/endpoint.md"
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### PARAMETERS
-
-| Name     | Description                                                                                                                                                                      | Limits | Required |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| url      | Public url of the image file. Either HTTP/HTTPS link.                                                                                                                            | 5 MB   | Yes      |
-| type     | `image/jpg`, `image/jpeg` and `image/png`                                                                                                                                        | YES    | YES      |
-| caption  | some text for image caption                                                                                                                                                      | N/A    | No       |
-| filename | Media file name                                                                                                                                                                  | N/A    | No       |
-| pixels   | vertically crops images with the 1:91:1 aspect ratio: 800×418 pixels. To communicate effectively, design the image such that the crux information is at the center of the image. | YES    | YES      |
-
-#### Example Request With Image Message
-
-#code "{version}/_code/whatsapp/send_message/image_type.json"
-
-## Send Document Message
-#include "_include/endpoint.md"
-
-We can send Document which is having valid MIME-type as attachment using below API. So anything not image, audio or video will be transmitted as document message.
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### PARAMETERS
-
-| Name     | Description                                                 | Limits              | Required |
-| -------- | ----------------------------------------------------------- | ------------------- | -------- |
-| url      | Public url of the document file. Either HTTP or HTTPS link. | Max File size 100MB | Yes      |
-| type     | Any valid MIME-type                                         | N/A                 | No       |
-| caption  | some text for document caption                              | N/A                 | No       |
-| filename | Media file name                                             | N/A                 | No       |
-
-#### Example Request With Document Message
-
-#code "{version}/_code/whatsapp/send_message/document_type.json"
-
-## Send Audio Message
-#include "_include/endpoint.md"
-
-We can send Audio clips as attachment using below API.
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### PARAMETERS
-
-| Name     | Description                                                                                             | Limits    | Required |
-| -------- | ------------------------------------------------------------------------------------------------------- | --------- | -------- |
-| url      | Public url of the audio file. Either HTTP or HTTPS link.                                                | Upto 16MB | Yes      |
-| type     | `audio/aac, audio/mp4, audio/amr, audio/mpeg; codecs=opus.` (The base audio/ogg type is not supported.) | YES       | YES      |
-| caption  | some text for audio caption                                                                             | N/A       | No       |
-| filename | Media file name                                                                                         | N/A       | No       |
-
-#### Example Request With Audio Message
-
-#code "{version}/_code/whatsapp/send_message/audio_type.json"
-
-## Send Video Message
-#include "_include/endpoint.md"
-
-We can send Video clips as attachment using below API.
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### PARAMETERS
-
-| Name     | Description                                                                            | Limits    | Required |
-| -------- | -------------------------------------------------------------------------------------- | --------- | -------- |
-| url      | Public url of the video file. Either HTTP or HTTPS link.                               | Upto 16MB | Yes      |
-| type     | `video/mp4, video/3gpp` (Only `H.264` video codec and `AAC` audio codec is supported.) | YES       | Yes      |
-| caption  | some text for audio caption                                                            | N/A       | No       |
-| filename | Media file name                                                                        | N/A       | No       |
-
-#### Example Request With Video Message
-
-#code "{version}/_code/whatsapp/send_message/video_type.json"
-
-## Send Notification With Interactive Suggestions
-#include "_include/endpoint.md"
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### PARAMETERS
-
-| Name         | Description                                                                                                                                     | Limits | Required |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
-| choices      | this block contains options list of the message                                                                                                 | N/A    | Yes      |
-| payload.type | if reply message type value should be `reply`, or list message type value should be `list`                                                      | N/A    | Yes      |
-| choices.type | if reply message type value should be `reply`, or list message type value first object should be `button` and second object should be `section` | N/A    | Yes      |
-
-#### Example Request With Interactive Reply Message
-
-#code "{version}/_code/whatsapp/send_message/interactive_type.json"
-
-#### Example Request With Interactive List Messages
-
-#code "{version}/_code/whatsapp/send_message/interactive_list.json"
-
-## Send Vcard / Contacts Message
-#include "_include/endpoint.md"
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### PARAMETERS
-
-| Name     | Description                         | Limits | Required |
-| -------- | ----------------------------------- | ------ | -------- |
-| phone    | Mobile numbers saved in mobile      | N/A    | Yes      |
-| name     | Person name                         | N/A    | Yes      |
-| address  | Address details of the contact      | N/A    | Yes      |
-| org      | Organization details of the contact | N/A    | Yes      |
-| emails   | emails details of the contact       | N/A    | Yes      |
-| urls     | urls details of the contact         | N/A    | Yes      |
-| birthday | birthday details of the contact     | N/A    | No       |
-
-#### Example Request With Vcard Message
-
-#code "{version}/_code/whatsapp/send_message/contact_message.json"
-
-## Send Location Message
-#include "_include/endpoint.md"
-
-```
-{endpoint}whatsapp/message/send
-```
-
-#### PARAMETERS
-
-| Name      | Description                           | Limits | Required |
-| --------- | ------------------------------------- | ------ | -------- |
-| longitude | Longitude of the location coordinates | N/A    | Yes      |
-| latitude  | Latitude of the location coordinates  | N/A    | No       |
-| name      | Address name                          | N/A    | No       |
-| address   | Textual representation of location    | N/A    | No       |
-
-#### Example Request With Location Message
-
-#code "{version}/_code/whatsapp/send_message/location_message.json"
-
