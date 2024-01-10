@@ -10,7 +10,17 @@
         ]
     },
     "method": "POST",
-    "header": [],
+    "header": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        },
+        {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
     "body": {
         "mode": "raw",
         "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"whatsapp\",\n            \"from\": \"{{from}}\"\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \"{{receiver}}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"interactive\",\n        \"payload\": {\n            \"type\": \"reply\",\n            \"header\": {\n                \"type\": \"text\",\n                \"payload\": {\n                    \"text\": \"Hello Dear!\"\n                }\n            },\n            \"body\": {\n                \"type\": \"text\",\n                \"payload\": {\n                    \"text\": \"Do you like the whatsapp?\"\n                }\n            },\n            \"choices\": [\n                {\n                    \"type\": \"reply\",\n                    \"payload\": {\n                        \"title\": \"Yes\",\n                        \"id\": \"1\"\n                    }\n                },\n                {\n                    \"type\": \"reply\",\n                    \"payload\": {\n                        \"title\": \"No\",\n                        \"id\": \"2\"\n                    }\n                }\n            ]\n        }\n    }\n}",

@@ -10,7 +10,17 @@
         ]
     },
     "method": "POST",
-    "header": [],
+    "header": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        },
+        {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+        }
+    ],
     "body": {
         "mode": "raw",
         "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"whatsapp\",\n            \"from\": \"{{from}}\"\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \"{{receiver}}\"\n        ]\n    },\n     \"message\" : {\n        \"type\": \"location\",\n        \"payload\" : {\n            \"longitude\": 12.912985,\n            \"latitude\": 77.599505,\n            \"name\": \"MOBtexting Pvt Ltd\",\n            \"address\": \"JP Nagar, Mini forest\"\n        }\n    }\n}",

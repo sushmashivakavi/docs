@@ -52,7 +52,7 @@
 }
 ```
 
-#### HTTP Methods
+## HTTP Methods
 
 It will support only `POST` requests.
 #include "_include/endpoint.md"
@@ -77,8 +77,6 @@ It will support only `POST` requests.
 
 ## Send Image Message
 
-#include "_include/endpoint.md"
-
 ```
 {endpoint}whatsapp/message/send
 ```
@@ -98,8 +96,6 @@ It will support only `POST` requests.
 #code "{version}/_code/whatsapp/send_message/image_type.json"
 
 ## Send Document Message
-
-#include "_include/endpoint.md"
 
 We can send Document which is having valid MIME-type as attachment using below API. So anything not image, audio or video will be transmitted as document message.
 
@@ -122,8 +118,6 @@ We can send Document which is having valid MIME-type as attachment using below A
 
 ## Send Audio Message
 
-#include "_include/endpoint.md"
-
 We can send Audio clips as attachment using below API.
 
 ```
@@ -145,8 +139,6 @@ We can send Audio clips as attachment using below API.
 
 ## Send Video Message
 
-#include "_include/endpoint.md"
-
 We can send Video clips as attachment using below API.
 
 ```
@@ -167,8 +159,6 @@ We can send Video clips as attachment using below API.
 #code "{version}/_code/whatsapp/send_message/video_type.json"
 
 ## Send Notification With Interactive Suggestions
-
-#include "_include/endpoint.md"
 
 ```
 {endpoint}whatsapp/message/send
@@ -192,8 +182,6 @@ We can send Video clips as attachment using below API.
 
 ## Send Vcard / Contacts Message
 
-#include "_include/endpoint.md"
-
 ```
 {endpoint}whatsapp/message/send
 ```
@@ -215,8 +203,6 @@ We can send Video clips as attachment using below API.
 #code "{version}/_code/whatsapp/send_message/contact_message.json"
 
 ## Send Location Message
-
-#include "_include/endpoint.md"
 
 ```
 {endpoint}whatsapp/message/send
