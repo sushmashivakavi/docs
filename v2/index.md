@@ -91,8 +91,8 @@ If an error occurs, the response body will provide a JSON-formatted message that
 
 | Name    | Value                                                                                                                                     |
 | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| status  | This represents the error type. OK or 200 is success and rest everthing is failed.                                                        |
-| code    | This represents the http code. This value is optional. Not be avaliable in all responses.                                                 |
+| status  | This represents the error type. OK or 200 is success and rest everything is failed.                                                       |
+| code    | This represents the http code. This value is optional. Not be available in all responses.                                                 |
 | message | A human-readable description of the error. You can provide your users with this information to indicate what they can do about the error. |
 
 ## HTTP STATUS CODES
@@ -102,7 +102,7 @@ If an error occurs, the response body will provide a JSON-formatted message that
 | 200  | OK - Everything went as planned.                                                 |
 | 202  | Accepted - Request accepted.                                                     |
 | 400  | Bad Request - Something in your header or request body was malformed.            |
-| 401  | Unauthorised - Necessary credentials were either missing or invalid.             |
+| 401  | Unauthorized - Necessary credentials were either missing or invalid.             |
 | 403  | Your credentials are valid, but you don't have access to the requested resource. |
 | 404  | The resources cannot be found                                                    |
 | 409  | Conflict - You might be trying to update the same resource concurrently.         |

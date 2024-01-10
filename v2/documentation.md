@@ -2,13 +2,12 @@
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/{collection})
 @endif
 
-
 - [Introduction](#)
 
-    - [API Overview](/docs/{version})
-    - [Authentication](/docs/{version}#content-authentication)
-    - [Rate Limits](/docs/{version}#content-rate-limits)
-    - [Status Code](/docs/{version}#content-http-status-codes)
+  - [API Overview](/docs/{version})
+  - [Authentication](/docs/{version}#content-authentication)
+  - [Rate Limits](/docs/{version}#content-rate-limits)
+  - [Status Code](/docs/{version}#content-http-status-codes)
 
 - [Verify](#)
 
@@ -52,6 +51,7 @@
   - [Introduction](/docs/{version}/whatsapp)
   - [Send Notification](/docs/{version}/whatsapp/send-message)
   - [Send Template Notification](/docs/{version}/whatsapp/template)
+  - [Send Meta Templates](/docs/{version}/whatsapp/send-meta-templates)
   - [Status Info](/docs/{version}/whatsapp/status)
   - [Webhook](/docs/{version}/whatsapp/webhooks)
   - [Pull DLR](/docs/{version}/whatsapp/pull-status)
@@ -104,7 +104,8 @@
 - [Studio](#)
 
   - [Introduction](/docs/{version}/studio)
-  
+
+
 - [Viber](#)
 
   - [Introduction](/docs/{version}/viber)
@@ -116,10 +117,9 @@
   - [Pricing List](/docs/{version}/viber/pricing)
   - [Templates](/docs/{version}/viber/templates)
   - [Unsubscribers](/docs/{version}/viber/suppressions/unsubscribers)
-  
+
 - [Developers](#)
 
   - [Webhooks](/docs/{version}/webhook)
   - [Subscriptions](/docs/{version}/subscriptions)
   - [Events List](/docs/{version}/event)
-
