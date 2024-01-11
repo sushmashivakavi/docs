@@ -226,3 +226,7 @@ Replace the {id} with the actual id of the webhook that you would like to delete
   "data": []
 }
 ```
+
+## Soft Delete and Restore Webhook
+
+A webhook can undergo a soft deletion process, during which its status is updated to 'inactive.' Upon restoration of the webhook, its status is changed to 'active' within the application.
