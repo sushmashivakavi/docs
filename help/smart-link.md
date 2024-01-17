@@ -6,6 +6,11 @@ This technique proves particularly useful in messaging technologies that impose 
 
 Additionally, Smart URL provides traffic tracking capabilities, allowing you to monitor the number of visits to the domain. Furthermore, it offers advanced analytics to determine the identities (mobile numbers) of visitors to the page.
 
+#### Note :
+
+Smart link requests are rate limited to 10 requests per 5 minutes. Once this limit has been crossed, your requests will be rejected with an HTTP 429 ‘Too Many Requests’ code.
+Short links don’t implement additional security mechanisms and are available for everyone who has that short links.
+
 #### Customizing the redirection of Smart URL
 
 Use a single short URL in your SMS campaign and based on your customer's device details route them to different domain of your's.
