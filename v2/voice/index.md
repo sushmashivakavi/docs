@@ -46,7 +46,7 @@ You can access the Array of the variables with `.` dot notation. Example if you 
 | end_at             | global | Call end time in `YYYY-MM-DD h:i:s` format                |
 | date               | global | Current time in `YYYY-MM-DD h:i:s` format                 |
 | unixtime           | global | Current time in `unixtime` format                         |
-| caller.country     | global | Caller two letters country code. ex: `IN` (India)         |
+| caller.country     | global | Caller two letters country code. ex: `IN` (India) [full list](https://www.iban.com/country-codes) |
 | caller.provider    | global | Caller two letters operator code. ex: `RJ` (Reliance JIO) |
 | caller.region      | global | Caller two letters region code. ex: `KA` (karnataka)      |
 | caller.name        | global | Caller name if avaliable in contacts                      |
