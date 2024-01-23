@@ -19,7 +19,7 @@ Upon receiving visits to the smart link, we will send a `POST` request in JSON f
 | device_type     | Type of the device `Ex:` desktop, smartphone...               |
 | device_brand    | Brand name of the device `Ex:` Samsung, OPPO..                |
 | country         | Full name of the country `Ex:` India                          |
-| country_code    | Country code `Ex:` IN                                         |
+| country_code    | Country code `Ex:` IN [full list](https://www.iban.com/country-codes) |
 | region          | Region name it will provide `Ex:` Karnataka, Tamil Nadu...    |
 | city            | City name it will provide `Ex:` Bangalore, Mumbai...          |
 | mobile          | Mobile number with country code `Ex:` 891952XXXX              |
