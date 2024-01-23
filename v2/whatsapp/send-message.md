@@ -4,14 +4,16 @@
 
 #### PARAMETERS
 
-| Name      | Description                                                 | type                | Required                       |
-| --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ |
-| channels  | This block contains information related messaging channel   | N/A                 | Yes                            |
-| name      | Name of Messaging Channel. Ex: `whatsapp`                   | `string`            | Yes                            |
-| from      | Sender or From Number                                       | `number`            | Yes                            |
-| recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
-| group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
-| to        | Receiver mobile numbers : `text`                            | `array`             | Yes, if `group_id` not present |
+| Name       | Description                                                               | type                | Required                       |
+| ---------  | ------------------------------------------------------------------------- | ------------------- | ------------------------------ |
+| channels   | This block contains information related messaging channel                 | N/A                 | Yes                            |
+| name       | Name of Messaging Channel. Ex: `whatsapp`                                 | `string`            | Yes                            |
+| from       | Sender or From Number                                                     | `number`            | Yes                            |
+| meta       | This block contains additional information related to messaging channel   | `map`               | No                             |
+| recipient  | This block contains contacts information related to channel 				 | N/A                 | Yes                            |
+| foreign_id | Custom id for reference from customer.                                    | `string`            | No                             |
+| group_id   | Segment id which contain list of phone numbers              				 | `string` or `array` | Yes if `to` param not present  |
+| to         | Receiver mobile numbers : `text`                            				 | `array`             | Yes, if `group_id` not present |
 
 `Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
 
