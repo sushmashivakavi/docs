@@ -8,7 +8,8 @@
 		"name": "rcs",
 		"from": "700969ca-0cb2-11ec-a2cxxxx", //Agent ID
         "meta" : {
-            "foreign_id":"your-custom-id"
+            "foreign_id":"your-custom-id",
+            "tags": ["tag1", "tag2"]
         }
 	}]
 	"recipient": {
@@ -49,6 +50,8 @@
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
 | group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param not present  |
 | to        | Receiver mobile numbers : `text`                            | `array`             | Yes, if `group_id` not present |
+| meta      | This block contains all the optional parameters             | `object`            | No                             |
+| tags      | opt-out the message based on the tags.                      | `string`            | No                             |
 
 `Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
 
