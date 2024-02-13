@@ -13,6 +13,7 @@
 | recipient  | This block contains contacts information related to channel 				 | N/A                 | Yes                            |
 | foreign_id | Custom id for reference from customer.                                    | `string`            | No                             |
 | group_id   | Segment id which contain list of phone numbers              				 | `string` or `array` | Yes if `to` param not present  |
+| tags      | opt-out the message based on the tags.                      				 | `string`            | No                             |
 | to         | Receiver mobile numbers : `text`                            				 | `array`             | Yes, if `group_id` not present |
 
 `Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
@@ -23,7 +24,8 @@
 		"name": "whatsapp",
 		"from": "91901912xxxx",
         "meta" : {
-            "foreign_id":"your-custom-id"
+            "foreign_id":"your-custom-id",
+            "tags": ["tag1", "tag2"]
         }
 	}]
 	"recipient": {

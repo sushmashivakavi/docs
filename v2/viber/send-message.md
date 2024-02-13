@@ -10,11 +10,13 @@
 | name      | Name of Messaging Channel. Ex: `viber`                   | `string`            | Yes                            |
 | from      | Commercial Account Id                                       | `string`            | Yes                            |
 | recipient | This block contains contacts information related to channel | N/A  				| Yes			|
-| meta | This block contains category information related to message type | N/A  				| Yes			|
+| meta      | This block contains category information related to message type and additional information | N/A  				| Yes			|
 | category |  `transactional` or `promotional`  | `string`                | Yes             |
 | ttl    | If TTL value is set it should be min 30 to max 1,209,600 seconds | `string` | No |
 | group_id  | Segment id which contain list of phone numbers              | `string` or `array` | Yes if `to` param is not present  |
 | to        | Receiver mobile numbers                            | `array`             | Yes, if `group_id` is not present |
+| tags      | opt-out the message based on the tags.                      | `string`            | No                                |
+
 
 `Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
 
@@ -28,7 +30,8 @@
           "meta": {
               "category": "category",
               "foreign_id": "your-custom-id",
-              "ttl": 60
+              "ttl": 60,
+              "tags": ["tag1", "tag2"]
           }
       }
   ],

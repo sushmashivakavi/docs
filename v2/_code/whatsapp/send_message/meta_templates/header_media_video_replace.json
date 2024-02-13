@@ -22,7 +22,7 @@
     ],
     "body": {
         "mode": "raw",
-        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"whatsapp\",\n            \"from\": \"{{from}}\"\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \"{{receiver}}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"template\",\n        \"payload\": {\n            \"name\": \"template_alias_name\",\n            \"language\": \"en\",\n            \"header_params\": {\n                \"type\": \"video\",\n                \"payload\": {\n                    \"url\": \"https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4\"\n                }\n            },\n            \"body_params\": []\n        }\n    }\n}"
+        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"whatsapp\",\n            \"from\": \"{{from}}\",\n            \"meta\": {\n                \"tags\": [\n                    \"tag1\",\n                    \"tag2\"\n                ]\n            }\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \"{{receiver}}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"template\",\n        \"payload\": {\n            \"name\": \"template_alias_name\",\n            \"language\": \"en\",\n            \"header_params\": {\n                \"type\": \"video\",\n                \"payload\": {\n                    \"url\": \"https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4\"\n                }\n            },\n            \"body_params\": []\n        }\n    }\n}"
     },
     "url": {
         "raw": "{{endpoint}}/api/v2/whatsapp/message/send",

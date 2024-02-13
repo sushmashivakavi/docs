@@ -18,7 +18,8 @@
 			"template_id": "1234XXXXXXX",
 			"entity_id":"89XXXXXXXXXXX",
 			"foreign_id":"your-custom-id",
-			"type":"U"
+			"type":"U",
+            "tags": ["tag1", "tag2"]
 		}
 	}],
 	"recipient": {
@@ -66,6 +67,7 @@
 | template_id | DLT registered template id.                                                   | `int`               | No (applicable for indian routes only) |
 | entity_id   | DLT registered entity id.                                                     | `int`               | No (applicable for indian routes only) |
 | max_units   | The maximum number of units to be sent in the message ex:(value 2 or 3)       | `int`               | No                                     |
+| tags        | opt-out the message based on the tags.                                        | `string`            | No                                     |
 
 `Note` : The `recipient` block inside channel is related to particular communication channel and it is optional. The outside `recipient` channel contain common recipients for every channel.
 
