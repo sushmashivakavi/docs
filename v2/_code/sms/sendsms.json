@@ -19,7 +19,7 @@
 	],
 	"body": {
 		"mode": "raw",
-		"raw": "{\n\t\"channels\": [{\n\t\t\"name\": \"sms\",\n\t\t\"from\": \"{{sender_name}}\"\n\t}],\n\t\"recipient\": {\n\t\t\"to\": \"{{receiver}}\"\n\t},\n\t\"message\": {\n        \"type\": \"text\",\n\t\t\"payload\": {\n            \"text\" : \"This is a test\"   \n\t\t}\n\t}\n}",
+		"raw": "{\n\t\"channels\": [{\n\t\t\"name\": \"sms\",\n\t\t\"from\": \"{{sender_name}}\",\n\t\t\"meta\": {\n\t\t\t\"tags\": [\"tag\"],\n\t\t\t\"service\": \"T\"\n\t\t}\n\t}],\n\t\"recipient\": {\n\t\t\"to\": \"{{receiver}}\"\n\t},\n\t\"message\": {\n\t\t\"type\": \"text\",\n\t\t\"payload\": {\n\t\t\t\"text\": \"This is a test\"\n\t\t}\n\t}\n}",
 		"options": {
 			"raw": {
 				"language": "json"
