@@ -40,7 +40,10 @@ Before you begin sending SMS messages through this API, we recommend testing you
 | port        | Port number to which SMS has to be delivered                                                                                                                           |
 | entity_id   | Principal Entityid registered in DLT portal (applicable for indian routes only)                                                                                        |
 | template_id | TemplateId registered in DLT portal (applicable for indian routes only)                                                                                                |
-| max_units | The maximum number of units to be sent in the message ex:(value 2 or 3) |
+| max_units   | The maximum number of units to be sent in the message ex:(value 2 or 3) |
+| meta        | This block contains additional information                                                                                                                             |
+| tags        | opt-out the message based on the tags.                                                                                                                                 |
+
 
 #### Example Request
 
