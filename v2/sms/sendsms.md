@@ -54,7 +54,7 @@
 
 | Name        | Description                                                                   | type                | Required                               |
 | ----------- | ----------------------------------------------------------------------------- | ------------------- | -------------------------------------- |
-| channels    | This block contains information realted messaging channel                     | `array`             | Yes                                    |
+| channels    | This block contains information related messaging channel                     | `array`             | Yes                                    |
 | name        | Name of Messaging Channel. Ex: `sms`                                          | `string`            | Yes                                    |
 | from        | Sender or From Number                                                         | `number`            | Yes                                    |
 | meta        | This block contains additional information related to messaging channel       | `map`               | Yes                                    |

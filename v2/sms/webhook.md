@@ -36,7 +36,7 @@ To request delivery reports, include the `webhook_id` parameter and its correspo
 
 - The method used for sending the delivery report onto the client’s URL is `POST`.
 
-We try 3 times with interval of 30 minutes for failed requests. Continues failure requests will be ignored.
+We retry 3 times with an interval of 30 minutes for failed requests. Continued failure requests will be ignored.
 ## Compose Webhook
 
 For users seeking enhanced customization, compose webhook will help to receive the customized webhook payload to precisely match your preferences and requirements.
@@ -58,7 +58,7 @@ For users seeking enhanced customization, compose webhook will help to receive t
 - Body Format: Choose between JSON or FormData for the payload.
 - Upon creation, you will receive an `id` for the newly created Webhook.
 - To request delivery reports, include the `webhook_id` parameter and its corresponding value in your API Request. Once the request is made, you will receive the delivery report as you configured.
-- here keys you can give any name but value should be availebe in the below replaced variable.
+- Here keys you can give any name but value should be availebe in the below replaced variable `Ex: @{{status}}`.
 
 ## Compose Webhook Request
 ```
