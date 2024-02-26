@@ -33,7 +33,7 @@ pass the `webhook_id` parameter and value in the API Request then you will recei
 
 - The method used for sending the delivery report onto the client’s URL is `POST`.
 
-We try 3 times with interval of 30 minutes for failed requests. Continues failure requests will be ignored.
+We retry 3 times with an interval of 30 minutes for failed requests. Continued failure requests will be ignored.
 
 #### Below Parameters can be used while creating a webhook
 

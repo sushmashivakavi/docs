@@ -44,7 +44,7 @@
 
 | Name      | Description                                                 | type                | Required                       |
 | --------- | ----------------------------------------------------------- | ------------------- | ------------------------------ | -------- | --- |
-| channels  | This block contains information realted messaging channel   | N/A                 | Yes                            |
+| channels  | This block contains information related messaging channel   | N/A                 | Yes                            |
 | name      | Name of Messaging Channel. `whatsapp                        | rcs                 | ip_message`                    | `string` | Yes |
 | from      | RCS Agent Reference ID                                      | `string`            | Yes                            |
 | recipient | This block contains contacts information related to channel | N/A                 | Yes                            |
