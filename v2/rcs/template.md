@@ -174,11 +174,10 @@ Kindly replace the template_id.
         "name": "text123",
         "number": "91861xxxxxxx",
         "alias": "text123",
-        "type": "text",
-        "category": "Marketing",
+        "type": "template",
+        "category": "TEXT_MESSAGE",
         "language": "English",
-        "payload": "{\"type\":\"text\",\"payload\":
-        {\"text\":\"Hi, This is Rcs test message.\"}}",
+        "payload": "{\"type\":\"template\",\"payload\":{\"body\":{\"type\":\"text\",\"payload\":{\"text\":\"do you like rcs?\"}}}}",
         "status": 1,
         "is_conversation": 1,
         "created_at": "2023-02-23T05:56:58.000000Z",
@@ -207,10 +206,10 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "interactive",
+    "type": "template",
     "name": "text12311",
     "language": "en",
-    "category": "marketing",
+    "category": "text_message",
     "number": "91861xxxxxxx",
     "payload": {
         "header": {
@@ -265,10 +264,10 @@ curl -X POST \
         "name": "text12311",
         "number": "91861xxxxxxx",
         "alias": "text12311",
-        "type": "interactive",
-        "category": "Marketing",
+        "type": "template",
+        "category": "TEXT_MESSAGE",
         "language": "English",
-        "payload": "{\"type\":\"interactive\",\"payload\":
+        "payload": "{\"type\":\"template\",\"payload\":
         {\"header\":{\"type\":\"text\",\"payload\":{\"text\":\"header text\"}},
         \"body\":{\"type\":\"text\",\"payload\":{\"text\":\"do you like rcs?\"}},
         \"footer\":{\"type\":\"text\",\"payload\":{\"text\":\"footer text\"}},
@@ -302,17 +301,17 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "media",
+    "type": "template",
     "name": "media123",
     "language": "en",
-    "category": "marketing",
+    "category": "rich_card",
     "number": "91861xxxxxxx",
     "payload": {
         "type": "image",
         "payload": {
             "url": "https://picsum.photos/id/237/200/300",
             "filename": "filename",
-            "caption": "caption"
+            "height": "MEDIUM_HEIGHT"
         }
     }
 }'
@@ -330,12 +329,12 @@ curl -X POST \
         "name": "media123",
         "number": "91861xxxxxxx",
         "alias": "media123-1",
-        "type": "media",
-        "category": "Marketing",
+        "type": "template",
+        "category": "RICH_CARD",
         "language": "English",
-        "payload": "{\"type\":\"image\",\"payload\":
+        "payload": "{\"type\":\"template\",\"payload\":
         {\"url\":\"https:\\/\\/picsum.photos\\/id\\/237\\/200\\/300\",
-        \"filename\":\"filename\",\"caption\":\"caption\"}}",
+        \"filename\":\"filename\",\"height\":\"MEDIUM_HEIGHT\"}}",
         "status": 1,
         "created_at": "2023-02-23T06:01:03.000000Z",
         "updated_at": "2023-02-23T06:01:03.000000Z"
@@ -368,19 +367,19 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "card",
+    "type": "template",
     "name": "card_demo",
     "language": "en",
-    "category": "marketing",
+    "category": "rich_card",
     "number": "91861xxxxxxx",
     "payload": {
         "title": "This is the card title",
         "description": "This is the card description",
         "body": {
-            "type": "image",
+            "type": "video",
             "payload": {
-                "url": "https://domain-name.com/your_image_path.png",
-                "height": "TALL"
+                "url": "https://domain-name.com/your_content_path.mp4",
+                "height": "MEDIUM_HEIGHT"
             }
         },
         "choices": {
@@ -440,14 +439,14 @@ curl -X POST \
         "name": "card_demo",
         "number": "91861xxxxxxx",
         "alias": "card-demo",
-        "type": "card",
-        "category": "Marketing",
+        "type": "template",
+        "category": "RICH_CARD",
         "language": "English",
-        "payload": "{\"type\":\"card\",\"payload\":
+        "payload": "{\"type\":\"template\",\"payload\":
         {\"title\":\"This is the card title\",
-        \"description\":\"This is the card description\",\"body\":{\"type\":\"image\",\"payload\":
-        {\"url\":\"https:\\/\\/domain-name.com\\/your_image_path.png\",
-        \"height\":\"TALL\"}},\"choices\":{\"replies\":[{\"type\":\"text\",\"payload\":
+        \"description\":\"This is the card description\",\"body\":{\"type\":\"video\",\"payload\":
+        {\"url\":\"https:\\/\\/domain-name.com\\/your_content_path.mp4\",
+        \"height\":\"MEDIUM_HEIGHT\"}},\"choices\":{\"replies\":[{\"type\":\"text\",\"payload\":
         {\"text\":\"yes\",\"content\":\"yes\"}},
         {\"type\":\"text\",\"payload\":{\"text\":\"No\",\"content\":\"no\"}}],
         \"actions\":[{\"type\":\"url\",\"payload\":{\"title\":\"Click Here\",\"url\":
@@ -477,14 +476,118 @@ curl -X POST \
   -H 'authorization: Bearer 5b02112fb7xxxxxxxxx' \
   -H 'content-type: application/json' \
   -d '{
-    "type": "carousel",
+    "type": "template",
     "name": "carousel_demo",
     "language": "en",
-    "category": "marketing",
+    "category": "carousel",
     "number": "91861xxxxxxx",
     "payload": {
         "cards": [
-            "5565ef13-8843-4f02-94f2-9a510140dadd"
+            {
+                "title": "This is the first card title",
+                "description": "This is the first card description",
+                "body": {
+                    "type": "video",
+                    "payload": {
+                        "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                        "filename": "BigBuckBunny.mp4",
+                        "height": "TALL"
+                    }
+                },
+                "choices": {
+                    "replies": [
+                        {
+                            "type": "text first",
+                            "payload": {
+                                "text": "yes",
+                                "content": "yes"
+                            }
+                        },
+                        {
+                            "type": "text first2",
+                            "payload": {
+                                "text": "no",
+                                "content": "No"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "type": "url",
+                            "payload": {
+                                "title": "Click Here",
+                                "url": "https://example.com"
+                            }
+                        },
+                        {
+                            "type": "dial",
+                            "payload": {
+                                "title": "Click Here",
+                                "phone_number": "+9178990XXXX"
+                            }
+                        },
+                        {
+                            "type": "location",
+                            "payload": {
+                                "latitude": 12.912985,
+                                "longitude": 77.599505
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "This is the second card title",
+                "description": "This is the second card description",
+                "body": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://www.domain.com/app/uploads/domain-logo.png",
+                        "height": "TALL"
+                    }
+                },
+                "choices": {
+                    "replies": [
+                        {
+                            "type": "text second",
+                            "payload": {
+                                "text": "yes",
+                                "content": "yes"
+                            }
+                        },
+                        {
+                            "type": "text second2",
+                            "payload": {
+                                "text": "no",
+                                "content": "No"
+                            }
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "type": "url",
+                            "payload": {
+                                "title": "Click Here",
+                                "url": "https://example.com"
+                            }
+                        },
+                        {
+                            "type": "dial",
+                            "payload": {
+                                "title": "Click Here",
+                                "phone_number": "+9178990XXXXX"
+                            }
+                        },
+                        {
+                            "type": "location",
+                            "payload": {
+                                "latitude": 12.912985,
+                                "longitude": 77.599505
+                            }
+                        }
+                    ]
+                }
+            }
         ]
     }
 }'
@@ -502,20 +605,10 @@ curl -X POST \
         "name": "carousel_demo",
         "number": "91861xxxxxxx",
         "alias": "carousel-demo",
-        "type": "carousel",
-        "category": "Marketing",
+        "type": "template",
+        "category": "carousel",
         "language": "English",
-        "payload": "{\"type\":\"carousel\",\"payload\":[{\"title\":\"This is the card title\",
-        \"description\":\"This is the card description\",\"body\":
-        {\"type\":\"image\",\"payload\":{\"url\":\"https:\\/\\/domain-name.com\\/your_image_path.png\",
-        \"height\":\"TALL\"}},\"choices\":{\"replies\":[{\"type\":\"text\",
-        \"payload\":{\"text\":\"yes\",\"content\":\"yes\"}},{\"type\":\"text\",
-        \"payload\":{\"text\":\"No\",\"content\":\"no\"}}],
-        \"actions\":[{\"type\":\"url\",\"payload\":{\"title\":\"Click Here\",
-        \"url\":\"https:\\/\\/example.com\"}},{\"type\":\"dial\",\"payload\":{\"title\":
-        \"Click Here\",\"phone_number\":\"+91901995xxxx\"}},
-        {\"type\":\"location\",\"payload\":{\"latitude\":12.912985,\"longitude\":77.599505}}]}}],
-        \"cards\":[\"5565ef13-8843-4f02-94f2-9a510140dadd\"]}",
+        "payload": "{\"type\":\"template\",\"payload\":{\"cards\":[{\"title\":\"This is the first card title\",\"description\":\"This is the first card description\",\"body\":{\"type\":\"video\",\"payload\":{\"url\":\"http:\\/\\/commondatastorage.googleapis.com\\/gtv-videos-bucket\\/sample\\/BigBuckBunny.mp4\",\"filename\":\"BigBuckBunny.mp4\",\"height\":\"TALL\"}},\"choices\":{\"replies\":[{\"type\":\"text first\",\"payload\":{\"text\":\"yes\",\"content\":\"yes\"}},{\"type\":\"text first2\",\"payload\":{\"text\":\"no\",\"content\":\"No\"}}],\"actions\":[{\"type\":\"url\",\"payload\":{\"title\":\"Click Here\",\"url\":\"https:\\/\\/example.com\"}},{\"type\":\"dial\",\"payload\":{\"title\":\"Click Here\",\"phone_number\":\"+9178990XXXX\"}},{\"type\":\"location\",\"payload\":{\"latitude\":12.912985000000001,\"longitude\":77.599504999999994}}]}},{\"title\":\"This is the second card title\",\"description\":\"This is the second card description\",\"body\":{\"type\":\"image\",\"payload\":{\"url\":\"https:\\/\\/www.domain.com\\/app\\/uploads\\/domain-logo.png\",\"height\":\"TALL\"}},\"choices\":{\"replies\":[{\"type\":\"text second\",\"payload\":{\"text\":\"yes\",\"content\":\"yes\"}},{\"type\":\"text second2\",\"payload\":{\"text\":\"no\",\"content\":\"No\"}}],\"actions\":[{\"type\":\"url\",\"payload\":{\"title\":\"Click Here\",\"url\":\"https:\\/\\/example.com\"}},{\"type\":\"dial\",\"payload\":{\"title\":\"Click Here\",\"phone_number\":\"+9178990XXXXX\"}},{\"type\":\"location\",\"payload\":{\"latitude\":12.912985000000001,\"longitude\":77.599504999999994}}]}}]}}",
         "status": 1,
         "created_at": "2023-02-23T06:08:46.000000Z",
         "updated_at": "2023-02-23T06:08:46.000000Z"
@@ -559,10 +652,10 @@ curl -X POST \
         "name": "text123",
         "number": "91861xxxxxxx",
         "alias": "text123",
-        "type": "text",
-        "category": "Marketing",
+        "type": "template",
+        "category": "TEXT_MESSAGE",
         "language": "English",
-        "payload": "{\"type\":\"text\",\"payload\":{\"text\":\"Hi, This is Rcs update test message.\"}}",
+        "payload": "{\"type\":\"template\",\"payload\":{\"body\":{\"type\":\"text\",\"payload\":{\"text\":\"do you like rcs?\"}}}}",
         "status": 1,
         "created_at": "2023-02-23T05:56:58.000000Z",
         "updated_at": "2023-02-23T06:27:29.000000Z"

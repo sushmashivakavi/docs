@@ -13,7 +13,7 @@
     "header": [],
     "body": {
         "mode": "raw",
-        "raw": "{\n    \"type\": \"text\",\n    \"name\": \"text_template\",\n    \"language\": \"en\",\n    \"category\": \"marketing\",\n    \"number\": \"91861xxxxxxx\",\n    \"payload\": {\n        \"text\" : \"Hi, This is Rcs update template message.\"\n    }\n}",
+        "raw": "{\n    \"type\": \"template\",\n    \"name\": \"vi_text\",\n    \"language\": \"en\",\n    \"category\": \"text_message\",\n    \"number\": \"{{rcs_agent_num}}\",\n    \"payload\": {\n        \"body\": {\n\t\t    \"type\":\"text\",\n\t\t    \"payload\": {\n\t\t\t \"text\":\"do you like rcs?\"\n\t\t\t}\n\t\t}\n\t}\n}",
         "options": {
             "raw": {
                 "language": "json"
