@@ -22,7 +22,7 @@ View all the Templates list.
 | -------------- | -------- | ----------------------------------------------- |
 | filter[id]     | Yes      | The id is template id                           |
 | filter[name]   | Yes      | The name is template name                       |
-| filter[type]   | Yes      | The type is template type EX: (text, media. . ) |
+| filter[type]   | Yes      | The type is template type  (template)           |
 | filter[status] | Yes      | (0 is Draft), (1 is Approved) ,(2 is Pending)   |
 
 #### Example Request
@@ -142,9 +142,9 @@ Kindly replace the template_id.
 
 | name            | description                                                     | Type                  | Required |
 | --------------- | --------------------------------------------------------------- | --------------------- | -------- |
-| type            | values are like `text`, `interactive`, `media` . .              | `string`              | Yes      |
+| type            | value should be `template`                                      | `string`              | Yes      |
 | name            | name should be a alphanumeric                                   | `string`,`integer`    | Yes      |
-| category        | template category names                                         | `string`              | Yes      |
+| category        | template category names(`text_message`,`rich_card`,`carousel`)  | `string`              | Yes      |
 | language        | Example : `eu`, `en_US`                                         | `string`              | Yes      |
 | number          | agent number Ex:(91861xxxxxxxx)                                 | `string` or `integer` | Yes      |
 | is_conversation | value is (1 auto approve) or (0 admin will approve), default(0) | `integer`             | Yes      |
@@ -287,7 +287,7 @@ curl -X POST \
 
 | name                     | description                             | Type     | Required |
 | ------------------------ | --------------------------------------- | -------- | -------- |
-| payload.type             | `image`, `video`, `audio` or `document` | `string` | Yes      |
+| payload.type             | `template`                              | `string` | Yes      |
 | payload.payload          | payload object                          | `object` | Yes      |
 | payload.payload.url      | proper link url                         | `string` | Yes      |
 | payload.payload.filename | optional                                | `string` | No       |
@@ -629,9 +629,9 @@ curl -X POST \
 | name        | description                                        | Type                  | Required |
 | ----------- | -------------------------------------------------- | --------------------- | -------- |
 | template id | created template id                                | `string`              | Yes      |
-| type        | values are like `text`, `interactive`, `media` . . | `string`              | Yes      |
+| type        | value should be  `template`                                  | `string`              | Yes      |
 | name        | created template name (can not be change)          | `string`              | Yes      |
-| category    | template category (can be change)                  | `string`              | Yes      |
+| category    | template category (`text_message`,`rich_card`,`carousel`)                  | `string`              | Yes      |
 | language    | example : `eu`, `en_US` (can be change)            | `string`              | Yes      |
 | number      | agent number Ex:(91861xxxxxxxx) (can be change)    | `string` or `integer` | Yes      |
 | payload     | payload content (can be change)                    | `object`              | Yes      |
