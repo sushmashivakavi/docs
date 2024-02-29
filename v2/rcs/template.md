@@ -287,7 +287,7 @@ curl -X POST \
 
 | name                     | description                             | Type     | Required |
 | ------------------------ | --------------------------------------- | -------- | -------- |
-| payload.type             | `template`                              | `string` | Yes      |
+| payload.type             | `image`, `video`, `audio` or `document` | `string` | Yes      |
 | payload.payload          | payload object                          | `object` | Yes      |
 | payload.payload.url      | proper link url                         | `string` | Yes      |
 | payload.payload.filename | optional                                | `string` | No       |
