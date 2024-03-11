@@ -11,7 +11,8 @@ This functionality is beneficial for the following purposes:
 To initiate the verification process for a recipient, simply create a new Verify object through the API. We will handle the generation of a token and ensure that the verification message is successfully delivered to the user's mobile device.
 
 ## Verify Request
-#include "_include/endpoint.md"
+
+#include "\_include/endpoint.md"
 
 #### POST
 
@@ -62,6 +63,15 @@ To initiate the verification process for a recipient, simply create a new Verify
       "ttl": 30,
       "order": 3,
       "wait": 60
+    },
+    {
+      "name": "rcs",
+      "from": "21d80b42-70e7-4d05-ab40-bf3502axxxxx",
+      "recipient": {
+        "to": "9189195xxxx"
+      },
+      "order": 3,
+      "wait": 60
     }
   ],
   "payload": {
@@ -91,16 +101,16 @@ To initiate the verification process for a recipient, simply create a new Verify
 | wait     | Waiting time [in seconds] for triggering otp via alternate channel if first channel not successful. Default 30 seconds    |     |
 | language | Language in which TTS should play                                                                                         |     |
 | token    | Token length should be equal to defined length                                                                            |
-| ttl      | Time To Live(TTL) should be min 30 to max 1,209,600 seconds                                                                           |
+| ttl      | Time To Live(TTL) should be min 30 to max 1,209,600 seconds                                                               |
 
 #### Example Response
 
 ```json
 {
-    "id": "bdd56db3-ecd3-4d20-8ab5-988bdc76795a",
-    "status": "sent",
-    "foreign_id": null,
-    "created_at": "2023-12-05 08:24:48",
-    "expire_at": "2023-12-05 08:26:48"
+  "id": "bdd56db3-ecd3-4d20-8ab5-988bdc76795a",
+  "status": "sent",
+  "foreign_id": null,
+  "created_at": "2023-12-05 08:24:48",
+  "expire_at": "2023-12-05 08:26:48"
 }
 ```
