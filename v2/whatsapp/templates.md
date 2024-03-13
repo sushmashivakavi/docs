@@ -254,7 +254,7 @@ Kindly replace the token with your respective access_token and other params.
 | payload.body.params       | No       | your verification code only one ex: 1287    |
 | choices.type              | No       | value is `otp`                              |
 | choices.type.otp.otp_type | No       | value is `copy_code` and `one_tap`          |
-| choices.type.otp.otp_code | No       | value button text ex: copy your code        |
+| choices.type.otp.text     | No       | value button text ex: copy your code        |
 | choices.security          | No       | true, false                                 |
 | choices.code_expire       | No       | min 1 and max 90 minutes (Code expiry time) |
 
