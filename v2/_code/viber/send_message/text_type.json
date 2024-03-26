@@ -22,7 +22,7 @@
     ],
     "body": {
         "mode": "raw",
-        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"viber\",\n            \"from\": \" {{ from }}\",\n            \"meta\": {\n                \"category\": \"transactional\"\n            }\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \" {{ receiver }}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"text\",\n        \"payload\": {\n            \"text\": \"Welcome to viber messaging!!\"\n        }\n    }\n}"
+        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"viber\",\n            \"from\": \" {{ from }}\",\n            \"meta\": {\n                \"category\": \"transactional,\"\n                \"ttl\": \"60\"\n            }\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \" {{ receiver }}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"text\",\n        \"payload\": {\n            \"text\": \"Welcome to viber messaging!!\"\n        }\n    }\n}"
     },
     "url": {
         "raw": "{{ endpoint }}api/v2/viber/message/send",

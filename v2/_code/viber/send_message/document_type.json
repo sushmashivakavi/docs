@@ -22,7 +22,7 @@
     ],
     "body": {
         "mode": "raw",
-        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"viber\",\n            \"from\": \" {{ from }}\",\n            \"meta\": {\n                \"category\": \"transactional\"\n            }\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \" {{ receiver }}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"file\",\n        \"payload\": {\n            \"file_name\": \"sample_file.pdf\",\n            \"url\": \"https://www.learningcontainer.com/wp-content/uploads/2019/09/sample-pdf-file.pdf\"\n        }\n    }\n}"
+        "raw": "{\n    \"channels\": [\n        {\n            \"name\": \"viber\",\n            \"from\": \" {{ from }}\",\n            \"meta\": {\n                \"category\": \"transactional\"\n                \"ttl\": \"60\"\n            }\n        }\n    ],\n    \"recipient\": {\n        \"to\": [\n            \" {{ receiver }}\"\n        ]\n    },\n    \"message\": {\n        \"type\": \"file\",\n        \"payload\": {\n            \"file_name\": \"sample_file.pdf\",\n            \"url\": \"https://www.learningcontainer.com/wp-content/uploads/2019/09/sample-pdf-file.pdf\"\n        }\n    }\n}"
     },
     "url": {
         "raw": "{{ endpoint }}api/v2/viber/message/send",
