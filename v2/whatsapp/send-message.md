@@ -90,6 +90,7 @@ It will support only `POST` requests.
 | Name     | Description                                                                                                                                                                      | Limits | Required |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- |
 | url      | Public url of the image file. Either HTTP/HTTPS link.                                                                                                                            | 5 MB   | Yes      |
+| thumbnail| Public url of the thumbnail of the image file.                                                                                                                                   | N/A    | Yes      |
 | type     | `image/jpg`, `image/jpeg` and `image/png`                                                                                                                                        | YES    | YES      |
 | caption  | some text for image caption                                                                                                                                                      | N/A    | No       |
 | filename | Media file name                                                                                                                                                                  | N/A    | No       |
