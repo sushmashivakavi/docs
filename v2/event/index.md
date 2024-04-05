@@ -17,7 +17,7 @@ Here's a list of events that can be used to send payload to the provided webhook
 | Voice | voice:message:out | To receive acknowledgments after CDR events.|
 | Voice | voice:unsubscription | Acknowledgment of opting out from any number.|
 | Viber | viber:message:status | For receiving Viber delivery updates|
-| Viber | viber:message:in | For receiving Viber message event|
+| Viber | viber:message:in | For receiving updates when user send message to Viber number|
 | Viber | viber:unsubscription | Acknowledgment of opting out from any number. |
 | Interact | vmn:message:in | Once we receive the acknowledgment, we will send the same to the webhook.|
 | Contact | contacts:subscriber:subscription | For receiving Contacts creation and updation Event payload. |
