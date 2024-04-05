@@ -56,7 +56,7 @@ Message Templates are message formats for common reusable messages a business ma
 | 3         | (3 x 67) 201 characters. |
 
 #### Note : 
-If any characters other than the following special characters are present in the message during the sending of a campaign type normal, they will be replaced with a question mark (?):
+If any characters other than the following special characters are present in the message during the sending of a campaign type normal, they will be replaced with a question mark (?)
 
 - Whitespace characters
 - Alphanumeric characters (a-z, A-Z, 0-9)
