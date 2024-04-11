@@ -16,6 +16,9 @@ Here's a list of events that can be used to send payload to the provided webhook
 | RCS | rcs:unsubscription | Acknowledgment of opting out from any number. |
 | Voice | voice:message:out | To receive acknowledgments after CDR events.|
 | Voice | voice:unsubscription | Acknowledgment of opting out from any number.|
+| Viber | viber:message:status | For receiving Viber delivery updates|
+| Viber | viber:message:in | For receiving updates when user send message to Viber number|
+| Viber | viber:unsubscription | Acknowledgment of opting out from any number. |
 | Interact | vmn:message:in | Once we receive the acknowledgment, we will send the same to the webhook.|
 | Contact | contacts:subscriber:subscription | For receiving Contacts creation and updation Event payload. |
 
@@ -337,8 +340,181 @@ For more details on RCS webhook :  [[Read Here]](/docs/{version}/rcs/webhooks)
 }
 ```
 
-
 For more details on Reach webhook :  [[Read Here]](/docs/{version}/reach/webhook)
+
+## Viber Service Events
+
+### Message Status Notification
+#### Example Payload for viber:message:status event
+
+```json
+{
+  "event": "viber:message:status",
+  "payload": {
+    "id": "a418d672-9781-4d97-b517-a56f7d95ad8a",
+    "channel": "viber",
+    "from": "700969ca-0cb2-11ec-a2cxxxx",
+    "to": "9190199xxxxx",
+    "status": "sent|delivered|read|failed|deleted",
+    "delivered_at": "2021-06-18T14:48:06.886358Z",
+    "read_at": "2021-06-18T14:48:06.886358Z",
+    "processed_at": "2021-06-18T14:48:06.886358Z",
+    "timestamp": "2021-06-18T14:48:06.886358Z",
+    "foreign_id": "your-business-identifier"
+  }
+}
+```
+### Message Incoming Notification
+#### Example Payload for viber:message:in event for Incoming Text
+
+```json
+{
+  "event": "viber:message:in",
+  "payload": {
+    "id": "our-message-id",
+    "channels": [
+      {
+        "name": "viber",
+        "to": "700969ca-0cb2-11ec-a2cxxxx"
+      }
+    ],
+    "recipient": {
+      "from": "919019120xxx",
+      "user": {
+        "id": "unique-id",
+        "identifier_id": "unique-identifier-id",
+        "subscriber_id": "unique-subscriber-id",
+        "identity": "unique-user-identity",
+        "username": "username",
+        "first_name": "user first name",
+        "middle_name": "user middle name",
+        "last_name": "user last name",
+        "email": "user email",
+        "phone": "user phone number",
+        "attributes": "user attributes",
+        "user_info": {
+          "picture": "null",
+          "gender": "user-gender",
+          "title": "null"
+        }
+      }
+    },
+    "message": {
+      "type": "text",
+      "payload": {
+        "text": "This is a simple text message from viber channel"
+      }
+    }
+  }
+}
+```
+
+### Incoming Media
+#### Example Payload for viber:message:in event for Incoming Media
+
+```json
+{
+  "event": "viber:message:in",
+  "payload": {
+    "id": "our-message-id",
+    "channels": [
+      {
+        "name": "viber",
+        "to": "700969ca-0cb2-11ec-a2cxxxx"
+      }
+    ],
+    "recipient": {
+      "from": "919019120xxx",
+      "user": {
+        "id": "unique-id",
+        "identifier_id": "unique-identifier-id",
+        "subscriber_id": "unique-subscriber-id",
+        "identity": "unique-user-identity",
+        "username": "username",
+        "first_name": "user first name",
+        "middle_name": "user middle name",
+        "last_name": "user last name",
+        "email": "user email",
+        "phone": "user phone number",
+        "attributes": "user attributes",
+        "user_info": {
+          "picture": "null",
+          "gender": "user-gender",
+          "title": "null"
+        }
+      }
+    },
+    "message": {
+      "type": "image",
+      "payload": {
+        "url": "https://domin-name.com/your_image_path.png",
+      }
+    }
+  }
+}
+```
+
+### Number Unsubscribe Notification
+#### Example Payload for viber:unsubscription event
+```
+{
+  "id": 173,
+  "receiver": "917002088xxx",
+  "type": "all",
+  "value": "*",
+  "created_at": "2023-07-08T12:31:47.000000Z",
+  "status": "Unsubscriber created successfully"
+}
+```
+
+For more details on Viber webhook :  [[Read Here]](/docs/{version}/viber/webhooks)
+
+## VMN Event
+
+### Message Incoming Notification
+#### Example Payload for vmn:message:in event
+
+```json
+{
+  "event": "vmn:message:in",
+  "payload": {
+    "id": "our-message-id",
+    "channels": [
+      {
+        "name": "vmn",
+        "to": "919019XXXXXX"
+      }
+    ],
+    "recipient": {
+      "from": "918074XXXXXX",
+      "user": {
+          "id": "unique-id",
+          "identifier_id": "unique-identifier-id",
+          "subscriber_id": "unique-subscriber-id",
+          "identity": "unique-user-identity",
+          "username": "username",
+          "first_name": "user first name",
+          "middle_name": "user middle name",
+          "last_name": "user last name",
+          "email": "user email",
+          "phone": "user phone number",
+          "attributes": "user attributes",
+          "user_info": {
+            "picture": "null",
+            "gender": "user-gender",
+            "title": "null"
+          }
+        }
+    },
+    "message": {
+      "type": "text",
+      "payload": {
+        "text": "This is a simple text message"
+      }
+    }
+  }
+}
+```
 
 ## Contacts Event
 

@@ -127,6 +127,19 @@ If you wish to have your callbacks signed and have made the proper configuration
   }
 }
 ```
+
+### Number Unsubscribe Notification
+```
+{
+  "id": 173,
+  "receiver": "917002088xxx",
+  "type": "all",
+  "value": "*",
+  "created_at": "2023-07-08T12:31:47.000000Z",
+  "status": "Unsubscriber created successfully"
+}
+```
+
 ## Compose Webhook
 
 For users seeking enhanced customization, compose webhook will help to receive the customized webhook payload to precisely match your preferences and requirements.
