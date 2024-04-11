@@ -160,7 +160,7 @@ Customers cannot transfer credits between transactional and promotional or other
 Deleted content is irretrievable.
 Impact of Exceeding Limit: Violating operational limitations may lead to disruptions in operations, loss of data, or failure to manage account settings as intended.
 
-## SMS Delivery: Loop Protection and Fraud Prevention
+### SMS Delivery: Loop Protection and Fraud Prevention
 
 #### Message Repetition
 
@@ -173,7 +173,7 @@ It allows for legitimate communication while protecting users from unwanted spam
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | Impact of Exceeding Limit | Violating the message repetition rule may trigger anti-spam mechanisms, resulting in message blocking or account suspension. |
 
-## Voice Channel
+### Voice Channel
 
 #### Data Retention
 
@@ -207,7 +207,7 @@ Webhook URLs for recordings are valid for 2 hours only.
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Impact of Exceeding Limit | Exceeding the recording URL validity period may lead to expired URLs, preventing access to call recordings or triggering errors in webhook processing and can be achieved the same URL from recordings API. |
 
-## VMN Messaging Logs
+### VMN Messaging Logs
 
 Retained for 60 days.
 
@@ -215,7 +215,7 @@ Retained for 60 days.
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | Impact of Exceeding Limit | Accessing messaging logs beyond the specified retention period may result in unavailability or loss of access to historical messaging data. |
 
-## WhatsApp/RCS/Viber
+### WhatsApp/RCS/Viber
 
 #### Bulk Upload Limit
 
