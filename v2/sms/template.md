@@ -73,6 +73,7 @@ You can send template message using `POST` method content in body.
 | webhook_id | The `id` of the webhook created in Webhook Section for which the SMS response to be sent after delivery report from operator [read more](/docs/{version}/sms/webhook), Instead of passing webhook_id everytime in the payload, refer to [create subscription](/docs/{version}/subscriptions#content-create-subscription) | |
 | foreign_id | Custom id for reference from customer.|
 | tags | opt-out the message based on the tags.|
+| flash | This parameter can be used to send flash sms via API ( Values 1 or 0.) |
 
 #### Example Request
 
