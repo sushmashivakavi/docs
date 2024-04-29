@@ -9,6 +9,14 @@ View all Blocklists
 {endpoint}sms/suppressions/templates
 ```
 
+#### PARAMETERS
+
+| name                | optional | value                                           |
+| --------------      | -------- | ----------------------------------------------- |
+| filter[id]          | Yes      | The id is unsubscriber id                       |
+| filter[template_id] | Yes      | The template id of template in blocklist        |
+| filter[status]      | Yes      | (0 for Inactive, 1 for Active)                  |
+
 #### Example Request
 
 #code "{version}/_code/sms/suppressions/list.json"

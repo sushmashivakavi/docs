@@ -11,6 +11,15 @@ View all smart links created under your account
 
 #### PARAMETERS
 
+| name               | optional | value                                           |
+| --------------     | -------- | ----------------------------------------------- |
+| filter[id]         | Yes      | Id of smart link                                |
+| filter[title]      | Yes      | Title of smart link                             |
+| filter[long_url]   | Yes      | Entire long URL of smart link                   |
+| filter[webhook_id] | Yes      | Id of webhook you provided                      |
+| filter[is_advanced]| Yes      | If Enable mobile number tracking (0 for Disabled, 1 for Enabled)|
+| filter[status]     | Yes      | Status of smart link (0 for Inactive, 1 for Active)             |
+
 #### Example Request
 
 #code "{version}/_code/link/index.json"

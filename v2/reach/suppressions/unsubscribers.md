@@ -9,6 +9,16 @@ View all created unsubscribers
 {endpoint}outgoing/suppressions/unsubscribers
 ```
 
+#### PARAMETERS
+
+| name             | optional | value                                           |
+| --------------   | -------- | ----------------------------------------------- |
+| filter[id]       | Yes      | The id is unsubscriber id                       |
+| filter[iso]      | Yes      | The ISO2 of country                             |
+| filter[receiver] | Yes      | The unsubscribed mobile number                  |
+| filter[type]     | Yes      | Type can be (tag, sender, service)              |
+| filter[value]    | Yes      | Value for any of the given type                 |
+
 #### Example Request
 
 ```
