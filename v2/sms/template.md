@@ -43,7 +43,7 @@ You can send template message using `POST` method content in body.
     "to": ["9189195xxxxx", "9189196xxxxx"]
   },
   "data": {
-    "name": "MKT",
+    "name": "demo",
     "email": "demoxxxx@gmail.com",
     "phone": "89XXXXXXXX"
   },

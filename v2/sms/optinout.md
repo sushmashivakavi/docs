@@ -16,7 +16,7 @@ Any number can be opted in/out based on the selected Service, Sender and/or Tags
 | ------------ | -------- | -------------------------------------------------------------------------------------------- |
 | sender       | Yes      | Enter a valid sender                                                                         |
 | tag         | Yes      | Provide max. of 2 tags(array)                                                                                             |
-| service      | Yes      | The short code of the service name. ex: (MKT) [full list](/docs/{version}/sms/products)                                                                        |
+| service      | Yes      | The short code of the service name. ex: (@if (config('service.unified')) MKT @else T @endif) [full list](/docs/{version}/sms/products)                                                                        |
 
 
 ### Example Request
@@ -57,7 +57,7 @@ curl -X POST \
 | ------------ | -------- | -------------------------------------------------------------------------------------------- |
 | sender       | Yes      | Enter a valid sender                                                                         |
 | tag         | Yes      | Provide max. of 2 tag(array)                                                                                             |
-| service      | Yes      | The short code of the service name. ex: (MKT) [full list](/docs/{version}/sms/products)                                                                        |
+| service      | Yes      | The short code of the service name. ex: (@if (config('service.unified')) MKT @else T @endif) [full list](/docs/{version}/sms/products)                                                                        |
 
 
 ### Example Request

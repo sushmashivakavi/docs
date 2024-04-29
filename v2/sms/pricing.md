@@ -14,7 +14,7 @@ View all Country wise pricing list.
 | name            | optional | value                                                    |
 | --------------- | -------- | -------------------------------------------------------- |
 | filter[iso]     | Yes      | The ISO code of the Country. EX: (IN, AF, ...) [full list](https://www.iban.com/country-codes) |
-| filter[service] | Yes      | The short code of the service name. EX: (T, P, MKT, A2P) |
+| filter[service] | Yes      | The short code of the service name. EX: (@if (config('service.unified')) MKT, A2P @else T, P @endif) |
 | filter[status]  | Yes      | 1 or 0                                                   |
 
 #### Example Request
