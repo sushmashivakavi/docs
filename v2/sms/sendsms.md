@@ -14,7 +14,7 @@
 		"name": "sms",
 		"from": "SENDER",
 		"meta": {
-			"service": "MKT",
+			"service": @if (config('service.unified')) "MKT" @else "T" @endif,
 			"template_id": "1234XXXXXXX",
 			"entity_id":"89XXXXXXXXXXX",
 			"foreign_id":"your-custom-id",

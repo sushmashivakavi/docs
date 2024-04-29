@@ -16,7 +16,7 @@ Edit sender-ids using put method under your account
 | country_code | Yes       | For which country this sender belongs to. 2 letters [full list](https://www.iban.com/country-codes)                                          |
 | entity_id    | Yes       | Input the entity id (required for india)                                                     |
 | entity_name  | Yes       | Company name whom this sender belongs to (required for india)                                |
-| service      | Yes       | The short code of the service name. ex: (MKT) [full list](/docs/{version}/#content-products) |
+| service      | Yes       | The short code of the service name. ex: (@if (config('service.unified')) MKT @else T @endif) [full list](/docs/{version}/#content-products) |
 
 #### Example Request
 

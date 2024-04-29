@@ -25,7 +25,7 @@ You can send sms using `POST` method only as uploading file will supporting in `
 | ------- | ----------------------------------------------------------------------------------------------------------- |
 | message | The content of the SMS                                                                                      |
 | sender  | The registered and approved Sender-id                                                                       |
-| service | The short code of the service name. ex: (MKT) [full list](/docs/{version}/#content-products)                |
+| service | The short code of the service name. ex: (@if (config('service.unified')) MKT @else T @endif) [full list](/docs/{version}/#content-products)                |
 | file    | Request body form-data you need to select file parameter and need to upload file containing mobile numbers. |
 
 #### OPTIONAL PARAMETERS
@@ -52,7 +52,7 @@ curl -X POST \
     -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
     -d 'sender=TXTSMS' \
     -d 'to=917026267xxx' \
-    -d 'service=MKT' \
+    -d 'service=@if (config('service.unified')) MKT @else T @endif' \
     -d 'message=Your OTP is 123456'
     -F file=@filename.txt
 ```
