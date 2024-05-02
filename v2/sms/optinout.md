@@ -15,7 +15,7 @@ Any number can be opted in/out based on the selected Service, Sender and/or Tags
 | Name         | optional | Descriptions                                                                                 |
 | ------------ | -------- | -------------------------------------------------------------------------------------------- |
 | sender       | Yes      | Enter a valid sender                                                                         |
-| tag         | Yes      | Provide max. of 2 tags(array)                                                                                             |
+| tags         | Yes      | Provide max. of 2 tags(array)                                                                                             |
 | service      | Yes      | The short code of the service name. ex: (@if (config('service.unified')) MKT @else T @endif) [full list](/docs/{version}/sms/products)                                                                        |
 
 
@@ -28,7 +28,7 @@ curl -X POST \
   -H 'content-type: application/json' \
   -d '{
     "sender": "654321",
-    "tag" : ["tag1","tag2"],
+    "tags" : ["tag1","tag2"],
     "service": "T"
 }'
 ```
@@ -56,7 +56,7 @@ curl -X POST \
 | Name         | optional | Descriptions                                                                                 |
 | ------------ | -------- | -------------------------------------------------------------------------------------------- |
 | sender       | Yes      | Enter a valid sender                                                                         |
-| tag         | Yes      | Provide max. of 2 tag(array)                                                                                             |
+| tags         | Yes      | Provide max. of 2 tag(array)                                                                                             |
 | service      | Yes      | The short code of the service name. ex: (@if (config('service.unified')) MKT @else T @endif) [full list](/docs/{version}/sms/products)                                                                        |
 
 
@@ -69,7 +69,7 @@ curl -X POST \
   -H 'content-type: application/json' \
   -d '{
     "sender": "654321",
-    "tag" : ["tag1","tag2"],
+    "tags" : ["tag1","tag2"],
     "service": "T"
 }'
 ```
